@@ -31,7 +31,7 @@
                       @include('admin.users.columns')
                             </thead>
                             <tbody>
-                            @each('admin.users.items' , $users_list , 'user')
+                            @each('admin.users.items' , $all_users , 'user')
                             </tbody>
                         </table>
 

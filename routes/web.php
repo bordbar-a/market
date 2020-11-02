@@ -34,9 +34,7 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'as' => 'admin.'], fu
 
 
     // User Route  -    all route begin by :   /admin/user
-    Route::group(['prefix' => 'user', 'as' => 'user.'], function () {
-
-
+    Route::group(['prefix' => 'user','namespace'=>'User' , 'as' => 'user.'], function () {
         Route::get('/', 'UsersController@list')->name('list');
         Route::get('/create', 'UsersController@create')->name('create');
         Route::post('/create', 'UsersController@store')->name('store');
