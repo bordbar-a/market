@@ -3,12 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="d4527880-cb0d-413e-8591-1ff27fa185c3" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_11_02_170443_create_products_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_11_02_170443_create_products_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_11_02_200326_create_addresses_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_11_02_200326_create_addresses_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_11_02_200713_create_categories_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_11_02_200713_create_categories_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_11_02_200803_create_orders_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_11_02_200803_create_orders_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_11_02_201506_create_payments_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_11_02_201506_create_payments_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Address.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Address.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Category.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Category.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Order.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Order.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Payment.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Payment.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Product.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Product.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -175,7 +175,7 @@
       <workItem from="1604317285051" duration="3690000" />
       <workItem from="1604321979667" duration="204000" />
       <workItem from="1604332888047" duration="7534000" />
-      <workItem from="1604386435075" duration="4445000" />
+      <workItem from="1604386435075" duration="8320000" />
     </task>
     <servers />
   </component>
@@ -183,6 +183,10 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="450" y="184" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1604392094440">
+      <screen x="0" y="0" width="1440" height="860" />
+    </state>
+    <state x="450" y="184" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1440.860@0.0.1440.860" timestamp="1604392094440" />
     <state x="500" y="184" key="FileChooserDialogImpl" timestamp="1604311873292">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
@@ -203,13 +207,17 @@
       <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state width="1397" height="499" key="GridCell.Tab.0.right/0.0.1440.860@0.0.1440.860" timestamp="1604321254774" />
+    <state x="508" y="244" key="NewPhpClassDialog" timestamp="1604392087758">
+      <screen x="0" y="0" width="1440" height="860" />
+    </state>
+    <state x="508" y="244" key="NewPhpClassDialog/0.0.1440.860@0.0.1440.860" timestamp="1604392087758" />
     <state x="416" y="253" key="com.intellij.ide.util.TipDialog" timestamp="1604386498924">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state x="416" y="253" key="com.intellij.ide.util.TipDialog/0.0.1440.860@0.0.1440.860" timestamp="1604386498924" />
-    <state x="383" y="180" width="672" height="678" key="search.everywhere.popup" timestamp="1604387045785">
+    <state x="383" y="180" width="672" height="678" key="search.everywhere.popup" timestamp="1604394919590">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state x="383" y="180" width="672" height="678" key="search.everywhere.popup/0.0.1440.860@0.0.1440.860" timestamp="1604387045785" />
+    <state x="383" y="180" width="672" height="678" key="search.everywhere.popup/0.0.1440.860@0.0.1440.860" timestamp="1604394919590" />
   </component>
 </project>

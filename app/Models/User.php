@@ -15,8 +15,8 @@ class User extends Authenticatable
      *
      * @var array
      */
-    protected $fillable = [
-        'name', 'email', 'password',
+    protected $guarded = [
+        'id',
     ];
 
     /**
@@ -25,7 +25,8 @@ class User extends Authenticatable
      * @var array
      */
     protected $hidden = [
-        'password', 'remember_token',
+        'password',
+        'remember_token',
     ];
 
     /**
@@ -36,4 +37,37 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+
+    /*
+     * Start Define Relation
+     */
+
+    public function payments()
+    {
+        return $this->hasMany(Payment::class , 'user_id');
+    }
+
+
+    public function orders()
+    {
+        return $this->hasMany(Order::class , 'user_id');
+    }
+
+
+    public function addresses()
+    {
+        return $this->hasMany(Address::class , 'user_id');
+    }
+
+
+    public function products()
+    {
+        return $this->hasMany(Product::class , 'user_id');
+    }
+
+    /*
+     * End Of Define Relation
+     */
+
 }
