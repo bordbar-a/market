@@ -8,6 +8,16 @@
         <li>
             <a href="#">
                 <i class="fa fa-menu-arrow pull-right"></i>
+                <i class="main-icon fa fa-user"></i> <span>دسته‌بندی‌ها</span>
+            </a>
+            <ul><!-- submenus -->
+                <li><a href="{{route('admin.category.list')}}">لیست</a></li>
+                <li><a href="{{route('admin.category.create')}}">اضافه کردن دسته‌بندی</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="#">
+                <i class="fa fa-menu-arrow pull-right"></i>
                 <i class="main-icon fa fa-user"></i> <span>کاربران</span>
             </a>
             <ul><!-- submenus -->

@@ -2,29 +2,46 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d4527880-cb0d-413e-8591-1ff27fa185c3" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/laravel-plugin.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/laravel-plugin.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/market.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/market.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Address.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Address.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Category.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Category.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Order.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Order.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Payment.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Payment.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Product.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Product.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/User/UsersController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/User/UsersController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_11_02_200713_create_categories_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_11_02_200713_create_categories_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_11_03_071646_change_categories_table_for_relation.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_11_03_073608_add_two_foreign_in_table_payments.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_11_03_073608_add_two_foreign_in_table_payments.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_11_03_073658_add_user_i_d_foreign_in_table_orders.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_11_03_073658_add_user_i_d_foreign_in_table_orders.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/mix-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/mix-manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/admin/base.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/admin/base.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/admin/partials/nav.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/admin/partials/nav.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/partials/tostr.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/partials/tostr.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webpack.mix.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpack.mix.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="DONT_SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution>
       <executable />
     </execution>
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="blade" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="PhpWorkspaceProjectConfiguration">
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP 7.3">
     <include_path>
       <path value="$PROJECT_DIR$/vendor/jakub-onderka/php-console-highlighter" />
       <path value="$PROJECT_DIR$/vendor/jakub-onderka/php-console-color" />
@@ -121,6 +138,11 @@
       <path value="$PROJECT_DIR$/vendor/symfony/polyfill-intl-normalizer" />
       <path value="$PROJECT_DIR$/vendor/egulias/email-validator" />
       <path value="$PROJECT_DIR$/vendor/laravel/ui" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/event-manager" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/dbal" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/cache" />
+      <path value="$PROJECT_DIR$/vendor/maximebf/debugbar" />
+      <path value="$PROJECT_DIR$/vendor/barryvdh/laravel-debugbar" />
     </include_path>
   </component>
   <component name="ProjectId" id="1jjEWWDEHWooDsRxARHhTlxlXId" />
@@ -131,16 +153,26 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/admin/category" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\market\app\Http\Requests\Category" />
+      <recent name="C:\xampp\htdocs\market\app\Http\Controllers\Admin\Category" />
       <recent name="C:\xampp\htdocs\market\app\Http\Controllers\Admin\Dashboard" />
       <recent name="C:\xampp\htdocs\market\app\Models" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\market\resources\views\admin\category" />
+      <recent name="C:\xampp\htdocs\market\app" />
+      <recent name="C:\xampp\htdocs\market\resources\views" />
+      <recent name="C:\xampp\htdocs\market\resources\views\admin" />
     </key>
   </component>
   <component name="RunManager">
@@ -175,7 +207,11 @@
       <workItem from="1604317285051" duration="3690000" />
       <workItem from="1604321979667" duration="204000" />
       <workItem from="1604332888047" duration="7534000" />
-      <workItem from="1604386435075" duration="8320000" />
+      <workItem from="1604386435075" duration="9696000" />
+      <workItem from="1604396367623" duration="10886000" />
+      <workItem from="1604411239634" duration="1043000" />
+      <workItem from="1604417333469" duration="12678000" />
+      <workItem from="1604463732769" duration="2598000" />
     </task>
     <servers />
   </component>
@@ -183,14 +219,26 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="300" y="84" key="#CLI_Interpreters" timestamp="1604417790759">
+      <screen x="0" y="0" width="1440" height="860" />
+    </state>
+    <state x="300" y="84" key="#CLI_Interpreters/0.0.1440.860@0.0.1440.860" timestamp="1604417790759" />
+    <state x="312" y="88" key="#Inspections" timestamp="1604417301554">
+      <screen x="0" y="0" width="1440" height="860" />
+    </state>
+    <state x="312" y="88" key="#Inspections/0.0.1440.860@0.0.1440.860" timestamp="1604417301554" />
     <state x="450" y="184" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1604392094440">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state x="450" y="184" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1440.860@0.0.1440.860" timestamp="1604392094440" />
-    <state x="500" y="184" key="FileChooserDialogImpl" timestamp="1604311873292">
+    <state x="524" y="325" width="447" height="241" key="ComposerInitDialogKey" timestamp="1604418130842">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state x="500" y="184" key="FileChooserDialogImpl/0.0.1440.860@0.0.1440.860" timestamp="1604311873292" />
+    <state x="524" y="325" width="447" height="241" key="ComposerInitDialogKey/0.0.1440.860@0.0.1440.860" timestamp="1604418130842" />
+    <state x="500" y="184" key="FileChooserDialogImpl" timestamp="1604407196388">
+      <screen x="0" y="0" width="1440" height="860" />
+    </state>
+    <state x="500" y="184" key="FileChooserDialogImpl/0.0.1440.860@0.0.1440.860" timestamp="1604407196388" />
     <state width="1397" height="499" key="GridCell.Tab.0.bottom" timestamp="1604321254774">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
@@ -207,17 +255,25 @@
       <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state width="1397" height="499" key="GridCell.Tab.0.right/0.0.1440.860@0.0.1440.860" timestamp="1604321254774" />
-    <state x="508" y="244" key="NewPhpClassDialog" timestamp="1604392087758">
+    <state x="508" y="244" key="NewPhpClassDialog" timestamp="1604411022491">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state x="508" y="244" key="NewPhpClassDialog/0.0.1440.860@0.0.1440.860" timestamp="1604392087758" />
-    <state x="416" y="253" key="com.intellij.ide.util.TipDialog" timestamp="1604386498924">
+    <state x="508" y="244" key="NewPhpClassDialog/0.0.1440.860@0.0.1440.860" timestamp="1604411022491" />
+    <state x="221" y="72" key="SettingsEditor" timestamp="1604418396001">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state x="416" y="253" key="com.intellij.ide.util.TipDialog/0.0.1440.860@0.0.1440.860" timestamp="1604386498924" />
-    <state x="383" y="180" width="672" height="678" key="search.everywhere.popup" timestamp="1604394919590">
+    <state x="221" y="72" key="SettingsEditor/0.0.1440.860@0.0.1440.860" timestamp="1604418396001" />
+    <state x="416" y="253" key="com.intellij.ide.util.TipDialog" timestamp="1604463991774">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state x="383" y="180" width="672" height="678" key="search.everywhere.popup/0.0.1440.860@0.0.1440.860" timestamp="1604394919590" />
+    <state x="416" y="253" key="com.intellij.ide.util.TipDialog/0.0.1440.860@0.0.1440.860" timestamp="1604463991774" />
+    <state x="461" y="72" key="refactoring.ChangeSignatureDialog" timestamp="1604417009670">
+      <screen x="0" y="0" width="1440" height="860" />
+    </state>
+    <state x="461" y="72" key="refactoring.ChangeSignatureDialog/0.0.1440.860@0.0.1440.860" timestamp="1604417009670" />
+    <state x="383" y="180" width="672" height="678" key="search.everywhere.popup" timestamp="1604464655169">
+      <screen x="0" y="0" width="1440" height="860" />
+    </state>
+    <state x="383" y="180" width="672" height="678" key="search.everywhere.popup/0.0.1440.860@0.0.1440.860" timestamp="1604464655169" />
   </component>
 </project>

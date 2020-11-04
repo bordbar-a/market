@@ -1,1 +1,1 @@
-_toastr("{{$message['message']}}", "top-right", "{{$message['level']}}", false);
+_toastr("{{$message['message']}}", "top-center", "{{$message['level']}}", false);

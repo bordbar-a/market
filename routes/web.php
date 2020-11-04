@@ -30,10 +30,23 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'as' => 'admin.'], fu
 
     // User Route  -    all route begin by :   /admin/user
     Route::group(['prefix' => 'user', 'namespace' => 'User', 'as' => 'user.'], function () {
-        Route::get('/', 'UsersController@list')->name('list');
+        Route::get('/', 'UsersController@all')->name('list');
         Route::get('/create', 'UsersController@create')->name('create');
         Route::post('/create', 'UsersController@store')->name('store');
         Route::get('/delete/{id}', 'UsersController@delete')->name('delete');
+
+
+    });
+
+    // Category Route  -    all route begin by :   /admin/category
+    Route::group(['prefix' => 'category', 'namespace' => 'Category', 'as' => 'category.'], function () {
+        Route::get('/', 'CategoriesController@all')->name('list');
+        Route::get('/create', 'CategoriesController@create')->name('create');
+        Route::post('/create', 'CategoriesController@store')->name('store');
+        Route::get('/delete/{id}', 'CategoriesController@delete')->name('delete');
+        Route::get('/edit/{id}', 'CategoriesController@edit')->name('edit');
+        Route::post('/update/{id}', 'CategoriesController@update')->name('update');
+
 
 
     });

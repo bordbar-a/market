@@ -11,10 +11,10 @@ class UsersController extends AdminBaseController
 {
 
 
-    public function list()
+    public function all()
     {
 
         $all_user = User::all();
-        return view('admin.users.list' , compact('all_user'));
+        return view('admin.users.list', compact('all_user'));
     }
 }

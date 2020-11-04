@@ -28,3 +28,7 @@ mix.scripts([
     'resources/assets/admin/js/cms.js',
     'resources/assets/admin/js/app.js'
 ],'public/backend/js/output.js');
+
+mix.styles([
+    'resources/assets/admin/css/layout-nestable.css',
+],'public/backend/css/custom/layout-nestable.css');
