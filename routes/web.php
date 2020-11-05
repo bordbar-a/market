@@ -34,6 +34,8 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'as' => 'admin.'], fu
         Route::get('/create', 'UsersController@create')->name('create');
         Route::post('/create', 'UsersController@store')->name('store');
         Route::get('/delete/{id}', 'UsersController@delete')->name('delete');
+        Route::get('/edit/{id}', 'UsersController@edit')->name('edit');
+        Route::post('/update/{id}', 'UsersController@update')->name('update');
 
 
     });

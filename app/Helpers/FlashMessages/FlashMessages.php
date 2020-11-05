@@ -10,6 +10,7 @@ namespace App\Helpers\FlashMessages;
  * @method static FlashMessages warning(string $message)
  * @method static FlashMessages info(string $message)
  * @method static FlashMessages primary(string $message)
+ * @method static FlashMessages error(string $message)
  *
  *
  */
@@ -38,6 +39,7 @@ class FlashMessages
             'warning',
             'info',
             'primary',
+            'error',
         ];
         if(in_array($method , $allowed_method)){
             self::message($message[0] , $method );

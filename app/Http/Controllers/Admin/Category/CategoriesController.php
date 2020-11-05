@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Admin\Category;
 
 use App\Helpers\FlashMessages\FlashMessages;
 use App\Http\Controllers\Admin\AdminBaseController;
-use App\Http\Requests\Category\CreateCategoryRequest;
+use App\Http\Requests\Category\CategoryCreateRequest;
 use App\Models\Category;
 use Illuminate\Http\Request;
 
@@ -29,7 +29,7 @@ class CategoriesController extends AdminBaseController
     }
 
 
-    public function store(CreateCategoryRequest $request)
+    public function store(CategoryCreateRequest $request)
     {
 
         $data = [
@@ -74,16 +74,18 @@ class CategoriesController extends AdminBaseController
     {
 
         $category = Category::find($category_id);
-        if($category)
-            $category->load('parent');
-        $categories = Category::cursor();
-            return view('admin.category.edit' , compact('category' , 'categories'));
+        if($category){
 
+            $category->load('parent');
+            $categories = Category::cursor();
+            return view('admin.category.edit', compact('category', 'categories'));
+        }
+        FlashMessages::error('دسته‌بندی مورد نظر پیدا نشد');
         return back();
     }
 
 
-   public function update(CreateCategoryRequest $request , $category_id)
+   public function update(CategoryCreateRequest $request , $category_id)
     {
         $category = Category::find($category_id);
 
