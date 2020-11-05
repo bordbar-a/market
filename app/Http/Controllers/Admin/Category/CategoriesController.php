@@ -66,7 +66,7 @@ class CategoriesController extends AdminBaseController
             }
         }
 
-        return back();
+        return redirect()->route('admin.category.list');
     }
 
 

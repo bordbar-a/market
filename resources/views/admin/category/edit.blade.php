@@ -16,7 +16,13 @@
 
 
     <div id="content" class="padding-20">
-
+        <div class="row">
+            <div class="col-md-4 col-md-offset-4"><a href="{{route('admin.category.list')}}"
+                                                     class="btn btn-3d   btn-default btn-lg btn-block margin-bottom-30">
+                    لیست دسته‌بندی‌ها
+                </a>
+            </div>
+        </div>
         <div class="row">
 
             <div class="col-md-12">
@@ -72,6 +78,13 @@
                                     <button type="submit" class="btn btn-3d   btn-teal btn-xlg btn-block margin-top-30">
                                         ذخیره دسته‌بندی
                                     </button>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12"><a href="{{route('admin.category.delete' , [$category->id])}}"
+                                                          class="btn btn-3d   btn-danger btn-xlg btn-block margin-top-30">
+                                        حذف دسته‌بندی
+                                    </a>
                                 </div>
                             </div>
 

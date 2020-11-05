@@ -16,7 +16,13 @@
 
 
     <div id="content" class="padding-20">
-
+        <div class="row">
+            <div class="col-md-4 col-md-offset-4"><a href="{{route('admin.user.list')}}"
+                                      class="btn btn-3d   btn-default btn-lg btn-block margin-bottom-30">
+                   لیست کاربران
+                </a>
+            </div>
+        </div>
         <div class="row">
 
             <div class="col-md-12">
@@ -95,7 +101,8 @@
                                             <label>وضعیت</label>
                                             <select name="status" class="form-control pointer required">
                                                 @foreach($userStatuses as $index => $status)
-                                                    <option value="{{$index}}" {{$user->status == $index ? "selected" : ""}} >{{$status}}</option>
+                                                    <option
+                                                        value="{{$index}}" {{$user->status == $index ? "selected" : ""}} >{{$status}}</option>
                                                 @endforeach
                                             </select>
                                         </div>
@@ -132,8 +139,15 @@
                             <div class="row">
                                 <div class="col-md-12">
                                     <button type="submit" class="btn btn-3d   btn-teal btn-xlg btn-block margin-top-30">
-                                       ویرایش کاربر
+                                        ویرایش کاربر
                                     </button>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12"><a href="{{route('admin.user.delete' , [$user->id])}}"
+                                                          class="btn btn-3d   btn-danger btn-xlg btn-block margin-top-30">
+                                        حذف کاربر
+                                    </a>
                                 </div>
                             </div>
 
