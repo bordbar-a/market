@@ -19,7 +19,7 @@ Route::get('/', function () {
 });
 
 
-// Admin Route - all route begin by :   /admin
+//Start Admin Route - all route begin by :   /admin
 
 
 Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'as' => 'admin.'], function () {
@@ -28,7 +28,8 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'as' => 'admin.'], fu
         Route::get('/', 'DashboardController@index')->name('dashboard');
     });
 
-    // User Route  -    all route begin by :   /admin/user
+
+    // Start User Route  -    all route begin by :   /admin/user
     Route::group(['prefix' => 'user', 'namespace' => 'User', 'as' => 'user.'], function () {
         Route::get('/', 'UsersController@all')->name('list');
         Route::get('/create', 'UsersController@create')->name('create');
@@ -36,11 +37,11 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'as' => 'admin.'], fu
         Route::get('/delete/{id}', 'UsersController@delete')->name('delete');
         Route::get('/edit/{id}', 'UsersController@edit')->name('edit');
         Route::post('/update/{id}', 'UsersController@update')->name('update');
-
-
     });
+    // End User Route
 
-    // Category Route  -    all route begin by :   /admin/category
+
+    // Start Category Route  -    all route begin by :   /admin/category
     Route::group(['prefix' => 'category', 'namespace' => 'Category', 'as' => 'category.'], function () {
         Route::get('/', 'CategoriesController@all')->name('list');
         Route::get('/create', 'CategoriesController@create')->name('create');
@@ -48,16 +49,25 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'as' => 'admin.'], fu
         Route::get('/delete/{id}', 'CategoriesController@delete')->name('delete');
         Route::get('/edit/{id}', 'CategoriesController@edit')->name('edit');
         Route::post('/update/{id}', 'CategoriesController@update')->name('update');
-
-
-
     });
+    // End Category Route
+
+
+    // Start Product Route  -    all route begin by :   /admin/product
+    Route::group(['prefix' => 'product', 'namespace' => 'Product', 'as' => 'product.'], function () {
+        Route::get('/', 'ProductsController@all')->name('list');
+        Route::get('/create', 'ProductsController@create')->name('create');
+        Route::post('/create', 'ProductsController@store')->name('store');
+        Route::get('/delete/{id}', 'ProductsController@delete')->name('delete');
+        Route::get('/edit/{id}', 'ProductsController@edit')->name('edit');
+        Route::post('/update/{id}', 'ProductsController@update')->name('update');
+    });
+    // End Product Route
 
 
 });
-
-
 // End Admin Route
+
 
 Auth::routes();
 

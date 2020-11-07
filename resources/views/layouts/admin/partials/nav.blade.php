@@ -22,7 +22,17 @@
             </a>
             <ul><!-- submenus -->
                 <li><a href="{{route('admin.user.list')}}">لیست</a></li>
-                <li><a href="{{route('admin.user.create')}}">اضافه کردن کاربران</a></li>
+                <li><a href="{{route('admin.user.create')}}">اضافه کردن کاربر</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="#">
+                <i class="fa fa-menu-arrow pull-right"></i>
+                <i class="main-icon fa fa-user"></i> <span>محصولات</span>
+            </a>
+            <ul><!-- submenus -->
+                <li><a href="{{route('admin.product.list')}}">لیست</a></li>
+                <li><a href="{{route('admin.product.create')}}">اضافه کردن محصول</a></li>
             </ul>
         </li>
     </ul>

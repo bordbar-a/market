@@ -113,7 +113,6 @@ class UsersController extends AdminBaseController
         if($request->filled('password')){
             $userData['password'] = $request->input('password');
         }
-
         $result = $user->update($userData);
 
         if ($result){

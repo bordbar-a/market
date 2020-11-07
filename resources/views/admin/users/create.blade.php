@@ -35,7 +35,7 @@
                         <form class="" action="{{route('admin.user.store')}}" method="post"
                               enctype="multipart/form-data">
                             <fieldset>
-                                {{csrf_field()}}
+                                @csrf
                                 <div class="row">
                                     <div class="form-group">
                                         <div class="col-md-6 col-sm-6">

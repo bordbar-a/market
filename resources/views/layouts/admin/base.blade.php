@@ -72,7 +72,11 @@
 {{--<script type="text/javascript" src="/assets/js/cms.js"></script>--}}
 
 {{--<script type="text/javascript" src="/assets/js/app.js"></script>--}}
-<script type="text/javascript" src="/backend/js/output.js"></script>
+<script type="text/javascript" src="/backend/js/output.js">
+
+</script>
+
+
 
 <!-- PAGE LEVEL SCRIPT -->
 <script type="text/javascript">

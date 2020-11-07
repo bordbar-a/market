@@ -46,6 +46,8 @@ class CategoriesController extends AdminBaseController
         }
 
 
+
+
         return redirect()->route('admin.category.create');
 
     }
@@ -53,6 +55,10 @@ class CategoriesController extends AdminBaseController
 
     public function delete(Request $request, $category_id)
     {
+
+
+
+
         $category = Category::find($category_id);
 
 
@@ -100,6 +106,12 @@ class CategoriesController extends AdminBaseController
         FlashMessages::success('ویرایش دسته‌بندی ای انجام نشد');
         return back();
 
+    }
+
+
+    public function searchByAjax(Request $request)
+    {
+        return 'salam';
     }
 
 
