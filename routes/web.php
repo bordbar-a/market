@@ -14,9 +14,9 @@
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+//Route::get('/', function () {
+//    return view('front.index');
+//});
 
 
 //Start Admin Route - all route begin by :   /admin
@@ -67,6 +67,32 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'as' => 'admin.'], fu
 
 });
 // End Admin Route
+
+
+
+//Start Front Route - all route begin by :   /
+
+
+Route::group(['namespace' => 'Front', 'as' => 'front.'], function () {
+
+    Route::group(['namespace' => 'Home'], function () {
+        Route::get('/', 'HomeController@index')->name('home');
+    });
+
+
+    // Start User Route  -    all route begin by :   /admin/user
+    Route::group(['prefix' => 'user', 'namespace' => 'User', 'as' => 'user.'], function () {
+
+    });
+    // End User Route
+
+
+
+
+});
+// End Front Route
+
+
 
 
 Auth::routes();

@@ -3,5 +3,9 @@
     "/css/app.css": "/css/app.css",
     "/backend/css/output.css": "/backend/css/output.css",
     "/backend/js/output.js": "/backend/js/output.js",
-    "/backend/css/custom/layout-nestable.css": "/backend/css/custom/layout-nestable.css"
+    "/backend/css/custom/layout-nestable.css": "/backend/css/custom/layout-nestable.css",
+    "/front/css/base.css": "/front/css/base.css",
+    "/front/css/index.css": "/front/css/index.css",
+    "/front/js/base.js": "/front/js/base.js",
+    "/front/js/index.js": "/front/js/index.js"
 }

@@ -5,7 +5,7 @@
 
     <!-- Logo -->
     <span class="logo pull-left">
-        <a href="{{route('admin.dashboard')}}">
+        <a href="{{route('front.home')}}">
 					<img src="/assets/images/logo_light.png" alt="admin panel" height="35"/>
 	    </a>
     </span>
