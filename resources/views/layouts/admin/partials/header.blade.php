@@ -49,14 +49,13 @@
                         <a href="page-lock.html"><i class="fa fa-lock"></i> قفل صفحه</a>
                     </li>
                     <li><!-- logout -->
-                        <a href="{{ route('admin.dashboard') }}"
+                        <a tabindex="-1" href="{{ route('logout') }}"
                            onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                            خروج
-                        </a>
+                                                     document.getElementById('logout-form').submit();"><i
+                                class="glyphicon glyphicon-off"></i> خروج</a>
 
-                        <form id="logout-form" action="{{ route('admin.dashboard') }}" method="POST" style="display: none;">
-                            {{ csrf_field() }}
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                            @csrf
                         </form>
                     </li>
                 </ul>

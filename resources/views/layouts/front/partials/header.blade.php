@@ -76,7 +76,7 @@
 
 
             <!-- Logo -->
-            <a class="logo pull-left" href="index.html">
+            <a class="logo pull-left" href="{{route('front.home')}}">
                 <img src="/front/images/logo_dark.png" alt=""/>
             </a>
 

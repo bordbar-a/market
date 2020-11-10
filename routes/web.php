@@ -22,7 +22,7 @@ use Illuminate\Support\Facades\Route;
 //Start Admin Route - all route begin by :   /admin
 
 
-Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'as' => 'admin.'], function () {
+Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'as' => 'admin.' , 'middleware'=>['auth']], function () {
 
     Route::group(['namespace' => 'Dashboard'], function () {
         Route::get('/', 'DashboardController@index')->name('dashboard');

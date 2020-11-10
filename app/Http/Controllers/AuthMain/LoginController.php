@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Auth;
+namespace App\Http\Controllers\AuthMain;
 
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
@@ -38,29 +38,9 @@ class LoginController extends Controller
         $this->middleware('guest')->except('logout');
     }
 
-
-
-
-
-
-
-
-
-
-    //Start My Change
     public function redirectTo()
     {
         return '/admin';
-    }
-
-    public function username()
-    {
-        return 'mobile';
-    }
-
-    public function showLoginForm()
-    {
-        return view('myAuth.login');
     }
 
 
