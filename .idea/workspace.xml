@@ -2,11 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d4527880-cb0d-413e-8591-1ff27fa185c3" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/market.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/market.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Presenters/Product/ProductPresenter.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Presenters/Product/ProductPresenter.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/mix-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/mix-manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/admin/partials/header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/admin/partials/header.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Helpers/FlashMessages/Exceptions/NotFoundFlashMessageMethodException.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Helpers/FlashMessages/Exceptions/NotFoundFlashMessageMethodException.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/front/css/base.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/front/css/base.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/front/partials/products.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/front/partials/products.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/front/partials/header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/front/partials/header.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/webpack.mix.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpack.mix.js" afterDir="false" />
     </list>
@@ -39,6 +44,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="blade" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -147,6 +153,7 @@
       <path value="$PROJECT_DIR$/vendor/doctrine/cache" />
       <path value="$PROJECT_DIR$/vendor/maximebf/debugbar" />
       <path value="$PROJECT_DIR$/vendor/barryvdh/laravel-debugbar" />
+      <path value="$PROJECT_DIR$/vendor/imanghafoori/laravel-widgetize" />
     </include_path>
   </component>
   <component name="ProjectId" id="1jjEWWDEHWooDsRxARHhTlxlXId" />
@@ -163,24 +170,25 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../LaraPay" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="yiiguxing.plugin.translate" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\market\app\Services\Basket" />
+      <recent name="C:\xampp\htdocs\market\app\Services\Basket\Facade" />
+      <recent name="C:\xampp\htdocs\market\app\Http\Controllers\Front\Home" />
+      <recent name="C:\xampp\htdocs\market\resources\views\front\partilas" />
+      <recent name="C:\xampp\htdocs\market\public\backend\plugins\select2" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\xampp\htdocs\market\public\front" />
       <recent name="C:\xampp\htdocs\market\resources\assets\front" />
       <recent name="C:\xampp\htdocs\market\app\Presenters" />
       <recent name="C:\xampp\htdocs\market\resources\views\admin" />
       <recent name="C:\xampp\htdocs\market\resources\views\admin\users" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\xampp\htdocs\market\app\Http\Controllers\Front\Home" />
-      <recent name="C:\xampp\htdocs\market\resources\views\front\partilas" />
-      <recent name="C:\xampp\htdocs\market\public\backend\plugins\select2" />
-      <recent name="C:\xampp\htdocs\market\public\backend\plugins\select2\new" />
-      <recent name="C:\xampp\htdocs\market\public\backend\plugins\select2\last" />
     </key>
   </component>
   <component name="RunManager">
@@ -228,7 +236,8 @@
       <workItem from="1604746610506" duration="11741000" />
       <workItem from="1604820880343" duration="11431000" />
       <workItem from="1604859109718" duration="66000" />
-      <workItem from="1604903554303" duration="4630000" />
+      <workItem from="1604903554303" duration="20049000" />
+      <workItem from="1604984867455" duration="6193000" />
     </task>
     <servers />
   </component>
@@ -256,18 +265,30 @@
       <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state x="365" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1440.860@0.0.1440.860" timestamp="1604752334155" />
-    <state x="450" y="184" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1604732756671">
+    <state x="450" y="184" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1604911920714">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state x="450" y="184" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1440.860@0.0.1440.860" timestamp="1604732756671" />
+    <state x="450" y="184" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1440.860@0.0.1440.860" timestamp="1604911920714" />
+    <state x="500" y="355" key="#com.jetbrains.php.lang.intentions.PhpImportClassDialog#" timestamp="1604989064297">
+      <screen x="0" y="0" width="1440" height="860" />
+    </state>
+    <state x="500" y="355" key="#com.jetbrains.php.lang.intentions.PhpImportClassDialog#/0.0.1440.860@0.0.1440.860" timestamp="1604989064297" />
+    <state x="461" y="45" key="#com.jetbrains.php.refactoring.extractMethod.PhpExtractMethodDialog#method0" timestamp="1604919257090">
+      <screen x="0" y="0" width="1440" height="860" />
+    </state>
+    <state x="461" y="45" key="#com.jetbrains.php.refactoring.extractMethod.PhpExtractMethodDialog#method0/0.0.1440.860@0.0.1440.860" timestamp="1604919257090" />
+    <state x="461" y="0" key="#com.jetbrains.php.refactoring.extractMethod.PhpExtractMethodDialog#method1" timestamp="1604923187783">
+      <screen x="0" y="0" width="1440" height="860" />
+    </state>
+    <state x="461" y="0" key="#com.jetbrains.php.refactoring.extractMethod.PhpExtractMethodDialog#method1/0.0.1440.860@0.0.1440.860" timestamp="1604923187783" />
     <state x="524" y="325" width="447" height="241" key="ComposerInitDialogKey" timestamp="1604418130842">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state x="524" y="325" width="447" height="241" key="ComposerInitDialogKey/0.0.1440.860@0.0.1440.860" timestamp="1604418130842" />
-    <state x="500" y="184" key="FileChooserDialogImpl" timestamp="1604859172892">
+    <state x="500" y="184" key="FileChooserDialogImpl" timestamp="1604909337705">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state x="500" y="184" key="FileChooserDialogImpl/0.0.1440.860@0.0.1440.860" timestamp="1604859172892" />
+    <state x="500" y="184" key="FileChooserDialogImpl/0.0.1440.860@0.0.1440.860" timestamp="1604909337705" />
     <state width="1397" height="499" key="GridCell.Tab.0.bottom" timestamp="1604321254774">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
@@ -284,10 +305,10 @@
       <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state width="1397" height="499" key="GridCell.Tab.0.right/0.0.1440.860@0.0.1440.860" timestamp="1604321254774" />
-    <state x="508" y="244" key="NewPhpClassDialog" timestamp="1604908049017">
+    <state x="508" y="244" key="NewPhpClassDialog" timestamp="1604912279922">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state x="508" y="244" key="NewPhpClassDialog/0.0.1440.860@0.0.1440.860" timestamp="1604908049017" />
+    <state x="508" y="244" key="NewPhpClassDialog/0.0.1440.860@0.0.1440.860" timestamp="1604912279922" />
     <state x="554" y="353" key="NewPhpFileDialog" timestamp="1604734638893">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
@@ -296,10 +317,10 @@
       <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state x="221" y="72" key="SettingsEditor/0.0.1440.860@0.0.1440.860" timestamp="1604729020213" />
-    <state x="416" y="253" key="com.intellij.ide.util.TipDialog" timestamp="1604859143098">
+    <state x="416" y="253" key="com.intellij.ide.util.TipDialog" timestamp="1604984954691">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state x="416" y="253" key="com.intellij.ide.util.TipDialog/0.0.1440.860@0.0.1440.860" timestamp="1604859143098" />
+    <state x="416" y="253" key="com.intellij.ide.util.TipDialog/0.0.1440.860@0.0.1440.860" timestamp="1604984954691" />
     <state x="416" y="167" width="607" height="526" key="find.popup" timestamp="1604838233089">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
@@ -308,14 +329,14 @@
       <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state x="461" y="72" key="refactoring.ChangeSignatureDialog/0.0.1440.860@0.0.1440.860" timestamp="1604417009670" />
-    <state x="376" y="195" key="run.anything.popup" timestamp="1604840947722">
+    <state x="376" y="195" key="run.anything.popup" timestamp="1604915454807">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state x="376" y="195" key="run.anything.popup/0.0.1440.860@0.0.1440.860" timestamp="1604840947722" />
-    <state x="383" y="180" width="672" height="678" key="search.everywhere.popup" timestamp="1604907332453">
+    <state x="376" y="195" key="run.anything.popup/0.0.1440.860@0.0.1440.860" timestamp="1604915454807" />
+    <state x="383" y="180" width="672" height="678" key="search.everywhere.popup" timestamp="1604991006144">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state x="383" y="180" width="672" height="678" key="search.everywhere.popup/0.0.1440.860@0.0.1440.860" timestamp="1604907332453" />
+    <state x="383" y="180" width="672" height="678" key="search.everywhere.popup/0.0.1440.860@0.0.1440.860" timestamp="1604991006144" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -22087,3 +22087,6 @@ div.owl-carousel.owl-mini-testimonial .owl-controls {
 #switcher .content-switcher label {
 	float:right !important;
 }
+a.btn-danger {
+    background-color: red !important;
+}

@@ -50,6 +50,7 @@ mix.styles([
     'resources/assets/front/plugins/bootstrap/RTL/bootstrap-rtl.min.css',
     'resources/assets/front/plugins/bootstrap/RTL/bootstrap-flipped.min.css',
     'resources/assets/front/css/layout-RTL.css',
+    'resources/assets/front/css/myCss.css',
 ],'public/front/css/base.css');
 
 mix.styles([

@@ -69,7 +69,6 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'as' => 'admin.'], fu
 // End Admin Route
 
 
-
 //Start Front Route - all route begin by :   /
 
 
@@ -80,19 +79,16 @@ Route::group(['namespace' => 'Front', 'as' => 'front.'], function () {
     });
 
 
-    // Start User Route  -    all route begin by :   /admin/user
-    Route::group(['prefix' => 'user', 'namespace' => 'User', 'as' => 'user.'], function () {
-
+    // Start Basket Route  -    all route begin by :   /front/basket
+    Route::group(['prefix' => 'basket', 'namespace' => 'Basket', 'as' => 'basket.'], function () {
+        Route::get('/add/{product_id}', 'BasketController@add')->name('add');
+        Route::get('/reset', 'BasketController@reset')->name('reset');
     });
     // End User Route
 
 
-
-
 });
 // End Front Route
-
-
 
 
 Auth::routes();

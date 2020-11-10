@@ -37,7 +37,7 @@
                                         <a class="btn btn-default add-compare" href="#" data-item-id="1"
                                            data-toggle="tooltip" title="مقایسه"><i class="fa fa-bar-chart-o nopadding"
                                                                                    data-toggle="tooltip"></i></a>
-                                        <a class="btn btn-default" href="shop-cart.html"><i
+                                        <a class="btn btn-default" href="{{route('front.basket.add' , [$product->id])}}"><i
                                                 class="fa fa-cart-plus size-20"></i></a>
                                     </div>
                                     <!-- /hover buttons -->
