@@ -20,14 +20,10 @@ class BasketController extends FrontBaseController
             $data = [
                 'id' => $product->id,
                 'title' => $product->title,
-                'count' =>1,
-                'price' =>$product->price,
+                'price' => $product->price,
             ];
             Basket::add($data);
         }
-
-
-
         return back();
     }
 
@@ -35,6 +31,23 @@ class BasketController extends FrontBaseController
     public function reset()
     {
         Basket::reset();
+        return back();
+    }
+
+
+    public function addByCount(Request $request){
+
+        $product = Product::find($request->input('product'));
+        if ($product && $product instanceof Product) {
+
+            $data = [
+                'id' => $product->id,
+                'title' => $product->title,
+                'count' => $request->input('count'),
+                'price' => $product->price,
+            ];
+            Basket::add($data);
+        }
         return back();
     }
 

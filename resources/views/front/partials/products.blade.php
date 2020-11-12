@@ -18,7 +18,7 @@
 
                                 <div class="thumbnail">
                                     <!-- product image(s) -->
-                                    <a class="shop-item-image" href="shop-single-left.html">
+                                    <a class="shop-item-image" href="{{route('front.product.item' , [$product->id])}}">
                                         <img class="img-responsive"
                                              src="/front/images/demo/shop/products/300x450/p13.jpg"
                                              alt="shop first image"/>

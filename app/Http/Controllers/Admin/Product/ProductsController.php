@@ -8,6 +8,7 @@ use App\Http\Requests\Product\ProductCreateRequest;
 use App\Models\Category;
 use App\Models\Product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ProductsController extends AdminBaseController
 {
@@ -40,19 +41,19 @@ class ProductsController extends AdminBaseController
             'description' => $request->input('description'),
             'price' => $request->input('price'),
             'discount' => $request->input('discount')?:config('product.basic_discount'),
-            'user_id' => 2,
+            'user_id' => Auth::user()->id,
 
         ];
 
 
 
 
-        $categories =$this->addNewCategoryItem($request->input('categories'));
+
 
 
         try {
             $product = Product::create($data);
-
+            $categories =$this->addNewCategoryItem($request->input('categories'));
             $product->categories()->sync($categories);
             FlashMessages::success('محصول ' . $product->title . " اضافه شد");
 

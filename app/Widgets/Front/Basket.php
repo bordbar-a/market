@@ -2,6 +2,7 @@
 
 namespace App\Widgets\Front;
 
+use App\Helpers\Number\Number;
 use App\Services\Basket\Basket as BasketService;
 
 /**
@@ -26,14 +27,16 @@ class Basket
      * @widget('Basket', ['a' => 'someVal', 'b' => 'foo'])
      * @return array
      */
-	public function data()
-	{
-
-	    $items = BasketService::items();
-	    $items_count  = BasketService::count();
-	    $total_price  = BasketService::total();
-		return [$items,$items_count , $total_price];
-	}
+    public function data()
+    {
+        $items_count = BasketService::count();
+        if(!$items_count){
+            return [0] ;
+        }
+        $items = BasketService::items();
+        $total_price = Number::numberSeparator(BasketService::total());
+        return [$items_count ,$items, $total_price];
+    }
 
     /**
      * If the widget output depends on query strings you should return key names.
@@ -42,8 +45,8 @@ class Basket
      * or if you want it to be separated for each user: return auth()->id();
      * @return array
      */
-	public function extraCacheKeyDependency($args)
-	{
+    public function extraCacheKeyDependency($args)
+    {
         return [/* request('page') */];
-	}
+    }
 }

@@ -15,14 +15,11 @@ class SessionBasketProvider implements IBasket
     {
 
         $this->handleBasketExist();
-
+        $item['count'] = $item['count'] ?? 1;
         $items = $this->updateBasketItems($item);
 
         Session::put('basket', $items);
-
-
     }
-
 
 
     public function remove(int $item_id)
@@ -35,21 +32,18 @@ class SessionBasketProvider implements IBasket
         unset($items[$item_id]);
         Session::put('basket', $items);
 
-
     }
 
     public function total()
     {
         $items = $this->items();
 
-        $total = array_reduce($items , function ($sum ,$item){
-           $sum += ($item['price']*$item['count']);
-           return $sum;
+        $total = array_reduce($items, function ($sum, $item) {
+            $sum += ($item['price'] * $item['count']);
+            return $sum;
         });
         return $total;
     }
-
-
 
 
     public function reset()
@@ -58,14 +52,10 @@ class SessionBasketProvider implements IBasket
     }
 
 
-
-
     public function items()
     {
         return Session::get('basket') ?? array();
     }
-
-
 
 
     public function isInBasket(int $product_id)
@@ -74,15 +64,10 @@ class SessionBasketProvider implements IBasket
     }
 
 
-
-
-
     public function count()
     {
         return count($this->items());
     }
-
-
 
 
     private function handleBasketExist(): void
@@ -93,26 +78,24 @@ class SessionBasketProvider implements IBasket
     }
 
 
-
     /**
      * @param $item array
      * @return array
      */
     private function updateBasketItems(array $item): array
     {
-
         $items = $this->items();
 
-
         if ($this->isInBasket($item['id'])) {
-            $items[$item['id']]['count']++;
-        } else {
-            $items[$item['id']] = [
-                'count' => 1,
-                'title' => $item['title'],
-                'price' => $item['price'],
-            ];
+            $items[$item['id']]['count'] += $item['count'];
+            return $items;
         }
+        $items[$item['id']] = [
+            'count' => $item['count'],
+            'title' => $item['title'],
+            'price' => $item['price'],
+        ];
+
         return $items;
     }
 

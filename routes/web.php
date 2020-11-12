@@ -82,9 +82,19 @@ Route::group(['namespace' => 'Front', 'as' => 'front.'], function () {
     // Start Basket Route  -    all route begin by :   /front/basket
     Route::group(['prefix' => 'basket', 'namespace' => 'Basket', 'as' => 'basket.'], function () {
         Route::get('/add/{product_id}', 'BasketController@add')->name('add');
+        Route::post('/add', 'BasketController@addByCount')->name('addByCount');
         Route::get('/reset', 'BasketController@reset')->name('reset');
     });
-    // End User Route
+    // End Basket Route
+
+
+
+    // Start Product Route  -    all route begin by :   /front/product
+    Route::group(['prefix' => 'product', 'namespace' => 'Product', 'as' => 'product.'], function () {
+        Route::get('/item/{product_id}', 'ProductsController@item')->name('item');
+
+    });
+    // End Product Route
 
 
 });

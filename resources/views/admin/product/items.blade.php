@@ -1,7 +1,7 @@
 <tr>
     <td>{{$product->id}}</td>
     <td>{{$product->title}}</td>
-    <td>{{$product->present()->getDescription}}</td>
+    <td>{{$product->present()->getShortDescription}}</td>
     <td>{{$product->price}}</td>
     <td>{{$product->discount}}</td>
     <td>{{$product->sell_count}}</td>

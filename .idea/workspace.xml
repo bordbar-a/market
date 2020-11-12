@@ -3,12 +3,14 @@
   <component name="ChangeListManager">
     <list default="true" id="d4527880-cb0d-413e-8591-1ff27fa185c3" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/admin/partials/header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/admin/partials/header.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/front/partials/header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/front/partials/header.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/front/partials/top-bar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/front/partials/top-bar.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/Product/ProductsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/Product/ProductsController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Front/Basket/BasketController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Front/Basket/BasketController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Presenters/Product/ProductPresenter.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Presenters/Product/ProductPresenter.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Services/Basket/Providers/SessionBasketProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Services/Basket/Providers/SessionBasketProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Widgets/Front/Basket.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Widgets/Front/Basket.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Widgets/Front/BasketView.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Widgets/Front/BasketView.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/product/items.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/product/items.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/front/partials/products.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/front/partials/products.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -233,7 +235,9 @@
       <workItem from="1604820880343" duration="11431000" />
       <workItem from="1604859109718" duration="66000" />
       <workItem from="1604903554303" duration="20049000" />
-      <workItem from="1604984867455" duration="13248000" />
+      <workItem from="1604984867455" duration="14448000" />
+      <workItem from="1605096476418" duration="10148000" />
+      <workItem from="1605175074598" duration="2785000" />
     </task>
     <servers />
   </component>
@@ -301,10 +305,10 @@
       <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state width="1397" height="499" key="GridCell.Tab.0.right/0.0.1440.860@0.0.1440.860" timestamp="1604321254774" />
-    <state x="508" y="244" key="NewPhpClassDialog" timestamp="1604912279922">
+    <state x="508" y="244" key="NewPhpClassDialog" timestamp="1605103599594">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state x="508" y="244" key="NewPhpClassDialog/0.0.1440.860@0.0.1440.860" timestamp="1604912279922" />
+    <state x="508" y="244" key="NewPhpClassDialog/0.0.1440.860@0.0.1440.860" timestamp="1605103599594" />
     <state x="554" y="353" key="NewPhpFileDialog" timestamp="1604734638893">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
@@ -313,14 +317,14 @@
       <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state x="221" y="72" key="SettingsEditor/0.0.1440.860@0.0.1440.860" timestamp="1604729020213" />
-    <state x="416" y="253" key="com.intellij.ide.util.TipDialog" timestamp="1604984954691">
+    <state x="416" y="253" key="com.intellij.ide.util.TipDialog" timestamp="1605176652043">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state x="416" y="253" key="com.intellij.ide.util.TipDialog/0.0.1440.860@0.0.1440.860" timestamp="1604984954691" />
-    <state x="416" y="167" width="607" height="526" key="find.popup" timestamp="1604838233089">
+    <state x="416" y="253" key="com.intellij.ide.util.TipDialog/0.0.1440.860@0.0.1440.860" timestamp="1605176652043" />
+    <state x="416" y="167" width="607" height="526" key="find.popup" timestamp="1605104129520">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state x="416" y="167" width="607" height="526" key="find.popup/0.0.1440.860@0.0.1440.860" timestamp="1604838233089" />
+    <state x="416" y="167" width="607" height="526" key="find.popup/0.0.1440.860@0.0.1440.860" timestamp="1605104129520" />
     <state x="461" y="72" key="refactoring.ChangeSignatureDialog" timestamp="1604417009670">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
@@ -329,10 +333,10 @@
       <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state x="376" y="195" key="run.anything.popup/0.0.1440.860@0.0.1440.860" timestamp="1604915454807" />
-    <state x="383" y="180" width="672" height="678" key="search.everywhere.popup" timestamp="1604999174999">
+    <state x="383" y="180" width="672" height="678" key="search.everywhere.popup" timestamp="1605178029626">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state x="383" y="180" width="672" height="678" key="search.everywhere.popup/0.0.1440.860@0.0.1440.860" timestamp="1604999174999" />
+    <state x="383" y="180" width="672" height="678" key="search.everywhere.popup/0.0.1440.860@0.0.1440.860" timestamp="1605178029626" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -341,6 +345,11 @@
           <url>file://$PROJECT_DIR$/resources/views/front/index.blade.php</url>
           <line>12</line>
           <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/resources/views/front/product/item.blade.php</url>
+          <line>44</line>
+          <option name="timeStamp" value="5" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
