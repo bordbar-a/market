@@ -4,57 +4,83 @@
 namespace App\Services\Basket\Providers;
 
 
-use App\Services\Basket\Contracts\IBasket;
+use App\Helpers\FlashMessages\FlashMessages;
+use App\Services\Basket\BasketItem;
+use App\Services\Basket\Contracts\BasketContract;
 use Illuminate\Support\Facades\Session;
 
-class SessionBasketProvider implements IBasket
+class SessionBasketProvider extends BasketContract
 {
+
+    private static $SESSION_NAME = 'basket';
 
 
     public function add(array $item)
     {
-
         $this->handleBasketExist();
         $item['count'] = $item['count'] ?? 1;
         $items = $this->updateBasketItems($item);
-
-        Session::put('basket', $items);
+        $this->saveBasket($items);
     }
 
+    public function setCount($items)
+    {
+        $basket_items = $this->items();
+
+        foreach ($items as $product_id => $count) {
+            if ($this->isInBasket($product_id)) {
+                $basket_items[$product_id]->count = $count;
+            }
+        }
+
+        $this->saveBasket($basket_items);
+    }
 
     public function remove(int $item_id)
     {
 
         $items = $this->items();
-        if (!key_exists($item_id, $items)) {
+        if (!$this->isInBasket($item_id)) {
             return null;
         }
         unset($items[$item_id]);
-        Session::put('basket', $items);
+
+        $this->saveBasket($items);
 
     }
 
-    public function total()
+
+    public function totalWithDiscount(): float
     {
         $items = $this->items();
+        return BasketItem::total($items, true);
+    }
 
-        $total = array_reduce($items, function ($sum, $item) {
-            $sum += ($item['price'] * $item['count']);
-            return $sum;
-        });
-        return $total;
+
+    public function totalWithoutDiscount(): float
+    {
+        $items = $this->items();
+        return BasketItem::total($items);
     }
 
 
     public function reset()
     {
-        session()->forget('basket');
+        session()->remove(self::$SESSION_NAME);
     }
 
 
-    public function items()
+    public function items(): array
     {
-        return Session::get('basket') ?? array();
+        if (!Session::get(self::$SESSION_NAME)) {
+            return [];
+        }
+        $items = Session::get(self::$SESSION_NAME);
+        $items = array_map(function ($item) {
+            return unserialize($item);
+        }, $items);
+
+        return $items;
     }
 
 
@@ -72,8 +98,8 @@ class SessionBasketProvider implements IBasket
 
     private function handleBasketExist(): void
     {
-        if (!Session::exists('basket')) {
-            Session::put('basket');
+        if (!Session::exists(self::$SESSION_NAME)) {
+           $this->saveBasket([]);
         }
     }
 
@@ -85,18 +111,34 @@ class SessionBasketProvider implements IBasket
     private function updateBasketItems(array $item): array
     {
         $items = $this->items();
-
         if ($this->isInBasket($item['id'])) {
-            $items[$item['id']]['count'] += $item['count'];
+            $items[$item['id']]->count += $item['count'];
             return $items;
         }
-        $items[$item['id']] = [
-            'count' => $item['count'],
-            'title' => $item['title'],
-            'price' => $item['price'],
-        ];
 
+
+        $basket_item = new BasketItem($item['id'], $item['count']);
+        $items[$item['id']] = $basket_item;
         return $items;
+
+
+    }
+
+
+    private function saveBasket(array $items)
+    {
+
+        foreach ($items as $item) {
+            if ($item->count == 0) {
+                unset($items[$item->product_id]);
+            }
+        }
+
+        $items = array_map(function ($item) {
+            return serialize($item);
+        }, $items);
+
+        Session::put(self::$SESSION_NAME, $items);
     }
 
 

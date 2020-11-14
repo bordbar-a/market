@@ -8,7 +8,7 @@ class Number
 {
 
 
-    public static function numberSeparator(int $value)
+    public static function numberSeparator(float $value)
     {
 
         return number_format($value);

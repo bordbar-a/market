@@ -25,6 +25,11 @@ class NationalCodeRule implements Rule
      */
     public function passes($attribute, $value)
     {
+
+        if (!is_string($value)){
+            return false;
+        }
+
         if(!preg_match('/^[0-9]{10}$/',$value))
             return false;
         for($i=0;$i<10;$i++)

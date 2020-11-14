@@ -23,8 +23,8 @@ if ($items_count) {
                     <a href="#"><!-- cart item -->
                         <img src="/front/images/demo/people/300x300/4-min.jpg" width="45" height="45"
                              alt=""/>
-                        <h6><span>{{$item['count']}} عدد </span>{{$item['title']}}</h6>
-                        <small>{{\App\Helpers\Number\Number::numberSeparator($item['price'])}} ریال </small>
+                        <h6><span>{{$item->count}} عدد </span>{{$item->title}}</h6>
+                        <small>{{$item->price}} ریال </small>
                     </a><!-- /cart item -->
                 @endforeach
             @endif
@@ -41,7 +41,7 @@ if ($items_count) {
         <!-- quick cart footer -->
         @if($items_count)
             <div class="quick-cart-footer clearfix">
-                <a href="#" class="btn btn-success btn-xs pull-right">تکمیل خرید</a>
+                <a href="{{route('front.basket.index')}}" class="btn btn-success btn-xs pull-right">تکمیل خرید</a>
                 <span class="pull-left"><strong>جمعا :</strong> {{$total_price}}</span>
             </div>
     @endif

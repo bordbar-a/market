@@ -11,7 +11,7 @@ abstract class Presenter
     public $entity;
 
 
-    public function __construct(Model $entity)
+    public function __construct($entity)
     {
         $this->entity = $entity;
     }

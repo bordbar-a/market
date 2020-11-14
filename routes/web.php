@@ -22,7 +22,7 @@ use Illuminate\Support\Facades\Route;
 //Start Admin Route - all route begin by :   /admin
 
 
-Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'as' => 'admin.' , 'middleware'=>['auth']], function () {
+Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'as' => 'admin.', 'middleware' => ['auth']], function () {
 
     Route::group(['namespace' => 'Dashboard'], function () {
         Route::get('/', 'DashboardController@index')->name('dashboard');
@@ -76,6 +76,10 @@ Route::group(['namespace' => 'Front', 'as' => 'front.'], function () {
 
     Route::group(['namespace' => 'Home'], function () {
         Route::get('/', 'HomeController@index')->name('home');
+//        Route::get('/', function (){
+//            var_dump(\App\Services\Basket\Basket::reset());
+//
+//        });
     });
 
 
@@ -84,9 +88,13 @@ Route::group(['namespace' => 'Front', 'as' => 'front.'], function () {
         Route::get('/add/{product_id}', 'BasketController@add')->name('add');
         Route::post('/add', 'BasketController@addByCount')->name('addByCount');
         Route::get('/reset', 'BasketController@reset')->name('reset');
+        Route::get('/', 'BasketController@index')->name('index');
+        Route::post('/', 'BasketController@updateBasket')->name('index');
+        Route::get('/remove/{product_id}', 'BasketController@remove')->name('remove');
+        Route::get('/review', 'BasketController@review')->name('review');
+
     });
     // End Basket Route
-
 
 
     // Start Product Route  -    all route begin by :   /front/product

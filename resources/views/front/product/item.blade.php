@@ -1,8 +1,4 @@
 @extends('layouts.front.base')
-@section('style')
-    <link href="/front/css/index.css" rel="stylesheet" type="text/css"/>
-@endsection
-
 
 @section('content')
     <!--

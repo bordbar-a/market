@@ -38,6 +38,9 @@
     {{--    <link href="assets/css/layout-shop.css" rel="stylesheet" type="text/css" />--}}
     {{--    <link href="assets/css/color_scheme/green.css" rel="stylesheet" type="text/css" id="color_scheme" />--}}
     <link href="/front/css/base.css" rel="stylesheet" type="text/css"/>
+
+    <!-- PAGE LEVEL SCRIPTS -->
+    <link href="/front/css/index.css" rel="stylesheet" type="text/css"/>
     @yield('style')
 </head>
 

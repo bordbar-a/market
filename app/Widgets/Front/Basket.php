@@ -30,12 +30,13 @@ class Basket
     public function data()
     {
         $items_count = BasketService::count();
-        if(!$items_count){
-            return [0] ;
+        if (!$items_count) {
+            return [0];
         }
         $items = BasketService::items();
-        $total_price = Number::numberSeparator(BasketService::total());
-        return [$items_count ,$items, $total_price];
+
+        $total_price_without_discount = BasketService::present()->getTotalPriceWithoutDiscount;
+        return [$items_count, $items, $total_price_without_discount];
     }
 
     /**
