@@ -20,8 +20,6 @@ use Illuminate\Support\Facades\Route;
 
 
 //Start Admin Route - all route begin by :   /admin
-
-
 Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'as' => 'admin.', 'middleware' => ['auth']], function () {
 
     Route::group(['namespace' => 'Dashboard'], function () {
@@ -69,9 +67,9 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'as' => 'admin.', 'mi
 // End Admin Route
 
 
+
+
 //Start Front Route - all route begin by :   /
-
-
 Route::group(['namespace' => 'Front', 'as' => 'front.'], function () {
 
     Route::group(['namespace' => 'Home'], function () {
@@ -93,6 +91,7 @@ Route::group(['namespace' => 'Front', 'as' => 'front.'], function () {
         Route::get('/remove/{product_id}', 'BasketController@remove')->name('remove');
         Route::get('/review', 'BasketController@review')->name('review');
 
+
     });
     // End Basket Route
 
@@ -107,6 +106,38 @@ Route::group(['namespace' => 'Front', 'as' => 'front.'], function () {
 
 });
 // End Front Route
+
+
+//Start Profile Route - all route begin by :   /profile
+Route::group(['prefix' => 'profile', 'namespace' => 'Profile', 'as' => 'profile.', 'middleware' => ['auth']], function () {
+
+    Route::group(['namespace' => 'Dashboard'], function () {
+        Route::get('/', 'DashboardController@index')->name('dashboard');
+    });
+
+
+
+
+     //Start Personal data Route  -    all route begin by :   /profile/personal
+    Route::group(['prefix' => 'personal', 'namespace' => 'Personal', 'as' => 'personal.'], function () {
+        Route::get('/', 'PersonalController@index')->name('index');
+        Route::post('/update', 'PersonalController@update')->name('update');
+        Route::get('/userImage/{user_id}', 'PersonalController@userImage')->name('userImage');
+        Route::get('/deleteProfileImage/{user_id}', 'PersonalController@deleteProfileImage')->name('deleteProfileImage');
+
+    });
+    // End Personal Route
+
+
+
+
+
+});
+    // End Profile Route
+
+
+
+
 
 
 Auth::routes();

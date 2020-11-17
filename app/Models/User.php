@@ -2,18 +2,24 @@
 
 namespace App\Models;
 
+use App\Entities\FileType;
 use App\Presenters\Contracts\Presentable;
 use App\Presenters\User\ProductPresenter;
 use App\Presenters\User\UserPresenter;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 
 class User extends Authenticatable
 {
     use Notifiable, Presentable;
 
+
+
+    const UserImageDisk = 'userImage';
+    const UserImagePath = 'app' . DIRECTORY_SEPARATOR . 'usersImage' .DIRECTORY_SEPARATOR;
 
     //Role Constants
     const User = 0;
@@ -62,6 +68,11 @@ class User extends Authenticatable
      */
 
 
+    public function profileImage()
+    {
+        return $this->morphOne(File::class , 'fileable')->where('type' , File::ProfileImage);
+    }
+
     public function payments()
     {
         return $this->hasMany(Payment::class, 'user_id');
@@ -95,6 +106,7 @@ class User extends Authenticatable
         $this->attributes['password'] = Hash::make($value);
     }
 
+
     public static function getUserRoles()
     {
         return [
@@ -113,6 +125,26 @@ class User extends Authenticatable
             self::INACTIVE => 'غیرفعال',
         ];
     }
+
+
+    public static function getUserProfile()
+    {
+
+        $user = User::find(Auth::user()->id)->first([
+            'id',
+            'first_name',
+            'last_name',
+            'mobile',
+            'email',
+            'national_code',
+        ]) ?: null;
+        return $user;
+    }
+
+
+
+
+
 
 
 }

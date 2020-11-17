@@ -4,7 +4,7 @@ namespace App\Models;
 
 use App\Presenters\Contracts\Presentable;
 use App\Presenters\Product\ProductPresenter;
-use App\RepeatRelation\BelongsToUser;
+use App\Traits\BelongsToUser;
 use Illuminate\Database\Eloquent\Model;
 
 class Product extends Model

@@ -2,20 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d4527880-cb0d-413e-8591-1ff27fa185c3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Services/Basket/Contracts/BasketContract.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Helpers/Number/Number.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Helpers/Number/Number.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Front/Basket/BasketController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Front/Basket/BasketController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Presenters/Contracts/Presenter.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Presenters/Contracts/Presenter.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Rules/NationalCodeRule.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Rules/NationalCodeRule.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Services/Basket/Basket.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Services/Basket/Basket.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Services/Basket/Contracts/IBasket.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Services/Basket/Providers/SessionBasketProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Services/Basket/Providers/SessionBasketProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Widgets/Front/Basket.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Widgets/Front/Basket.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Widgets/Front/BasketView.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Widgets/Front/BasketView.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/front/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/front/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/front/product/item.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/front/product/item.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/front/base.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/front/base.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Address.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Address.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Order.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Order.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Payment.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Payment.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Product.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Product.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/RepeatRelation/BelongsToUser.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Traits/BelongsToUser.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/filesystems.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/filesystems.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -173,32 +169,41 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../LaraPay" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../LaraCMS" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="yiiguxing.plugin.translate" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\market\app\Http\Controllers" />
       <recent name="C:\xampp\htdocs\market\app\Services\Basket" />
       <recent name="C:\xampp\htdocs\market\app\Services\Basket\Facade" />
       <recent name="C:\xampp\htdocs\market\app\Http\Controllers\Front\Home" />
       <recent name="C:\xampp\htdocs\market\resources\views\front\partilas" />
-      <recent name="C:\xampp\htdocs\market\public\backend\plugins\select2" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\market\resources\views\layouts\profile" />
       <recent name="C:\xampp\htdocs\market\app\Http\Controllers" />
       <recent name="C:\xampp\htdocs\market\public\front" />
       <recent name="C:\xampp\htdocs\market\resources\assets\front" />
       <recent name="C:\xampp\htdocs\market\app\Presenters" />
-      <recent name="C:\xampp\htdocs\market\resources\views\admin" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="PHPUnit.app">
+    <configuration name="app" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner configuration_file="$PROJECT_DIR$/phpunit.xml" directory="$PROJECT_DIR$/app" />
+      <method v="2" />
+    </configuration>
     <configuration name="phpunit.xml" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
       <TestRunner scope="XML" />
       <method v="2" />
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="PHPUnit.app" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="ServiceViewManager">
     <option name="viewStates">
@@ -244,7 +249,10 @@
       <workItem from="1605096476418" duration="10148000" />
       <workItem from="1605175074598" duration="3380000" />
       <workItem from="1605258154159" duration="25575000" />
-      <workItem from="1605343167522" duration="7713000" />
+      <workItem from="1605343167522" duration="8317000" />
+      <workItem from="1605440712271" duration="1338000" />
+      <workItem from="1605518492927" duration="22270000" />
+      <workItem from="1605612844722" duration="19995000" />
     </task>
     <servers />
   </component>
@@ -264,6 +272,10 @@
       <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state x="312" y="88" key="#Inspections/0.0.1440.860@0.0.1440.860" timestamp="1604470742818" />
+    <state x="373" y="232" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1605550840352">
+      <screen x="0" y="0" width="1440" height="860" />
+    </state>
+    <state x="373" y="232" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1440.860@0.0.1440.860" timestamp="1605550840352" />
     <state x="525" y="145" key="#com.intellij.ide.util.MemberChooser" timestamp="1604474638312">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
@@ -280,10 +292,10 @@
       <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state x="500" y="355" key="#com.jetbrains.php.lang.intentions.PhpImportClassDialog#/0.0.1440.860@0.0.1440.860" timestamp="1604989064297" />
-    <state x="461" y="45" key="#com.jetbrains.php.refactoring.extractMethod.PhpExtractMethodDialog#method0" timestamp="1604919257090">
+    <state x="461" y="45" key="#com.jetbrains.php.refactoring.extractMethod.PhpExtractMethodDialog#method0" timestamp="1605552318947">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state x="461" y="45" key="#com.jetbrains.php.refactoring.extractMethod.PhpExtractMethodDialog#method0/0.0.1440.860@0.0.1440.860" timestamp="1604919257090" />
+    <state x="461" y="45" key="#com.jetbrains.php.refactoring.extractMethod.PhpExtractMethodDialog#method0/0.0.1440.860@0.0.1440.860" timestamp="1605552318947" />
     <state x="461" y="0" key="#com.jetbrains.php.refactoring.extractMethod.PhpExtractMethodDialog#method1" timestamp="1604923187783">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
@@ -292,30 +304,46 @@
       <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state x="524" y="325" width="447" height="241" key="ComposerInitDialogKey/0.0.1440.860@0.0.1440.860" timestamp="1604418130842" />
-    <state x="500" y="184" key="FileChooserDialogImpl" timestamp="1605279825371">
+    <state x="500" y="184" key="FileChooserDialogImpl" timestamp="1605619484812">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state x="500" y="184" key="FileChooserDialogImpl/0.0.1440.860@0.0.1440.860" timestamp="1605279825371" />
-    <state width="1397" height="499" key="GridCell.Tab.0.bottom" timestamp="1604321254774">
+    <state x="500" y="184" key="FileChooserDialogImpl/0.0.1440.860@0.0.1440.860" timestamp="1605619484812" />
+    <state width="1397" height="276" key="GridCell.Tab.0.bottom" timestamp="1605470280430">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state width="1397" height="499" key="GridCell.Tab.0.bottom/0.0.1440.860@0.0.1440.860" timestamp="1604321254774" />
-    <state width="1397" height="499" key="GridCell.Tab.0.center" timestamp="1604321254774">
+    <state width="1397" height="276" key="GridCell.Tab.0.bottom/0.0.1440.860@0.0.1440.860" timestamp="1605470280430" />
+    <state width="1397" height="276" key="GridCell.Tab.0.center" timestamp="1605470280430">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state width="1397" height="499" key="GridCell.Tab.0.center/0.0.1440.860@0.0.1440.860" timestamp="1604321254774" />
-    <state width="1397" height="499" key="GridCell.Tab.0.left" timestamp="1604321254773">
+    <state width="1397" height="276" key="GridCell.Tab.0.center/0.0.1440.860@0.0.1440.860" timestamp="1605470280430" />
+    <state width="1397" height="276" key="GridCell.Tab.0.left" timestamp="1605470280429">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state width="1397" height="499" key="GridCell.Tab.0.left/0.0.1440.860@0.0.1440.860" timestamp="1604321254773" />
-    <state width="1397" height="499" key="GridCell.Tab.0.right" timestamp="1604321254774">
+    <state width="1397" height="276" key="GridCell.Tab.0.left/0.0.1440.860@0.0.1440.860" timestamp="1605470280429" />
+    <state width="1397" height="276" key="GridCell.Tab.0.right" timestamp="1605470280430">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state width="1397" height="499" key="GridCell.Tab.0.right/0.0.1440.860@0.0.1440.860" timestamp="1604321254774" />
-    <state x="508" y="244" key="NewPhpClassDialog" timestamp="1605281097740">
+    <state width="1397" height="276" key="GridCell.Tab.0.right/0.0.1440.860@0.0.1440.860" timestamp="1605470280430" />
+    <state width="1397" height="276" key="GridCell.Tab.1.bottom" timestamp="1605470280430">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state x="508" y="244" key="NewPhpClassDialog/0.0.1440.860@0.0.1440.860" timestamp="1605281097740" />
+    <state width="1397" height="276" key="GridCell.Tab.1.bottom/0.0.1440.860@0.0.1440.860" timestamp="1605470280430" />
+    <state width="1397" height="276" key="GridCell.Tab.1.center" timestamp="1605470280430">
+      <screen x="0" y="0" width="1440" height="860" />
+    </state>
+    <state width="1397" height="276" key="GridCell.Tab.1.center/0.0.1440.860@0.0.1440.860" timestamp="1605470280430" />
+    <state width="1397" height="276" key="GridCell.Tab.1.left" timestamp="1605470280430">
+      <screen x="0" y="0" width="1440" height="860" />
+    </state>
+    <state width="1397" height="276" key="GridCell.Tab.1.left/0.0.1440.860@0.0.1440.860" timestamp="1605470280430" />
+    <state width="1397" height="276" key="GridCell.Tab.1.right" timestamp="1605470280430">
+      <screen x="0" y="0" width="1440" height="860" />
+    </state>
+    <state width="1397" height="276" key="GridCell.Tab.1.right/0.0.1440.860@0.0.1440.860" timestamp="1605470280430" />
+    <state x="508" y="244" key="NewPhpClassDialog" timestamp="1605630970537">
+      <screen x="0" y="0" width="1440" height="860" />
+    </state>
+    <state x="508" y="244" key="NewPhpClassDialog/0.0.1440.860@0.0.1440.860" timestamp="1605630970537" />
     <state x="554" y="353" key="NewPhpFileDialog" timestamp="1604734638893">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
@@ -324,26 +352,26 @@
       <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state x="221" y="72" key="SettingsEditor/0.0.1440.860@0.0.1440.860" timestamp="1604729020213" />
-    <state x="416" y="253" key="com.intellij.ide.util.TipDialog" timestamp="1605345453686">
+    <state x="416" y="253" key="com.intellij.ide.util.TipDialog" timestamp="1605612862433">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state x="416" y="253" key="com.intellij.ide.util.TipDialog/0.0.1440.860@0.0.1440.860" timestamp="1605345453686" />
-    <state x="416" y="167" width="607" height="526" key="find.popup" timestamp="1605104129520">
+    <state x="416" y="253" key="com.intellij.ide.util.TipDialog/0.0.1440.860@0.0.1440.860" timestamp="1605612862433" />
+    <state x="416" y="167" width="607" height="526" key="find.popup" timestamp="1605619230118">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state x="416" y="167" width="607" height="526" key="find.popup/0.0.1440.860@0.0.1440.860" timestamp="1605104129520" />
+    <state x="416" y="167" width="607" height="526" key="find.popup/0.0.1440.860@0.0.1440.860" timestamp="1605619230118" />
     <state x="461" y="72" key="refactoring.ChangeSignatureDialog" timestamp="1604417009670">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state x="461" y="72" key="refactoring.ChangeSignatureDialog/0.0.1440.860@0.0.1440.860" timestamp="1604417009670" />
-    <state x="376" y="195" key="run.anything.popup" timestamp="1604915454807">
+    <state x="376" y="195" key="run.anything.popup" timestamp="1605525025747">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state x="376" y="195" key="run.anything.popup/0.0.1440.860@0.0.1440.860" timestamp="1604915454807" />
-    <state x="383" y="180" width="672" height="678" key="search.everywhere.popup" timestamp="1605357525849">
+    <state x="376" y="195" key="run.anything.popup/0.0.1440.860@0.0.1440.860" timestamp="1605525025747" />
+    <state x="383" y="180" width="672" height="678" key="search.everywhere.popup" timestamp="1605634945741">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state x="383" y="180" width="672" height="678" key="search.everywhere.popup/0.0.1440.860@0.0.1440.860" timestamp="1605357525849" />
+    <state x="383" y="180" width="672" height="678" key="search.everywhere.popup/0.0.1440.860@0.0.1440.860" timestamp="1605634945741" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

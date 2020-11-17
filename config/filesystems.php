@@ -45,7 +45,13 @@ return [
 
         'local' => [
             'driver' => 'local',
-            'root' => storage_path('app'),
+            'root' => storage_path(''),
+        ],
+        'userImage' => [
+            'driver' => 'local',
+            'root' => storage_path('app/usersImage'),
+            'url' => env('APP_URL').'/userImage',
+            'visibility' => 'private'
         ],
 
         'public' => [

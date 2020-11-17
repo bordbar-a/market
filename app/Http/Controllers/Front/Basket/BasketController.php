@@ -108,7 +108,7 @@ class BasketController extends FrontBaseController
 
     public function review()
     {
-        dd('salam');
+        return view('front.basket.review');
     }
 
 

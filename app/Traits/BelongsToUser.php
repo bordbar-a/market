@@ -1,7 +1,7 @@
 <?php
 
 
-namespace App\RepeatRelation;
+namespace App\Traits;
 
 
 use App\Models\User;
