@@ -67,9 +67,8 @@
                                             <input type="text" name="nationalCode" value="{{$user->national_code}}"
                                                    class="form-control">
                                         </div>
-                                    </div>
-                                    @if($user->profileImage)
-                                        <div class="form-group">
+
+                                        @if($user->profileImage)
 
                                             <div class="col-md-6 col-sm-6 text-center">
 
@@ -80,13 +79,15 @@
                                                 </div>
                                                 <div class="col-md-6 col-sm-6">
                                                     <a href="{{route('profile.personal.deleteProfileImage' ,['user_id'=>$user->id])}}">
-                                                        <button type="button" class="btn btn-danger btn-xs">حذف عکس پروفایل</button>
+                                                        <button type="button" class="btn btn-danger btn-xs">حذف عکس
+                                                            پروفایل
+                                                        </button>
                                                     </a>
                                                 </div>
 
 
                                             </div>
-                                        </div>
+                                    </div>
                                     @endif
                                 </div>
 

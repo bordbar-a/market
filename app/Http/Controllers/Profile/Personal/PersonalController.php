@@ -7,11 +7,13 @@ use App\Helpers\File\UploadedFile;
 use App\Helpers\FlashMessages\FlashMessages;
 use App\Helpers\UploadFileName\UploadFileName;
 use App\Http\Controllers\Profile\ProfileBaseController;
+use App\Http\Requests\User\ChangeUserPasswordRequest;
 use App\Models\File;
 use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Response;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
@@ -80,7 +82,6 @@ class PersonalController extends ProfileBaseController
     }
 
 
-
     public function deleteProfileImage($user_id){
 
 
@@ -94,6 +95,45 @@ class PersonalController extends ProfileBaseController
         $user->profileImage()->delete();
 
         return back();
+    }
+
+
+
+    public function changePassword($user_id)
+    {
+        $user = User::find($user_id);
+
+        if($user->id ==Auth::user()->id){
+            return view('profile.personal.changePassword');
+        }
+
+        return redirect()->route('profile.personal.index');
+
+    }
+
+    public function doChangePassword(ChangeUserPasswordRequest $request , $user_id)
+    {
+
+        $user = User::find($user_id);
+
+        if(!Hash::check($request->input('password') , $user->password)){
+
+            FlashMessages::error('پسورد وارد شده صحیح نیست');
+            return back()->withErrors(['پسورد وارد شده اشتباه است']);
+        }
+
+        $user->password = $request->input('newPassword');
+
+        if($user->save()){
+
+            FlashMessages::success('پسورد تغییر کرد');
+            return back();
+        }
+
+        FlashMessages::error('رمز عبور تغییر نکرد');
+        return redirect()->route('profile.index');
+
+
     }
 
     /**
@@ -130,4 +170,6 @@ class PersonalController extends ProfileBaseController
 
 
     }
+
+
 }

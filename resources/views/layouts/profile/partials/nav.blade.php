@@ -6,22 +6,22 @@
             </a>
         </li>
 
-        <li class="active"><!-- dashboard -->
-            <a class="dashboard" href="{{route('profile.personal.index')}}">
-                <!-- warning - url used by default by ajax (if eneabled) -->
-                <i class="main-icon fa fa-dashboard"></i> <span>اطلاعات شخصی</span>
-            </a>
-        </li>
-{{--        <li>--}}
-{{--            <a href="#">--}}
-{{--                <i class="fa fa-menu-arrow pull-right"></i>--}}
-{{--                <i class="main-icon fa fa-user"></i> <span>اطلاعات شخصی</span>--}}
+{{--        <li class="active"><!-- dashboard -->--}}
+{{--            <a class="dashboard" href="">--}}
+{{--                <!-- warning - url used by default by ajax (if eneabled) -->--}}
+{{--                <i class="main-icon fa fa-dashboard"></i> <span>اطلاعات شخصی</span>--}}
 {{--            </a>--}}
-{{--            <ul><!-- submenus -->--}}
-{{--                <li><a href="{{route('admin.category.list')}}">لیست</a></li>--}}
-{{--                <li><a href="{{route('admin.category.create')}}">اضافه کردن دسته‌بندی</a></li>--}}
-{{--            </ul>--}}
 {{--        </li>--}}
+        <li>
+            <a href="#">
+                <i class="fa fa-menu-arrow pull-right"></i>
+                <i class="main-icon fa fa-user"></i> <span>پروفایل</span>
+            </a>
+            <ul><!-- submenus -->
+                <li><a href="{{route('profile.personal.index')}}">اطلاعات شخصی</a></li>
+                <li><a href="{{route('profile.personal.changePassword' , ['user_id'=>\Illuminate\Support\Facades\Auth::user()])}}">تغییر رمز عبور</a></li>
+            </ul>
+        </li>
 
     </ul>
 

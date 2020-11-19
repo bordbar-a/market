@@ -17,9 +17,8 @@ class User extends Authenticatable
     use Notifiable, Presentable;
 
 
-
     const UserImageDisk = 'userImage';
-    const UserImagePath = 'app' . DIRECTORY_SEPARATOR . 'usersImage' .DIRECTORY_SEPARATOR;
+    const UserImagePath = 'app' . DIRECTORY_SEPARATOR . 'usersImage' . DIRECTORY_SEPARATOR;
 
     //Role Constants
     const User = 0;
@@ -70,7 +69,7 @@ class User extends Authenticatable
 
     public function profileImage()
     {
-        return $this->morphOne(File::class , 'fileable')->where('type' , File::ProfileImage);
+        return $this->morphOne(File::class, 'fileable')->where('type', File::ProfileImage);
     }
 
     public function payments()
@@ -101,10 +100,14 @@ class User extends Authenticatable
      */
 
 
+    //start Mutator for this class
     public function setPasswordAttribute($value)
     {
         $this->attributes['password'] = Hash::make($value);
     }
+
+
+    //End Mutator fot this class
 
 
     public static function getUserRoles()
@@ -140,11 +143,6 @@ class User extends Authenticatable
         ]) ?: null;
         return $user;
     }
-
-
-
-
-
 
 
 }

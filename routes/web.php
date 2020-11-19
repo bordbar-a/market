@@ -124,6 +124,8 @@ Route::group(['prefix' => 'profile', 'namespace' => 'Profile', 'as' => 'profile.
         Route::post('/update', 'PersonalController@update')->name('update');
         Route::get('/userImage/{user_id}', 'PersonalController@userImage')->name('userImage');
         Route::get('/deleteProfileImage/{user_id}', 'PersonalController@deleteProfileImage')->name('deleteProfileImage');
+        Route::get('/changePassword/{user_id}', 'PersonalController@changePassword')->name('changePassword');
+        Route::post('/changePassword/{user_id}', 'PersonalController@doChangePassword')->name('changePassword');
 
     });
     // End Personal Route
