@@ -130,19 +130,5 @@ class User extends Authenticatable
     }
 
 
-    public static function getUserProfile()
-    {
-
-        $user = User::find(Auth::user()->id)->first([
-            'id',
-            'first_name',
-            'last_name',
-            'mobile',
-            'email',
-            'national_code',
-        ]) ?: null;
-        return $user;
-    }
-
 
 }

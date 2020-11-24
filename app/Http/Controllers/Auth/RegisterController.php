@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\Helpers\FlashMessages\FlashMessages;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use App\Models\User;
@@ -9,6 +10,7 @@ use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use function Couchbase\basicDecoderV1;
 
 class RegisterController extends Controller
 {
@@ -53,7 +55,7 @@ class RegisterController extends Controller
         return Validator::make($data, [
             'firstName' => ['required', 'string', 'max:255'],
             'lastName' => ['required', 'string', 'max:255'],
-            'mobile' => ['required', 'string', 'max:255' ,'regex:/^09[0-9]{9}$/'],
+            'mobile' => ['required','string', 'max:255' ,'regex:/^09[0-9]{9}$/' , 'unique:users,mobile'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
         ]);
     }
@@ -66,12 +68,18 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
-            'first_name' => $data['firstName'],
-            'last_name' => $data['lastName'],
-            'mobile' => $data['mobile'],
-            'password' => $data['password'],
-        ]);
+        try {
+            return User::create([
+                'first_name' => $data['firstName'],
+                'last_name' => $data['lastName'],
+                'mobile' => $data['mobile'],
+                'password' => $data['password'],
+            ]);
+        }catch (\Exception $exception){
+            FlashMessages::error('ثبت نام انجام نشد');
+            return  redirect()->route('register')->withErrors(['ثبت نام انجام نشد']);
+        }
+
     }
 
 

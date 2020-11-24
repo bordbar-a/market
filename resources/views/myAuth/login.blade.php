@@ -96,7 +96,7 @@
                 </div>
 
                 <div class="margin-top-30 text-center">
-                    <a href="page-register-1.html"><strong>ایجاد حساب</strong></a>
+                    <a href="{{route('register')}}"><strong>ایجاد حساب</strong></a>
 
                 </div>
 

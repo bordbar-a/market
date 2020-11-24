@@ -25,7 +25,7 @@ class PersonalController extends ProfileBaseController
 
     public function index()
     {
-        $user = User::getUserProfile();
+        $user = Auth::user();
         if ($user) {
             return view('profile.personal.index', compact('user'));
         }
