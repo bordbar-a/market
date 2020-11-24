@@ -3,10 +3,16 @@
   <component name="ChangeListManager">
     <list default="true" id="d4527880-cb0d-413e-8591-1ff27fa185c3" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Profile/Personal/PersonalController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Profile/Personal/PersonalController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/myAuth/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/myAuth/login.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Front/Basket/BasketController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Front/Basket/BasketController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Profile/Dashboard/DashboardController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Profile/Dashboard/DashboardController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Profile/ProfileBaseController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Profile/ProfileBaseController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Services/Basket/Basket.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Services/Basket/Basket.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Services/Basket/BasketItem.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Services/Basket/BasketItem.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Services/Basket/Contracts/BasketContract.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Services/Basket/Contracts/BasketContract.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Services/Basket/Providers/SessionBasketProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Services/Basket/Providers/SessionBasketProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/front/basket/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/front/basket/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -251,7 +257,8 @@
       <workItem from="1605861356386" duration="1418000" />
       <workItem from="1606024347804" duration="6603000" />
       <workItem from="1606109449812" duration="1867000" />
-      <workItem from="1606201979540" duration="3318000" />
+      <workItem from="1606201979540" duration="5355000" />
+      <workItem from="1606230368490" duration="9197000" />
     </task>
     <servers />
   </component>
@@ -351,10 +358,14 @@
       <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state x="221" y="72" key="SettingsEditor/0.0.1440.860@0.0.1440.860" timestamp="1604729020213" />
-    <state x="416" y="253" key="com.intellij.ide.util.TipDialog" timestamp="1606202044021">
+    <state x="416" y="253" key="com.intellij.ide.util.TipDialog" timestamp="1606230516346">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state x="416" y="253" key="com.intellij.ide.util.TipDialog/0.0.1440.860@0.0.1440.860" timestamp="1606202044021" />
+    <state x="416" y="253" key="com.intellij.ide.util.TipDialog/0.0.1440.860@0.0.1440.860" timestamp="1606230516346" />
+    <state x="295" y="74" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1606234506085">
+      <screen x="0" y="0" width="1440" height="860" />
+    </state>
+    <state x="295" y="74" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1440.860@0.0.1440.860" timestamp="1606234506085" />
     <state x="416" y="167" width="607" height="526" key="find.popup" timestamp="1605619230118">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
@@ -367,10 +378,10 @@
       <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state x="376" y="195" key="run.anything.popup/0.0.1440.860@0.0.1440.860" timestamp="1605525025747" />
-    <state x="383" y="180" width="672" height="678" key="search.everywhere.popup" timestamp="1606212140882">
+    <state x="383" y="180" width="672" height="678" key="search.everywhere.popup" timestamp="1606238739056">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state x="383" y="180" width="672" height="678" key="search.everywhere.popup/0.0.1440.860@0.0.1440.860" timestamp="1606212140882" />
+    <state x="383" y="180" width="672" height="678" key="search.everywhere.popup/0.0.1440.860@0.0.1440.860" timestamp="1606238739056" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

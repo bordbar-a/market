@@ -220,8 +220,8 @@
 
                                     <hr/>
 
-                                    <a href="{{route('front.basket.review')}}" class="btn btn-primary btn-lg btn-block size-15"><i
-                                            class="fa fa-mail-forward"></i>مرحله بعد</a>
+                                    <a href="{{route('profile.order.register')}}" class="btn btn-primary btn-lg btn-block size-15"><i
+                                            class="fa fa-mail-forward"></i>ثبت سفارش و پرداخت</a>
                                 </div>
                             </div>
                         </div>

@@ -43,7 +43,7 @@ class BasketItem
     }
 
 
-    public static function total(array $items, $discount = false): float
+    public static function total(array $items, $discount = false): int
     {
 
         if ($discount) {
@@ -58,7 +58,12 @@ class BasketItem
                 return $sum;
             });
         }
-        return $total ?: 0;
+        return (int)$total ?: 0;
+    }
+
+
+    public function itemFinalPrice(){
+        return $this->price * ((100-$this->discount)/100) * $this->count;
     }
 
 

@@ -89,7 +89,6 @@ Route::group(['namespace' => 'Front', 'as' => 'front.'], function () {
         Route::get('/', 'BasketController@index')->name('index');
         Route::post('/', 'BasketController@updateBasket')->name('index');
         Route::get('/remove/{product_id}', 'BasketController@remove')->name('remove');
-        Route::get('/review', 'BasketController@review')->name('review');
 
 
     });
@@ -129,6 +128,14 @@ Route::group(['prefix' => 'profile', 'namespace' => 'Profile', 'as' => 'profile.
 
     });
     // End Personal Route
+
+    //Start Order Route  -    all route begin by :   /profile/order
+    Route::group(['prefix' => 'order', 'namespace' => 'Order', 'as' => 'order.'], function () {
+        Route::get('/', 'OrdersController@register')->name('register');
+
+
+    });
+    // End Order Route
 
 
 

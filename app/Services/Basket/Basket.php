@@ -11,8 +11,10 @@ use Illuminate\Support\Facades\Facade;
  * @method static Basket totalWithDiscount()
  * @method static Basket totalWithoutDiscount()
  * @method static Basket reset()
- * @method static Basket items()
+ * @method static Basket items() : array
  * @method static Basket count()
+ * @method static Basket forceSave($item)
+ * @method static Basket products()
  *
  *
  */

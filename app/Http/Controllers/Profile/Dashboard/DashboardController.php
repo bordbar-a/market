@@ -12,4 +12,7 @@ class DashboardController extends ProfileBaseController
     {
         return view('profile.index');
     }
+
+
+
 }

@@ -4,7 +4,10 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
+use App\Widgets\Front\Basket;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Http\Request;
+
 
 class LoginController extends Controller
 {
@@ -39,14 +42,6 @@ class LoginController extends Controller
     }
 
 
-
-
-
-
-
-
-
-
     //Start My Change
     public function redirectTo()
     {
@@ -63,6 +58,18 @@ class LoginController extends Controller
         return view('myAuth.login');
     }
 
+
+    public function logout(Request $request)
+    {
+
+        $this->guard()->logout();
+        $items = \App\Services\Basket\Basket::items();
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+        \App\Services\Basket\Basket::forceSave($items);
+        return $this->loggedOut($request) ?: redirect('/');
+        return redirect()->route('front.home');
+    }
 
 
 }

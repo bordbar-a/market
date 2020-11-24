@@ -5,6 +5,7 @@ namespace App\Services\Basket\Providers;
 
 
 use App\Helpers\FlashMessages\FlashMessages;
+use App\Models\Product;
 use App\Services\Basket\BasketItem;
 use App\Services\Basket\Contracts\BasketContract;
 use Illuminate\Support\Facades\Session;
@@ -50,14 +51,14 @@ class SessionBasketProvider extends BasketContract
     }
 
 
-    public function totalWithDiscount(): float
+    public function totalWithDiscount(): int
     {
         $items = $this->items();
         return BasketItem::total($items, true);
     }
 
 
-    public function totalWithoutDiscount(): float
+    public function totalWithoutDiscount(): int
     {
         $items = $this->items();
         return BasketItem::total($items);
@@ -96,10 +97,16 @@ class SessionBasketProvider extends BasketContract
     }
 
 
+    public function forceSave($items)
+    {
+        $this->saveBasket($items);
+    }
+
+
     private function handleBasketExist(): void
     {
         if (!Session::exists(self::$SESSION_NAME)) {
-           $this->saveBasket([]);
+            $this->saveBasket([]);
         }
     }
 

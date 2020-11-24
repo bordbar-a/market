@@ -108,7 +108,9 @@ class BasketController extends FrontBaseController
 
     public function review()
     {
-        return view('front.basket.review');
+        $items = Basket::items();
+
+        return view('front.basket.review' , compact($items));
     }
 
 

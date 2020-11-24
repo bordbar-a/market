@@ -19,9 +19,9 @@ abstract class BasketContract
 
     public abstract function remove(int $item_id);
 
-    public abstract function totalWithDiscount(): float ;
+    public abstract function totalWithDiscount(): int ;
 
-    public abstract function totalWithoutDiscount():float;
+    public abstract function totalWithoutDiscount():int;
 
     public abstract function reset();
 
@@ -30,6 +30,9 @@ abstract class BasketContract
     public abstract function count();
 
     public abstract function isInBasket(int $item_id);
+
+
+    public abstract function forceSave($items);
 
 
 }
