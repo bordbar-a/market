@@ -130,5 +130,12 @@ class User extends Authenticatable
     }
 
 
+    public function hasRole(int $role)
+    {
+        if ($this->role == $role) {
+            return true;
+        }
+        return false;
+    }
 
 }

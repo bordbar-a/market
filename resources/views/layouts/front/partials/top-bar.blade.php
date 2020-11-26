@@ -9,7 +9,7 @@
                 <li class="hidden-xs"><a href="{{route('register')}}">ثبت نام</a></li>
 
             @else
-                <li class="text-welcome hidden-xs">به مارکت خوش اومدی ،<strong> ادمین</strong></li>
+                <li class="text-welcome hidden-xs">به مارکت خوش اومدی <strong>{{\Illuminate\Support\Facades\Auth::user()->first_name}}</strong></li>
                 <li>
                     <a class="dropdown-toggle no-text-underline" data-toggle="dropdown" href="#"><i
                             class="fa fa-user hidden-xs"></i> حساب من</a>
