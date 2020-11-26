@@ -20,7 +20,7 @@ use Illuminate\Support\Facades\Route;
 
 
 //Start Admin Route - all route begin by :   /admin
-Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'as' => 'admin.', 'middleware' => ['auth' , 'admin']], function () {
+Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'as' => 'admin.', 'middleware' => ['auth' ]], function () {
 
     Route::group(['namespace' => 'Dashboard'], function () {
         Route::get('/', 'DashboardController@index')->name('dashboard');
@@ -131,7 +131,8 @@ Route::group(['prefix' => 'profile', 'namespace' => 'Profile', 'as' => 'profile.
 
     //Start Order Route  -    all route begin by :   /profile/order
     Route::group(['prefix' => 'order', 'namespace' => 'Order', 'as' => 'order.'], function () {
-        Route::get('/', 'OrdersController@register')->name('register');
+        Route::get('/', 'OrdersController@list')->name('list');
+        Route::get('/register', 'OrdersController@register')->name('register');
 
 
     });

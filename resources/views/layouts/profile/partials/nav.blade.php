@@ -23,6 +23,17 @@
             </ul>
         </li>
 
+        <li class="active"><!-- dashboard -->
+            <a class="dashboard" href="{{route('profile.order.list')}}">
+                <i class="main-icon fa fa-cart-arrow-down"></i> <span>سفارشات من</span>
+            </a>
+        </li>
+        <li class="active"><!-- dashboard -->
+            <a class="dashboard" href="#">
+                <i class="main-icon fa fa-money"></i> <span>پرداخت‌های من</span>
+            </a>
+        </li>
+
     </ul>
 
     <!-- SECOND MAIN LIST -->

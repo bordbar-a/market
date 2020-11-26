@@ -2,12 +2,20 @@
 
 namespace App\Models;
 
+use App\Presenters\Contracts\Presentable;
+use App\Presenters\Order\OrderPresenter;
 use App\Traits\BelongsToUser;
 use Illuminate\Database\Eloquent\Model;
 
 class Order extends Model
 {
-    use BelongsToUser;
+    use BelongsToUser , Presentable;
+    public $presenter = OrderPresenter::class;
+
+    const PENDING = 0;
+    const PAYED= 1;
+    const CANCELLATION = 2;
+
 
     protected $guarded = [
         'id'
@@ -40,4 +48,6 @@ class Order extends Model
     /*
      * End Of Define Relation
      */
+
+
 }

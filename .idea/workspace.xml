@@ -2,14 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d4527880-cb0d-413e-8591-1ff27fa185c3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Http/Middleware/AdminMiddleware.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/market.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/market.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Profile/Order/OrdersController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Profile/Order/OrdersController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Kernel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/admin/partials/header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/admin/partials/header.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Order.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Order.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/layouts/front/partials/top-bar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/front/partials/top-bar.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/profile/partials/header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/profile/partials/header.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/profile/partials/nav.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/profile/partials/nav.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -151,6 +153,8 @@
       <path value="$PROJECT_DIR$/vendor/maximebf/debugbar" />
       <path value="$PROJECT_DIR$/vendor/barryvdh/laravel-debugbar" />
       <path value="$PROJECT_DIR$/vendor/imanghafoori/laravel-widgetize" />
+      <path value="$PROJECT_DIR$/vendor/hekmatinasser/verta" />
+      <path value="$PROJECT_DIR$/vendor/hekmatinasser/notowo" />
     </include_path>
   </component>
   <component name="ProjectId" id="1jjEWWDEHWooDsRxARHhTlxlXId" />
@@ -167,25 +171,25 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/profile/order" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="yiiguxing.plugin.translate" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\market\resources\views\profile\order" />
+      <recent name="C:\xampp\htdocs\market\resources\views\profile" />
+      <recent name="C:\xampp\htdocs\market\resources\views\layouts\profile" />
+      <recent name="C:\xampp\htdocs\market\app\Http\Controllers" />
+      <recent name="C:\xampp\htdocs\market\public\front" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\xampp\htdocs\market\app\Http\Controllers" />
       <recent name="C:\xampp\htdocs\market\app\Services\Basket" />
       <recent name="C:\xampp\htdocs\market\app\Services\Basket\Facade" />
       <recent name="C:\xampp\htdocs\market\app\Http\Controllers\Front\Home" />
       <recent name="C:\xampp\htdocs\market\resources\views\front\partilas" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\xampp\htdocs\market\resources\views\layouts\profile" />
-      <recent name="C:\xampp\htdocs\market\app\Http\Controllers" />
-      <recent name="C:\xampp\htdocs\market\public\front" />
-      <recent name="C:\xampp\htdocs\market\resources\assets\front" />
-      <recent name="C:\xampp\htdocs\market\app\Presenters" />
     </key>
   </component>
   <component name="RunManager" selected="PHPUnit.app">
@@ -258,7 +262,7 @@
       <workItem from="1606201979540" duration="5355000" />
       <workItem from="1606230368490" duration="9197000" />
       <workItem from="1606292390103" duration="1188000" />
-      <workItem from="1606372190183" duration="3122000" />
+      <workItem from="1606372190183" duration="14502000" />
     </task>
     <servers />
   </component>
@@ -290,10 +294,10 @@
       <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state x="365" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1440.860@0.0.1440.860" timestamp="1606375363563" />
-    <state x="450" y="184" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1604911920714">
+    <state x="450" y="184" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1606379297507">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state x="450" y="184" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1440.860@0.0.1440.860" timestamp="1604911920714" />
+    <state x="450" y="184" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1440.860@0.0.1440.860" timestamp="1606379297507" />
     <state x="500" y="355" key="#com.jetbrains.php.lang.intentions.PhpImportClassDialog#" timestamp="1606375386753">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
@@ -346,10 +350,10 @@
       <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state width="1397" height="276" key="GridCell.Tab.1.right/0.0.1440.860@0.0.1440.860" timestamp="1605470280430" />
-    <state x="508" y="244" key="NewPhpClassDialog" timestamp="1605630970537">
+    <state x="508" y="244" key="NewPhpClassDialog" timestamp="1606379758758">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state x="508" y="244" key="NewPhpClassDialog/0.0.1440.860@0.0.1440.860" timestamp="1605630970537" />
+    <state x="508" y="244" key="NewPhpClassDialog/0.0.1440.860@0.0.1440.860" timestamp="1606379758758" />
     <state x="554" y="353" key="NewPhpFileDialog" timestamp="1604734638893">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
@@ -378,10 +382,10 @@
       <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state x="376" y="195" key="run.anything.popup/0.0.1440.860@0.0.1440.860" timestamp="1605525025747" />
-    <state x="383" y="180" width="672" height="678" key="search.everywhere.popup" timestamp="1606375442454">
+    <state x="383" y="180" width="672" height="678" key="search.everywhere.popup" timestamp="1606390881817">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state x="383" y="180" width="672" height="678" key="search.everywhere.popup/0.0.1440.860@0.0.1440.860" timestamp="1606375442454" />
+    <state x="383" y="180" width="672" height="678" key="search.everywhere.popup/0.0.1440.860@0.0.1440.860" timestamp="1606390881817" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

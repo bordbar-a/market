@@ -18,7 +18,7 @@
                         <li class="divider"></li>
                         <li><a tabindex="-1" href="#"><i class="fa fa-bookmark"></i> مورد علاقه های من</a></li>
                         <li><a tabindex="-1" href="#"><i class="fa fa-edit"></i> دیدگاه های من</a></li>
-                        <li><a tabindex="-1" href="#"><i class="fa fa-cog"></i> تنظیمات اکانت</a></li>
+                        <li><a tabindex="-1" href="{{route('profile.dashboard')}}"><i class="fa fa-cog"></i> تنظیمات اکانت</a></li>
                         <li class="divider"></li>
                         <li><a tabindex="-1" href="{{ route('logout') }}"
                                onclick="event.preventDefault();
