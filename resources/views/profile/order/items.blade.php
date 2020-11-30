@@ -7,8 +7,9 @@
     <td>{!! $order->present()->getStatus !!}</td>
 
     <td>
-        <a href="#" class="btn btn-default btn-xs"><i class="fa fa-edit white"></i> Edit </a>
-        <a href="#" class="btn btn-default btn-xs"><i class="fa fa-times white"></i> Delete </a>
+        <a href="{{route('profile.order.products' ,[$order->id])}}" class="btn btn-info btn-xs"><i class="fa fa-info white"></i>جزئیات</a>
+        <a href="{{route('profile.order.delete' ,[$order->id])}}" class="btn btn-danger btn-xs"><i class="fa fa-times white"></i> حذف </a>
     </td>
     {{--    <td><span class="label label-success">Approved </span></td>--}}
 </tr>
+

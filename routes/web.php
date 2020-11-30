@@ -133,8 +133,9 @@ Route::group(['prefix' => 'profile', 'namespace' => 'Profile', 'as' => 'profile.
     Route::group(['prefix' => 'order', 'namespace' => 'Order', 'as' => 'order.'], function () {
         Route::get('/', 'OrdersController@list')->name('list');
         Route::get('/register', 'OrdersController@register')->name('register');
-
-
+        Route::get('/products/{order_id}', 'OrdersController@products')->name('products');
+        Route::get('/edit/{order_id}', 'OrdersController@edit')->name('edit');
+        Route::get('/delete/{order_id}', 'OrdersController@delete')->name('delete');
     });
     // End Order Route
 

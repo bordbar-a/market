@@ -43,8 +43,6 @@ class BasketController extends FrontBaseController
 
     public function addByCount(Request $request)
     {
-
-
         $request->validate([
            'id'=>'int',
            'count'=>'int',
@@ -79,8 +77,6 @@ class BasketController extends FrontBaseController
 
     public function updateBasket(Request $request)
     {
-
-
         $request->validate([
                 'count' => 'array',
             ]

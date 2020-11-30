@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Profile\Order;
 
+use App\Helpers\FlashMessages\FlashMessages;
 use App\Http\Controllers\Profile\ProfileBaseController;
 use App\Models\Order;
 use App\Models\Product;
@@ -25,19 +26,53 @@ class OrdersController extends ProfileBaseController
 
         $order->save();
 
-        $result = $order->products()->saveMany($items , $this->createPivotOrderField());
+        $result = $order->products()->saveMany($items, $this->createPivotOrderField());
 
         Basket::reset();
-        return back();
-
+        return redirect()->route('profile.order.list');
     }
 
 
     public function list()
     {
-        $orders = Auth::user()->orders()->orderBy('updated_at' , 'DESC')->get();
-        return view('profile.order.list' , compact('orders'));
+        $orders = Auth::user()->orders()->orderBy('updated_at', 'DESC')->get();
+        return view('profile.order.list', compact('orders'));
     }
+
+    public function products(Request $request, $order_id)
+    {
+        $order = Order::with('products')->find($order_id);
+        return view('profile.order.products', compact('order'));
+    }
+
+    public function edit($order_id)
+    {
+        $order = Order::with('products')->find($order_id);
+        if (!$order->hasStatus(Order::PENDING)) {
+            FlashMessages::error('این سفارش قابل تغییر نمی‌باشد');
+            return redirect()->route('profile.order.list');
+        }
+        foreach ($order->products as $product) {
+            Basket::add(['id' => $product->id, 'count' => $product->pivot->count]);
+        }
+        $order->setStatus(Order::CANCELLATION);
+        return redirect()->route('front.basket.index');
+    }
+
+
+    public function delete($order_id)
+    {
+        $order = Order::find($order_id);
+        if ($order->hasStatus(Order::PENDING)) {
+            $order->setStatus(Order::CANCELLATION);
+            $order->save();
+        }
+        $order->delete();
+        return redirect()->route('profile.order.list');
+    }
+
+
+
 
 
     private function convertBasketItemsToProductsItems()
