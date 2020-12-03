@@ -7,7 +7,7 @@ use App\Presenters\Order\OrderPresenter;
 use App\Traits\BelongsToUser;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
-use mysql_xdevapi\Exception;
+
 
 class Order extends Model
 {

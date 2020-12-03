@@ -31,6 +31,7 @@ class User extends Authenticatable
     const ACTIVE = 1;
     const INACTIVE = 2;
 
+
     //define presenter class
     private $presenter = UserPresenter::class;
     /**
