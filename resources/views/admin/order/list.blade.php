@@ -1,13 +1,12 @@
-@extends('layouts.profile.base')
+@extends('layouts.admin.base')
 @section('content')
 
     <!-- page title -->
     <header id="page-header">
-        <h1>لیست سفارشات</h1>
+        <h1>لیست محصولات</h1>
         <ol class="breadcrumb">
-            <li><a href="{{route('profile.dashboard')}}">پنل ادمین</a></li>
-            <li><a href="{{route('profile.order.list')}}">لیست سفارشات</a></li>
-            <li class="active">لیست محصولات سفارش : {{ $order->ref_number }}</li>
+            <li><a href="{{route('admin.dashboard')}}">پنل ادمین</a></li>
+            <li class="active">لیست سفارشات</li>
         </ol>
     </header>
     <!-- /page title -->
@@ -22,20 +21,24 @@
                 <!-- ------ -->
                 <div class="panel panel-default">
                     <div class="panel-heading panel-heading-transparent">
-                        <strong>محصولات سفارش {{ $order->ref_number }}</strong>
-                        <a href="{{route('profile.order.edit',[$order->id])}}" class="btn btn-xs btn-warning pull-right">لغو و ویرایش سفارش</a>
+                        <strong>سفارشات</strong>
                     </div>
 
                     <div class="panel-body">
                         <table class="table table-hover table-vertical-middle nomargin">
                             <thead>
-                            @include('profile.order.product-columns')
+                            @include('admin.order.columns')
                             </thead>
                             <tbody>
-                            @each('profile.order.product-items' , $order->products , 'product')
+{{--                            @each('admin.order.items' , $orders, 'order')--}}
+
+                            @foreach($orders as $order)
+                                @include('admin.order.items' , ['order'=>$order])
+                            @endforeach
                             </tbody>
                         </table>
                     </div>
+                    {{$orders->links()}}
                 </div>
                 <!-- /----- -->
 
@@ -43,11 +46,9 @@
 
 
         </div>
-
     </div>
 
 
 
 @endsection
-
 

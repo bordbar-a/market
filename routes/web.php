@@ -62,6 +62,17 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'as' => 'admin.', 'mi
     });
     // End Product Route
 
+    // Start Order Route  -    all route begin by :   /admin/order
+    Route::group(['prefix' => 'order', 'namespace' => 'Order', 'as' => 'order.'], function () {
+        Route::get('/', 'OrdersController@all')->name('list');
+        Route::get('/details/{order_id}', 'OrdersController@details')->name('details');
+//        Route::post('/create', 'ProductsController@store')->name('store');
+//        Route::get('/delete/{id}', 'ProductsController@delete')->name('delete');
+//        Route::get('/edit/{id}', 'ProductsController@edit')->name('edit');
+//        Route::post('/update/{id}', 'ProductsController@update')->name('update');
+    });
+    // End Product Route
+
 
 });
 // End Admin Route
@@ -144,7 +155,7 @@ Route::group(['prefix' => 'profile', 'namespace' => 'Profile', 'as' => 'profile.
 
 
 });
-    // End Profile Route
+// End Profile Route
 
 
 

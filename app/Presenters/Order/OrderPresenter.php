@@ -4,6 +4,7 @@
 namespace App\Presenters\Order;
 
 
+use App\Helpers\Number\Number;
 use App\Models\Order;
 use App\Presenters\Contracts\Presenter;
 use App\Presenters\Share\DateConvertor;
@@ -25,6 +26,30 @@ class OrderPresenter extends Presenter
         }
 
         return '<span class="label label-info">نامشخص</span>';
+    }
+
+    public function getPrice()
+    {
+        return Number::numberSeparator($this->entity->price) . ' ریال';
+    }
+
+    public function getTotalDiscount()
+    {
+
+        if ($this->entity->discount_price===0) {
+            return 'این سفارش شامل تخفیف نبوده';
+        }
+        return Number::numberSeparator($this->entity->discount_price) . ' ریال';
+    }
+
+    public function getOrderOwner()
+    {
+        return $this->entity->user->first_name . ' ' . $this->entity->user->last_name;
+    }
+
+    public function getTotalPriceWithoutDiscount()
+    {
+        return Number::numberSeparator($this->entity->price + $this->entity->discount_price);
     }
 
 }

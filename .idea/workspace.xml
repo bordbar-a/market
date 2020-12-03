@@ -5,8 +5,14 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Profile/Order/OrdersController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Profile/Order/OrdersController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Models/Order.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Order.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Providers/AuthServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/AuthServiceProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Presenters/Order/OrderPresenter.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Presenters/Order/OrderPresenter.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Services/Basket/Basket.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Services/Basket/Basket.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Services/Basket/Contracts/BasketContract.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Services/Basket/Contracts/BasketContract.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Services/Basket/Providers/SessionBasketProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Services/Basket/Providers/SessionBasketProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/admin/partials/nav.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/admin/partials/nav.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/profile/order/product-columns.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/profile/order/products/columns.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/profile/order/product-items.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/profile/order/products/items.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/profile/order/products.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/profile/order/products/list.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -166,25 +172,25 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/profile/order" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/admin/order" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="yiiguxing.plugin.translate" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\market\resources\views\admin\order" />
+      <recent name="C:\xampp\htdocs\market\resources\views\admin" />
+      <recent name="C:\xampp\htdocs\market\app\Http\Controllers\Admin" />
+      <recent name="C:\xampp\htdocs\market\resources\views\profile\order" />
+      <recent name="C:\xampp\htdocs\market\resources\views\profile" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\market\resources\views\profile\order\products" />
+      <recent name="C:\xampp\htdocs\market\app\Http\Controllers\Admin\Order" />
       <recent name="C:\xampp\htdocs\market\app\Http\Controllers" />
       <recent name="C:\xampp\htdocs\market\app\Services\Basket" />
       <recent name="C:\xampp\htdocs\market\app\Services\Basket\Facade" />
-      <recent name="C:\xampp\htdocs\market\app\Http\Controllers\Front\Home" />
-      <recent name="C:\xampp\htdocs\market\resources\views\front\partilas" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\xampp\htdocs\market\resources\views\profile\order" />
-      <recent name="C:\xampp\htdocs\market\resources\views\profile" />
-      <recent name="C:\xampp\htdocs\market\resources\views\layouts\profile" />
-      <recent name="C:\xampp\htdocs\market\app\Http\Controllers" />
-      <recent name="C:\xampp\htdocs\market\public\front" />
     </key>
   </component>
   <component name="RunManager" selected="PHPUnit.app">
@@ -265,7 +271,7 @@
       <workItem from="1606757636321" duration="131000" />
       <workItem from="1606798060563" duration="3627000" />
       <workItem from="1606921069718" duration="1683000" />
-      <workItem from="1606969988048" duration="5990000" />
+      <workItem from="1606969988048" duration="18479000" />
     </task>
     <servers />
   </component>
@@ -373,10 +379,10 @@
       <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state x="295" y="74" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1440.860@0.0.1440.860" timestamp="1606234506085" />
-    <state x="416" y="167" width="607" height="526" key="find.popup" timestamp="1605619230118">
+    <state x="416" y="167" width="737" height="596" key="find.popup" timestamp="1606979731972">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state x="416" y="167" width="607" height="526" key="find.popup/0.0.1440.860@0.0.1440.860" timestamp="1605619230118" />
+    <state x="416" y="167" width="737" height="596" key="find.popup/0.0.1440.860@0.0.1440.860" timestamp="1606979731972" />
     <state x="461" y="72" key="refactoring.ChangeSignatureDialog" timestamp="1604417009670">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
@@ -385,10 +391,10 @@
       <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state x="376" y="195" key="run.anything.popup/0.0.1440.860@0.0.1440.860" timestamp="1606974907256" />
-    <state x="383" y="180" width="672" height="678" key="search.everywhere.popup" timestamp="1606978478708">
+    <state x="383" y="180" width="672" height="678" key="search.everywhere.popup" timestamp="1606991528338">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state x="383" y="180" width="672" height="678" key="search.everywhere.popup/0.0.1440.860@0.0.1440.860" timestamp="1606978478708" />
+    <state x="383" y="180" width="672" height="678" key="search.everywhere.popup/0.0.1440.860@0.0.1440.860" timestamp="1606991528338" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

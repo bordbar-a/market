@@ -11,7 +11,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Order extends Model
 {
-    use BelongsToUser, Presentable ,SoftDeletes;
+    use BelongsToUser, Presentable, SoftDeletes;
     public $presenter = OrderPresenter::class;
 
     const PENDING = 0;
@@ -59,6 +59,7 @@ class Order extends Model
         }
         return $this->status == $status;
     }
+
     public function setStatus(int $status)
     {
         $statuses = [
@@ -72,6 +73,8 @@ class Order extends Model
         $this->status = $status;
         $this->save();
     }
+
+
 
 
     /*

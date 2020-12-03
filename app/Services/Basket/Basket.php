@@ -15,6 +15,7 @@ use Illuminate\Support\Facades\Facade;
  * @method static Basket count()
  * @method static Basket forceSave($item)
  * @method static Basket products()
+ * @method static Basket totalDiscount()
  *
  *
  */

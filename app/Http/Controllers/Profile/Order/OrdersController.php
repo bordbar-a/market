@@ -29,12 +29,12 @@ class OrdersController extends ProfileBaseController
         $order = new Order();
         $order->user_id = Auth::user()->id;
         $order->price = Basket::totalWithDiscount();
+        $order->discount_price = Basket::totalDiscount();
         $order->ref_number = Str::random(30);
 
         $order->save();
 
         $result = $order->products()->saveMany($items, $this->createPivotOrderField());
-
         Basket::reset();
         return redirect()->route('profile.order.list');
     }
@@ -55,7 +55,7 @@ class OrdersController extends ProfileBaseController
             return redirect()->route('profile.order.list');
         }
 
-        return view('profile.order.products', compact('order'));
+        return view('profile.order.products.list', compact('order'));
     }
 
 

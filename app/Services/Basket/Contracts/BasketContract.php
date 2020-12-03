@@ -19,9 +19,11 @@ abstract class BasketContract
 
     public abstract function remove(int $item_id);
 
-    public abstract function totalWithDiscount(): int ;
+    public abstract function totalWithDiscount(): int;
 
-    public abstract function totalWithoutDiscount():int;
+    public abstract function totalWithoutDiscount(): int;
+
+    public abstract function totalDiscount(): int;
 
     public abstract function reset();
 

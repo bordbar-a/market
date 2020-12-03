@@ -66,6 +66,10 @@ class SessionBasketProvider extends BasketContract
         return BasketItem::total($items);
     }
 
+    public function totalDiscount(): int
+    {
+        return $this->totalWithoutDiscount() - $this->totalWithDiscount();
+    }
 
     public function reset()
     {

@@ -35,6 +35,15 @@
                 <li><a href="{{route('admin.product.create')}}">اضافه کردن محصول</a></li>
             </ul>
         </li>
+        <li>
+            <a href="#">
+                <i class="fa fa-menu-arrow pull-right"></i>
+                <i class="main-icon fa fa-user"></i> <span>سفارشات</span>
+            </a>
+            <ul><!-- submenus -->
+                <li><a href="{{route('admin.order.list')}}">لیست همه سفارشات</a></li>
+            </ul>
+        </li>
     </ul>
 
     <!-- SECOND MAIN LIST -->
