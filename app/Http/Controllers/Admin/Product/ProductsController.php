@@ -67,11 +67,8 @@ class ProductsController extends AdminBaseController
     }
 
 
-    public function delete(Request $request, $product_id)
+    public function delete(Request $request, $product)
     {
-        $product = Product::find($product_id);
-
-
         if ($product){
             try {
                 $product->delete();
@@ -81,15 +78,14 @@ class ProductsController extends AdminBaseController
                 FlashMessages::warning('محصول مورد نظر حذف نشد');
             }
         }
-
         return redirect()->route('admin.product.list');
     }
 
 
-    public function edit(Request $request, $product_id)
+    public function edit(Request $request, $product)
     {
 
-        $product = Product::with('categories')->find($product_id);
+        $product = Product::with('categories')->find($product->id);
         if($product){
 
             $product->load('categories');
@@ -102,11 +98,9 @@ class ProductsController extends AdminBaseController
     }
 
 
-    public function update(ProductCreateRequest $request , $product_id)
+    public function update(ProductCreateRequest $request , $product)
     {
 
-
-        $product = Product::find($product_id);
         if($product){
             $data = [
                 'title' => $request->input('title'),

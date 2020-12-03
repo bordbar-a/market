@@ -53,16 +53,11 @@ class CategoriesController extends AdminBaseController
     }
 
 
-    public function delete(Request $request, $category_id)
+    public function delete(Request $request, $category)
     {
 
 
-
-
-        $category = Category::find($category_id);
-
-
-        if ($category){
+        if ($category instanceof Category){
             try {
                 $category->delete();
                 FlashMessages::success('دسته‌بندی مورد نظر حذف شد');
@@ -76,10 +71,9 @@ class CategoriesController extends AdminBaseController
     }
 
 
-    public function edit(Request $request, $category_id)
+    public function edit(Request $request, $category)
     {
 
-        $category = Category::find($category_id);
         if($category){
 
             $category->load('parent');
@@ -91,10 +85,8 @@ class CategoriesController extends AdminBaseController
     }
 
 
-   public function update(CategoryCreateRequest $request , $category_id)
+   public function update(CategoryCreateRequest $request , $category)
     {
-        $category = Category::find($category_id);
-
         if($category){
             $category->title = $request->input('title');
             $category->parent_id = $request->input('parentId');
@@ -107,13 +99,6 @@ class CategoriesController extends AdminBaseController
         return back();
 
     }
-
-
-    public function searchByAjax(Request $request)
-    {
-        return 'salam';
-    }
-
 
 
 }

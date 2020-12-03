@@ -22,9 +22,9 @@ class OrdersController extends AdminBaseController
     }
 
 
-    public function details($order_id)
+    public function details($order)
     {
-        $order = Order::withTrashed()->with('products')->find($order_id);
+        $order = Order::withTrashed()->with('products')->find($order->id);
         return view('admin.order.products.list' , compact('order'));
     }
 }

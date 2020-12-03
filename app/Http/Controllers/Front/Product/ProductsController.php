@@ -10,13 +10,12 @@ class ProductsController extends Controller
 {
 
 
-    public function item(Request $request, $product_id)
+    public function item(Request $request, $product)
     {
-
-        $product = Product::find($product_id);
 
         if ($product instanceof Product) {
             return view('front.product.item', compact('product'));
         }
+        return redirect()->route('front.home');
     }
 }

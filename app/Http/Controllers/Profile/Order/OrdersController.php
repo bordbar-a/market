@@ -81,9 +81,8 @@ class OrdersController extends ProfileBaseController
     }
 
 
-    public function delete($order_id)
+    public function delete($order)
     {
-        $order = Order::find($order_id);
 
         if (!$this->userHasThisOrder($order)) {
             return redirect()->route('profile.order.list');

@@ -33,10 +33,9 @@ class PersonalController extends ProfileBaseController
     }
 
 
-    public function userImage($user_id)
+    public function userImage($user)
     {
 
-        $user = User::find($user_id);
         $loginUser = Auth::user();
         if (!$user || $loginUser->id != $user->id) {
             return abort(404);
@@ -82,10 +81,7 @@ class PersonalController extends ProfileBaseController
     }
 
 
-    public function deleteProfileImage($user_id){
-
-
-        $user = User::find($user_id);
+    public function deleteProfileImage($user){
 
         if($user->id != Auth::user()->id){
             return abort(403);
@@ -99,9 +95,8 @@ class PersonalController extends ProfileBaseController
 
 
 
-    public function changePassword($user_id)
+    public function changePassword($user)
     {
-        $user = User::find($user_id);
 
         if($user->id ==Auth::user()->id){
             return view('profile.personal.changePassword');
@@ -111,10 +106,8 @@ class PersonalController extends ProfileBaseController
 
     }
 
-    public function doChangePassword(ChangeUserPasswordRequest $request , $user_id)
+    public function doChangePassword(ChangeUserPasswordRequest $request , $user)
     {
-
-        $user = User::find($user_id);
 
         if(!Hash::check($request->input('password') , $user->password)){
 

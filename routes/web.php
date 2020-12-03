@@ -32,9 +32,9 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'as' => 'admin.', 'mi
         Route::get('/', 'UsersController@all')->name('list');
         Route::get('/create', 'UsersController@create')->name('create');
         Route::post('/create', 'UsersController@store')->name('store');
-        Route::get('/delete/{id}', 'UsersController@delete')->name('delete');
-        Route::get('/edit/{id}', 'UsersController@edit')->name('edit');
-        Route::post('/update/{id}', 'UsersController@update')->name('update');
+        Route::get('/delete/{user}', 'UsersController@delete')->name('delete');
+        Route::get('/edit/{user}', 'UsersController@edit')->name('edit');
+        Route::post('/update/{user}', 'UsersController@update')->name('update');
     });
     // End User Route
 
@@ -44,9 +44,9 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'as' => 'admin.', 'mi
         Route::get('/', 'CategoriesController@all')->name('list');
         Route::get('/create', 'CategoriesController@create')->name('create');
         Route::post('/create', 'CategoriesController@store')->name('store');
-        Route::get('/delete/{id}', 'CategoriesController@delete')->name('delete');
-        Route::get('/edit/{id}', 'CategoriesController@edit')->name('edit');
-        Route::post('/update/{id}', 'CategoriesController@update')->name('update');
+        Route::get('/delete/{category}', 'CategoriesController@delete')->name('delete');
+        Route::get('/edit/{category}', 'CategoriesController@edit')->name('edit');
+        Route::post('/update/{category}', 'CategoriesController@update')->name('update');
     });
     // End Category Route
 
@@ -56,16 +56,16 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'as' => 'admin.', 'mi
         Route::get('/', 'ProductsController@all')->name('list');
         Route::get('/create', 'ProductsController@create')->name('create');
         Route::post('/create', 'ProductsController@store')->name('store');
-        Route::get('/delete/{id}', 'ProductsController@delete')->name('delete');
-        Route::get('/edit/{id}', 'ProductsController@edit')->name('edit');
-        Route::post('/update/{id}', 'ProductsController@update')->name('update');
+        Route::get('/delete/{product}', 'ProductsController@delete')->name('delete');
+        Route::get('/edit/{product}', 'ProductsController@edit')->name('edit');
+        Route::post('/update/{product}', 'ProductsController@update')->name('update');
     });
     // End Product Route
 
     // Start Order Route  -    all route begin by :   /admin/order
     Route::group(['prefix' => 'order', 'namespace' => 'Order', 'as' => 'order.'], function () {
         Route::get('/', 'OrdersController@all')->name('list');
-        Route::get('/details/{order_id}', 'OrdersController@details')->name('details');
+        Route::get('/details/{order}', 'OrdersController@details')->name('details');
 //        Route::post('/create', 'ProductsController@store')->name('store');
 //        Route::get('/delete/{id}', 'ProductsController@delete')->name('delete');
 //        Route::get('/edit/{id}', 'ProductsController@edit')->name('edit');
@@ -108,7 +108,7 @@ Route::group(['namespace' => 'Front', 'as' => 'front.'], function () {
 
     // Start Product Route  -    all route begin by :   /front/product
     Route::group(['prefix' => 'product', 'namespace' => 'Product', 'as' => 'product.'], function () {
-        Route::get('/item/{product_id}', 'ProductsController@item')->name('item');
+        Route::get('/item/{product}', 'ProductsController@item')->name('item');
 
     });
     // End Product Route
@@ -132,10 +132,10 @@ Route::group(['prefix' => 'profile', 'namespace' => 'Profile', 'as' => 'profile.
     Route::group(['prefix' => 'personal', 'namespace' => 'Personal', 'as' => 'personal.'], function () {
         Route::get('/', 'PersonalController@index')->name('index');
         Route::post('/update', 'PersonalController@update')->name('update');
-        Route::get('/userImage/{user_id}', 'PersonalController@userImage')->name('userImage');
-        Route::get('/deleteProfileImage/{user_id}', 'PersonalController@deleteProfileImage')->name('deleteProfileImage');
-        Route::get('/changePassword/{user_id}', 'PersonalController@changePassword')->name('changePassword');
-        Route::post('/changePassword/{user_id}', 'PersonalController@doChangePassword')->name('changePassword');
+        Route::get('/userImage/{user}', 'PersonalController@userImage')->name('userImage');
+        Route::get('/deleteProfileImage/{user}', 'PersonalController@deleteProfileImage')->name('deleteProfileImage');
+        Route::get('/changePassword/{user}', 'PersonalController@changePassword')->name('changePassword');
+        Route::post('/changePassword/{user}', 'PersonalController@doChangePassword')->name('changePassword');
 
     });
     // End Personal Route
@@ -146,7 +146,7 @@ Route::group(['prefix' => 'profile', 'namespace' => 'Profile', 'as' => 'profile.
         Route::get('/register', 'OrdersController@register')->name('register');
         Route::get('/products/{order_id}', 'OrdersController@products')->name('products');
         Route::get('/edit/{order_id}', 'OrdersController@edit')->name('edit');
-        Route::get('/delete/{order_id}', 'OrdersController@delete')->name('delete');
+        Route::get('/delete/{order}', 'OrdersController@delete')->name('delete');
     });
     // End Order Route
 

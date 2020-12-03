@@ -58,11 +58,9 @@ class UsersController extends AdminBaseController
     }
 
 
-    public function delete(Request $request, $user_id)
+    public function delete(Request $request, $user)
     {
-        $user = User::find($user_id);
-
-        if (!$user) {
+        if (!$user instanceof User) {
             FlashMessages::error('کاربر حذف نشد');
             return redirect()->route('admin.user.list');
         }
@@ -75,10 +73,10 @@ class UsersController extends AdminBaseController
     }
 
 
-    public function edit(Request $request, $user_id)
+    public function edit(Request $request, $user)
     {
-        $user = User::find($user_id);
-        if (!$user) {
+
+        if (!$user instanceof User) {
             FlashMessages::error('کاربر مورد نظر یافت نشد');
             return view('admin.users.list');
         }
@@ -90,11 +88,10 @@ class UsersController extends AdminBaseController
     }
 
 
-    public function update(UserEditRequest $request, $user_id)
+    public function update(UserEditRequest $request, $user)
     {
-        $user = User::find($user_id);
 
-        if (!$user) {
+        if (!$user instanceof User) {
             FlashMessages::error('کاربر مورد نظر پیدا نشد');
             return redirect()->route('admin.user.list');
         }

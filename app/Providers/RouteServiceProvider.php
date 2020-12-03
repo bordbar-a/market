@@ -2,6 +2,10 @@
 
 namespace App\Providers;
 
+use App\Models\Category;
+use App\Models\Order;
+use App\Models\Product;
+use App\Models\User;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
 use Illuminate\Support\Facades\Route;
 
@@ -33,6 +37,11 @@ class RouteServiceProvider extends ServiceProvider
         //
 
         parent::boot();
+        Route::model('user' , User::class);
+        Route::model('category' , Category::class);
+        Route::model('product' , Product::class);
+        Route::model('order' , Order::class);
+
     }
 
     /**
