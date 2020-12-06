@@ -3,11 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="d4527880-cb0d-413e-8591-1ff27fa185c3" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/AdminMiddleware.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/AdminMiddleware.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/admin/partials/nav.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/admin/partials/nav.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/profile/partials/nav.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/profile/partials/nav.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/profile/personal/changePassword.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/profile/personal/changePassword.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/front/partials/products.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/front/partials/products.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/front/product/item.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/front/product/item.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -269,7 +267,7 @@
       <workItem from="1607004906109" duration="2803000" />
       <workItem from="1607083445133" duration="318000" />
       <workItem from="1607144340018" duration="9337000" />
-      <workItem from="1607249122415" duration="4648000" />
+      <workItem from="1607249122415" duration="15310000" />
     </task>
     <servers />
   </component>
@@ -377,10 +375,10 @@
       <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state x="295" y="74" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1440.860@0.0.1440.860" timestamp="1606234506085" />
-    <state x="416" y="167" width="737" height="596" key="find.popup" timestamp="1607186859879">
+    <state x="416" y="167" width="737" height="596" key="find.popup" timestamp="1607263139692">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state x="416" y="167" width="737" height="596" key="find.popup/0.0.1440.860@0.0.1440.860" timestamp="1607186859879" />
+    <state x="416" y="167" width="737" height="596" key="find.popup/0.0.1440.860@0.0.1440.860" timestamp="1607263139692" />
     <state x="461" y="72" key="refactoring.ChangeSignatureDialog" timestamp="1604417009670">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
@@ -389,10 +387,10 @@
       <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state x="376" y="195" key="run.anything.popup/0.0.1440.860@0.0.1440.860" timestamp="1606974907256" />
-    <state x="549" y="245" width="672" height="678" key="search.everywhere.popup" timestamp="1607187441559">
+    <state x="549" y="245" width="672" height="678" key="search.everywhere.popup" timestamp="1607274592586">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state x="549" y="245" width="672" height="678" key="search.everywhere.popup/0.0.1440.860@0.0.1440.860" timestamp="1607187441559" />
+    <state x="549" y="245" width="672" height="678" key="search.everywhere.popup/0.0.1440.860@0.0.1440.860" timestamp="1607274592586" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

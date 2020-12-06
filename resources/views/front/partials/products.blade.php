@@ -80,75 +80,7 @@
             <div class="col-sm-3 col-sm-pull-9">
 
                 <!-- CATEGORIES -->
-                <div class="side-nav margin-bottom-60">
-
-                    <div class="side-nav-head">
-                        <button class="fa fa-bars"></button>
-                        <h4>دسته بندی ها</h4>
-                    </div>
-
-                    <ul class="list-group list-group-bordered list-group-noicon uppercase">
-                        <li class="list-group-item active">
-                            <a class="dropdown-toggle" href="#">پوشاک بانوان</a>
-                            <ul>
-                                <li><a href="#"><span class="size-11 text-muted pull-right">(123)</span> تیشرت و
-                                        پولوشرت</a></li>
-                                <li class="active"><a href="#"><span
-                                            class="size-11 text-muted pull-right">(331)</span> پوشاک ورزشی</a></li>
-                                <li><a href="#"><span class="size-11 text-muted pull-right">(234)</span> ژاکت و لباس
-                                        گرم</a></li>
-                                <li><a href="#"><span class="size-11 text-muted pull-right">(234)</span> کیف و
-                                        کفش</a></li>
-                            </ul>
-                        </li>
-                        <li class="list-group-item">
-                            <a class="dropdown-toggle" href="#">پوشاک آقایان</a>
-                            <ul>
-                                <li><a href="#"><span class="size-11 text-muted pull-right">(88)</span> تیشرت و
-                                        پولوشرت</a></li>
-                                <li><a href="#"><span class="size-11 text-muted pull-right">(67)</span> پوشاک ورزشی</a>
-                                </li>
-                                <li><a href="#"><span class="size-11 text-muted pull-right">(32)</span> ژاکت و لباس
-                                        گرم</a></li>
-                                <li class="active"><a href="#"><span
-                                            class="size-11 text-muted pull-right">(78)</span> کیف و کفش</a></li>
-                            </ul>
-                        </li>
-                        <li class="list-group-item">
-                            <a class="dropdown-toggle" href="#">پوشاک کودکان</a>
-                            <ul>
-                                <li><a href="#"><span class="size-11 text-muted pull-right">(23)</span> تیشرت و
-                                        پولوشرت</a></li>
-                                <li><a href="#"><span class="size-11 text-muted pull-right">(34)</span> پوشاک ورزشی</a>
-                                </li>
-                                <li class="active"><a href="#"><span
-                                            class="size-11 text-muted pull-right">(21)</span> ژاکت و لباس گرم</a>
-                                </li>
-                                <li><a href="#"><span class="size-11 text-muted pull-right">(88)</span> کیف و
-                                        کفش</a></li>
-                            </ul>
-                        </li>
-                        <li class="list-group-item">
-                            <a class="dropdown-toggle" href="#">لوازم الکتریکی</a>
-                            <ul>
-                                <li><a href="#"><span class="size-11 text-muted pull-right">(88)</span> موبایل</a>
-                                </li>
-                                <li><a href="#"><span class="size-11 text-muted pull-right">(22)</span> لپ تاپ</a>
-                                </li>
-                                <li><a href="#"><span class="size-11 text-muted pull-right">(31)</span> کنسول
-                                        بازی</a></li>
-                                <li class="active"><a href="#"><span
-                                            class="size-11 text-muted pull-right">(18)</span> لوازم خانگی</a></li>
-                            </ul>
-                        </li>
-                        <li class="list-group-item"><a href="#"><span
-                                    class="size-11 text-muted pull-right">(189)</span> لوازم جانبی</a></li>
-                        <li class="list-group-item"><a href="#"><span
-                                    class="size-11 text-muted pull-right">(61)</span> انواع عینک</a></li>
-
-                    </ul>
-
-                </div>
+              @widget('Front\Categories\Category')
                 <!-- /CATEGORIES -->
 
                 <!-- BRANDS -->
