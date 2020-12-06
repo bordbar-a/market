@@ -66,12 +66,16 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'as' => 'admin.', 'mi
     Route::group(['prefix' => 'order', 'namespace' => 'Order', 'as' => 'order.'], function () {
         Route::get('/', 'OrdersController@all')->name('list');
         Route::get('/details/{order}', 'OrdersController@details')->name('details');
-//        Route::post('/create', 'ProductsController@store')->name('store');
-//        Route::get('/delete/{id}', 'ProductsController@delete')->name('delete');
-//        Route::get('/edit/{id}', 'ProductsController@edit')->name('edit');
-//        Route::post('/update/{id}', 'ProductsController@update')->name('update');
     });
-    // End Product Route
+    // End Order Route
+
+
+    // Start Setting Route  -    all route begin by :   /admin/setting
+    Route::group(['prefix' => 'setting', 'namespace' => 'Setting', 'as' => 'setting.'], function () {
+        Route::get('/', 'SettingsController@all')->name('list');
+        Route::post('/save', 'SettingsController@save')->name('save');
+    });
+    // End Setting Route
 
 
 });

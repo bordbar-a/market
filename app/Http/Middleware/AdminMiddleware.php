@@ -23,5 +23,7 @@ class AdminMiddleware
            return redirect()->route('profile.dashboard');
         }
         return $next($request);
+
     }
+
 }

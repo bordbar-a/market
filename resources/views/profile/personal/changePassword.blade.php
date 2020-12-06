@@ -32,7 +32,7 @@
                             @each('messages.errors' , $errors->all() , 'error')
                         @endif
                         <form
-                            action="{{route('profile.personal.changePassword' , ['user_id'=>\Illuminate\Support\Facades\Auth::user()->id])}}"
+                            action="{{route('profile.personal.changePassword' , \Illuminate\Support\Facades\Auth::user()->id)}}"
                             method="post" enctype="multipart/form-data">
                             <fieldset>
                                 @csrf

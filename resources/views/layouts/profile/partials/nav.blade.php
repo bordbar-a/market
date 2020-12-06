@@ -19,7 +19,7 @@
             </a>
             <ul><!-- submenus -->
                 <li><a href="{{route('profile.personal.index')}}">اطلاعات شخصی</a></li>
-                <li><a href="{{route('profile.personal.changePassword' , ['user_id'=>\Illuminate\Support\Facades\Auth::user()])}}">تغییر رمز عبور</a></li>
+                <li><a href="{{route('profile.personal.changePassword' , ['user'=>\Illuminate\Support\Facades\Auth::user()])}}">تغییر رمز عبور</a></li>
             </ul>
         </li>
 
