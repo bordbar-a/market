@@ -3,10 +3,10 @@
 
 namespace App\Presenters\Share;
 
-
+use App\Helpers\PersianDate\PersianDate;
 use Hekmatinasser\Verta\Verta;
 
-trait DateConvertor
+trait DateConverter
 {
 
     public function getPersianDate($date)
@@ -15,8 +15,7 @@ trait DateConvertor
         if(is_null($date)){
             return 'نامشخص';
         }
-        $v = new Verta($date);
-        $v->timezone = 'Asia/Tehran';
+        $v = new PersianDate($date);
         return $v->format('j-%B-Y----- H:i');
 
     }

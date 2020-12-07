@@ -5,8 +5,8 @@
     <td>{{$product->price}}</td>
     <td>{{$product->discount}}</td>
     <td>{{$product->sell_count}}</td>
-    <td>{{$product->created_at}}</td>
-    <td>{{$product->updated_at}}</td>
+    <td>{{$product->present()->getCreatedAt}}</td>
+    <td>{{$product->present()->getUpdatedAt}}</td>
 
 
     <td>

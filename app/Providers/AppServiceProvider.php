@@ -2,6 +2,8 @@
 
 namespace App\Providers;
 
+use App\Helpers\Setting\SettingHelper;
+use App\Models\Setting;
 use App\Services\Basket\Providers\SessionBasketProvider;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\ServiceProvider;
@@ -17,6 +19,10 @@ class AppServiceProvider extends ServiceProvider
     {
         $this->app->singleton('basket', function ($app){
             return new SessionBasketProvider();
+        });
+
+        $this->app->singleton('setting', function ($app){
+            return new SettingHelper();
         });
     }
 

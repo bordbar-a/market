@@ -82,7 +82,7 @@
 @yield('content')
 
     <!-- FOOTER -->
-@include('layouts.front.partials.footer')
+@widget('Front\Footer\Footer')
 <!-- /FOOTER -->
 
 

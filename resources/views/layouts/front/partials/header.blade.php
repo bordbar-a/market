@@ -68,7 +68,7 @@
                 <!-- /SEARCH -->
 
                 <!-- QUICK SHOP CART -->
-           @widget('Front\Basket')
+           @widget('Front\Basket\Basket')
                 <!-- /QUICK SHOP CART -->
 
             </ul>

@@ -7,12 +7,12 @@ namespace App\Presenters\Order;
 use App\Helpers\Number\Number;
 use App\Models\Order;
 use App\Presenters\Contracts\Presenter;
-use App\Presenters\Share\DateConvertor;
+use App\Presenters\Share\DateConverter;
 
 class OrderPresenter extends Presenter
 {
 
-    use DateConvertor;
+    use DateConverter;
 
     public function getStatus()
     {

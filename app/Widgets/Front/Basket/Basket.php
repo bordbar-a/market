@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Widgets\Front;
+namespace App\Widgets\Front\Basket;
 
 use App\Helpers\Number\Number;
 use App\Services\Basket\Basket as BasketService;

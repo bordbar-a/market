@@ -3,9 +3,19 @@
   <component name="ChangeListManager">
     <list default="true" id="d4527880-cb0d-413e-8591-1ff27fa185c3" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/front/partials/products.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/front/partials/products.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/front/product/item.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/front/product/item.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/Product/ProductsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/Product/ProductsController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Presenters/Order/OrderPresenter.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Presenters/Order/OrderPresenter.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Presenters/Product/ProductPresenter.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Presenters/Product/ProductPresenter.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Presenters/Share/DateConvertor.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Presenters/Share/DateConverter.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Widgets/Front/Basket.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Widgets/Front/Basket/Basket.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Widgets/Front/BasketView.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Widgets/Front/Basket/BasketView.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Widgets/Front/Categories/Category.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Widgets/Front/Categories/Category.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/product/items.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/product/items.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/front/base.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/front/base.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/front/partials/footer.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/front/partials/header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/front/partials/header.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -169,19 +179,19 @@
     <property name="settings.editor.selected.configurable" value="yiiguxing.plugin.translate" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\xampp\htdocs\market\app\Http\Controllers\Admin\Option" />
-      <recent name="C:\xampp\htdocs\market\resources\views\profile\order\products" />
-      <recent name="C:\xampp\htdocs\market\app\Http\Controllers\Admin\Order" />
-      <recent name="C:\xampp\htdocs\market\app\Http\Controllers" />
-      <recent name="C:\xampp\htdocs\market\app\Services\Basket" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\xampp\htdocs\market\resources\views\admin" />
       <recent name="C:\xampp\htdocs\market\resources\views\admin\order" />
       <recent name="C:\xampp\htdocs\market\app\Http\Controllers\Admin" />
       <recent name="C:\xampp\htdocs\market\resources\views\profile\order" />
       <recent name="C:\xampp\htdocs\market\resources\views\profile" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\market\app\Widgets\Front\Basket" />
+      <recent name="C:\xampp\htdocs\market\app\Http\Controllers\Admin\Option" />
+      <recent name="C:\xampp\htdocs\market\resources\views\profile\order\products" />
+      <recent name="C:\xampp\htdocs\market\app\Http\Controllers\Admin\Order" />
+      <recent name="C:\xampp\htdocs\market\app\Http\Controllers" />
     </key>
   </component>
   <component name="RunManager" selected="PHPUnit.app">
@@ -267,7 +277,8 @@
       <workItem from="1607004906109" duration="2803000" />
       <workItem from="1607083445133" duration="318000" />
       <workItem from="1607144340018" duration="9337000" />
-      <workItem from="1607249122415" duration="15310000" />
+      <workItem from="1607249122415" duration="15316000" />
+      <workItem from="1607317838441" duration="7529000" />
     </task>
     <servers />
   </component>
@@ -295,14 +306,14 @@
       <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state x="525" y="145" key="#com.intellij.ide.util.MemberChooser/0.0.1440.860@0.0.1440.860" timestamp="1604474638312" />
-    <state x="365" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1606375363563">
+    <state x="365" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1607348192428">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state x="365" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1440.860@0.0.1440.860" timestamp="1606375363563" />
-    <state x="450" y="184" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1606379297507">
+    <state x="365" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1440.860@0.0.1440.860" timestamp="1607348192428" />
+    <state x="450" y="184" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1607348021613">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state x="450" y="184" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1440.860@0.0.1440.860" timestamp="1606379297507" />
+    <state x="450" y="184" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1440.860@0.0.1440.860" timestamp="1607348021613" />
     <state x="500" y="355" key="#com.jetbrains.php.lang.intentions.PhpImportClassDialog#" timestamp="1606375386753">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
@@ -355,22 +366,22 @@
       <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state width="1397" height="276" key="GridCell.Tab.1.right/0.0.1440.860@0.0.1440.860" timestamp="1605470280430" />
-    <state x="508" y="244" key="NewPhpClassDialog" timestamp="1606379758758">
+    <state x="508" y="244" key="NewPhpClassDialog" timestamp="1607348588005">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state x="508" y="244" key="NewPhpClassDialog/0.0.1440.860@0.0.1440.860" timestamp="1606379758758" />
-    <state x="554" y="353" key="NewPhpFileDialog" timestamp="1604734638893">
+    <state x="508" y="244" key="NewPhpClassDialog/0.0.1440.860@0.0.1440.860" timestamp="1607348588005" />
+    <state x="554" y="353" key="NewPhpFileDialog" timestamp="1607345105859">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state x="554" y="353" key="NewPhpFileDialog/0.0.1440.860@0.0.1440.860" timestamp="1604734638893" />
+    <state x="554" y="353" key="NewPhpFileDialog/0.0.1440.860@0.0.1440.860" timestamp="1607345105859" />
     <state x="221" y="72" key="SettingsEditor" timestamp="1604729020213">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state x="221" y="72" key="SettingsEditor/0.0.1440.860@0.0.1440.860" timestamp="1604729020213" />
-    <state x="416" y="253" key="com.intellij.ide.util.TipDialog" timestamp="1607249686493">
+    <state x="416" y="253" key="com.intellij.ide.util.TipDialog" timestamp="1607339461264">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state x="416" y="253" key="com.intellij.ide.util.TipDialog/0.0.1440.860@0.0.1440.860" timestamp="1607249686493" />
+    <state x="416" y="253" key="com.intellij.ide.util.TipDialog/0.0.1440.860@0.0.1440.860" timestamp="1607339461264" />
     <state x="295" y="74" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1606234506085">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
@@ -387,10 +398,10 @@
       <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state x="376" y="195" key="run.anything.popup/0.0.1440.860@0.0.1440.860" timestamp="1606974907256" />
-    <state x="549" y="245" width="672" height="678" key="search.everywhere.popup" timestamp="1607274592586">
+    <state x="549" y="245" width="672" height="678" key="search.everywhere.popup" timestamp="1607349215917">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state x="549" y="245" width="672" height="678" key="search.everywhere.popup/0.0.1440.860@0.0.1440.860" timestamp="1607274592586" />
+    <state x="549" y="245" width="672" height="678" key="search.everywhere.popup/0.0.1440.860@0.0.1440.860" timestamp="1607349215917" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

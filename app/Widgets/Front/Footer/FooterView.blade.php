@@ -9,41 +9,43 @@
                 <!-- Footer Logo -->
                 <img class="footer-logo" src="/front/images/logo-footer.png" alt=""/>
 
-                <p>
-                    با استفاده از پوسته فروشگاه پکیج "اسمارتی" صاحب یک فروشگاه سبک ، زیبا که توام با طراحی به روز و
-                    امکانات درجه یک است ، شوید.
-                </p>
+                <p>{{getSetting('description_in_footer')}}</p>
 
-                <h2>(800) 123-4567</h2>
+                <h2>{{getSetting('phone_number')}}</h2>
 
                 <!-- Social Icons -->
                 <div class="clearfix">
 
-                    <a href="#" class="social-icon social-icon-sm social-icon-border social-facebook pull-left"
+                    <a href="{{getSetting('facebook_address')}}"
+                       class="social-icon social-icon-sm social-icon-border social-facebook pull-left"
                        data-toggle="tooltip" data-placement="top" title="فیسبوک">
                         <i class="icon-facebook"></i>
                         <i class="icon-facebook"></i>
                     </a>
 
-                    <a href="#" class="social-icon social-icon-sm social-icon-border social-twitter pull-left"
+                    <a href="{{getSetting('twitter_address')}}"
+                       class="social-icon social-icon-sm social-icon-border social-twitter pull-left"
                        data-toggle="tooltip" data-placement="top" title="توئیتر">
                         <i class="icon-twitter"></i>
                         <i class="icon-twitter"></i>
                     </a>
 
-                    <a href="#" class="social-icon social-icon-sm social-icon-border social-gplus pull-left"
+                    <a href="{{getSetting('googleplus_address')}}"
+                       class="social-icon social-icon-sm social-icon-border social-gplus pull-left"
                        data-toggle="tooltip" data-placement="top" title="گوگل پلاس">
                         <i class="icon-gplus"></i>
                         <i class="icon-gplus"></i>
                     </a>
 
-                    <a href="#" class="social-icon social-icon-sm social-icon-border social-linkedin pull-left"
+                    <a href="{{getSetting('linkedin_address')}}"
+                       class="social-icon social-icon-sm social-icon-border social-linkedin pull-left"
                        data-toggle="tooltip" data-placement="top" title="لینکداین">
                         <i class="icon-linkedin"></i>
                         <i class="icon-linkedin"></i>
                     </a>
 
-                    <a href="#" class="social-icon social-icon-sm social-icon-border social-rss pull-left"
+                    <a href="{{getSetting('rss')}}"
+                       class="social-icon social-icon-sm social-icon-border social-rss pull-left"
                        data-toggle="tooltip" data-placement="top" title="Rss">
                         <i class="icon-rss"></i>
                         <i class="icon-rss"></i>
@@ -61,24 +63,14 @@
                 <div class="row">
 
                     <div class="col-md-5 hidden-sm hidden-xs">
-                        <h4 class="letter-spacing-1">آخرین اخبار فروشگاه</h4>
+                        <h4 class="letter-spacing-1">آخرین محصولات</h4>
                         <ul class="list-unstyled footer-list half-paddings">
-                            <li>
-                                <a class="block" href="#">لورم ایپسوم یک متن ساختگی است</a>
-                                <small>دوشنبه 1396/08/02</small>
-                            </li>
-                            <li>
-                                <a class="block" href="#">لورم ایپسوم یک متن ساختگی است</a>
-                                <small>دوشنبه 1396/08/02</small>
-                            </li>
-                            <li>
-                                <a class="block" href="#">لورم ایپسوم یک متن ساختگی است</a>
-                                <small>دوشنبه 1396/08/02</small>
-                            </li>
-                            <li>
-                                <a class="block" href="#">لورم ایپسوم یک متن ساختگی است</a>
-                                <small>دوشنبه 1396/08/02</small>
-                            </li>
+                            @foreach($data['products'] as $product)
+                                <li>
+                                    <a class="block" href="{{route('front.product.item',$product->id)}}">{{$product->title}}</a>
+                                    <small>{{$product->present()->getUpdatedAtInFooter()}}</small>
+                                </li>
+                            @endforeach
                         </ul>
                     </div>
 
@@ -124,7 +116,7 @@
                 <li>&bull;</li>
                 <li><a href="#">حریم خصوصی</a></li>
             </ul>
-            &copy; تمامی حقوق برای وب سایت اسمارتی محفوظ است - 1396
+            {!! getSetting('footer_copyright') !!}
         </div>
     </div>
 

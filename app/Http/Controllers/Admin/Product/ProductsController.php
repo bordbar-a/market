@@ -107,7 +107,7 @@ class ProductsController extends AdminBaseController
                 'description' => $request->input('description'),
                 'price' => $request->input('price'),
                 'discount' => $request->input('discount')?:config('product.basic_discount'),
-                'user_id' => 2,
+                'user_id' => Auth::user()->id,
 
             ];
             $categories =$this->addNewCategoryItem($request->input('categories'));
