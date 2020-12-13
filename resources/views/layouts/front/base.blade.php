@@ -75,15 +75,15 @@
 <!-- /Top Bar -->
 
     <!-- HEADER -->
-@include('layouts.front.partials.header')
-<!-- /HEADER -->
+    @widget('Front\Header\Header')
+    <!-- /HEADER -->
 
 
 @yield('content')
 
-    <!-- FOOTER -->
-@widget('Front\Footer\Footer')
-<!-- /FOOTER -->
+<!-- FOOTER -->
+    @widget('Front\Footer\Footer')
+    <!-- /FOOTER -->
 
 
     <!--

@@ -78,6 +78,21 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'as' => 'admin.', 'mi
     // End Setting Route
 
 
+    // Start Menu Route  -    all route begin by :   /admin/menu
+    Route::group(['prefix' => 'menu', 'namespace' => 'Menu', 'as' => 'menu.'], function () {
+        Route::get('/', 'MenusController@index')->name('list');
+        Route::get('/create', 'MenusController@create')->name('create');
+        Route::post('/store', 'MenusController@store')->name('store');
+        Route::get('/{menu}/sub', 'MenusController@submenu')->name('sub');
+        Route::post('/{menu}/sub/store', 'MenusController@subStore')->name('subStore');
+        Route::get('/{menu}/sub/update', 'MenusController@subUpdate')->name('subUpdate');
+        Route::get('/{menuItem}/edit', 'MenusController@menuItemEdit')->name('menuItemEdit');
+        Route::post('/{menuItem}/update', 'MenusController@menuItemUpdate')->name('menuItemUpdate');
+        Route::get('/{menuItem}/delete', 'MenusController@menuItemDelete')->name('menuItemDelete');
+    });
+    // End Menu Route
+
+
 });
 // End Admin Route
 

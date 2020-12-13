@@ -50,6 +50,18 @@
                 <li><a href="{{route('admin.order.list')}}">لیست همه سفارشات</a></li>
             </ul>
         </li>
+
+        {{--        menu--}}
+        <li>
+            <a href="#">
+                <i class="fa fa-menu-arrow pull-right"></i>
+                <i class="main-icon fa fa-bars"></i> <span>منوها</span>
+            </a>
+            <ul><!-- submenus -->
+                <li><a href="{{route('admin.menu.list')}}">لیست همه منوها</a></li>
+                <li><a href="{{route('admin.menu.create')}}">اضافه کردن منو</a></li>
+            </ul>
+        </li>
     </ul>
 
     <!-- SECOND MAIN LIST -->

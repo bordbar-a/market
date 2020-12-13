@@ -24,6 +24,7 @@ mix.styles([
     'resources/assets/admin/plugins/bootstrap/RTL/bootstrap-rtl.min.css',
     'resources/assets/admin/plugins/bootstrap/RTL/bootstrap-flipped.min.css',
     'resources/assets/admin/css/layout-RTL.css',
+    'resources/assets/admin/css/myCss.css',
 ],'public/backend/css/output.css');
 
 mix.scripts([

@@ -14,11 +14,11 @@
                     <a class="dropdown-toggle no-text-underline" data-toggle="dropdown" href="#"><i
                             class="fa fa-user hidden-xs"></i> حساب من</a>
                     <ul class="dropdown-menu pull-right">
-                        <li><a tabindex="-1" href="#"><i class="fa fa-history"></i> تاریخپه سفارشات</a></li>
+                        <li><a tabindex="-1" href="{{route('profile.dashboard')}}"><i class="fa fa-cog"></i>حساب کاربری</a></li>
+                        <li><a tabindex="-1" href="{{route('profile.order.list')}}"><i class="fa fa-history"></i> تاریخپه سفارشات</a></li>
                         <li class="divider"></li>
                         <li><a tabindex="-1" href="#"><i class="fa fa-bookmark"></i> مورد علاقه های من</a></li>
                         <li><a tabindex="-1" href="#"><i class="fa fa-edit"></i> دیدگاه های من</a></li>
-                        <li><a tabindex="-1" href="{{route('profile.dashboard')}}"><i class="fa fa-cog"></i> تنظیمات اکانت</a></li>
                         <li class="divider"></li>
                         <li><a tabindex="-1" href="{{ route('logout') }}"
                                onclick="event.preventDefault();

@@ -13,7 +13,6 @@ class SettingsController extends AdminBaseController
 {
     public function all()
     {
-        Auth::logout();
         $settings = Setting::all();
         return view('admin.setting.list', compact('settings'));
     }
