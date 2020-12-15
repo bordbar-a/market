@@ -92,6 +92,16 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'as' => 'admin.', 'mi
     });
     // End Menu Route
 
+    // Start Comment Route  -    all route begin by :   /admin/comment
+    Route::group(['prefix' => 'comment', 'namespace' => 'Comment', 'as' => 'comment.'], function () {
+        Route::get('/', 'CommentsController@all')->name('list');
+        Route::get('/{comment}/depending', 'CommentsController@setDepending')->name('set.depending');
+        Route::get('/{comment}/approved', 'CommentsController@setApproved')->name('set.approved');
+        Route::get('/{comment}/unapproved', 'CommentsController@setUnapproved')->name('set.unapproved');
+
+    });
+    // End Comment Route
+
 
 });
 // End Admin Route
@@ -128,6 +138,15 @@ Route::group(['namespace' => 'Front', 'as' => 'front.'], function () {
     // Start Product Route  -    all route begin by :   /front/product
     Route::group(['prefix' => 'product', 'namespace' => 'Product', 'as' => 'product.'], function () {
         Route::get('/item/{product}', 'ProductsController@item')->name('item');
+
+    });
+    // End Product Route
+
+
+
+    // Start Product Route  -    all route begin by :   /front/comment
+    Route::group(['prefix' => 'comment', 'namespace' => 'Comment', 'as' => 'comment.'], function () {
+        Route::post('/{product}/product', 'CommentsController@productCreate')->name('product.add');
 
     });
     // End Product Route

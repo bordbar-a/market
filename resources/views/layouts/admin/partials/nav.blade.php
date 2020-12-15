@@ -62,6 +62,19 @@
                 <li><a href="{{route('admin.menu.create')}}">اضافه کردن منو</a></li>
             </ul>
         </li>
+
+        {{--        menu--}}
+        <li>
+            <a href="#">
+                <i class="fa fa-menu-arrow pull-right"></i>
+                <i class="main-icon fa fa-comments"></i> <span>نظرات</span>
+            </a>
+            <ul><!-- submenus -->
+                <li><a href="#">در انتظار تایید</a></li>
+                <li><a href="{{route('admin.comment.list')}}">همه نظرات</a></li>
+                <li><a href="#">نظرات تایید نشده</a></li>
+            </ul>
+        </li>
     </ul>
 
     <!-- SECOND MAIN LIST -->

@@ -5,11 +5,12 @@ namespace App\Models;
 use App\Presenters\Contracts\Presentable;
 use App\Presenters\Product\ProductPresenter;
 use App\Traits\BelongsToUser;
+use App\Traits\MorphManyComments;
 use Illuminate\Database\Eloquent\Model;
 
 class Product extends Model
 {
-    use BelongsToUser , Presentable;
+    use BelongsToUser ,MorphManyComments, Presentable;
     protected $guarded = [
         'id'
     ];
@@ -31,11 +32,7 @@ class Product extends Model
 
 
 
-    // Use BelongsToUser trait
-
-
-
-
+    // Use BelongsToUser , MorphManyComments trait , for relation
 
     public function orders()
     {
@@ -50,6 +47,9 @@ class Product extends Model
         return $this->
         belongsToMany(Category::class , 'category_product' , 'product_id' ,'category_id');
     }
+
+
+
 
 
     /*

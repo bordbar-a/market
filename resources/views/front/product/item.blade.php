@@ -250,7 +250,8 @@
                         <li role="presentation" class="active"><a href="#description" role="tab" data-toggle="tab">توضیحات</a>
                         </li>
                         <li role="presentation"><a href="#specs" role="tab" data-toggle="tab">ویژگی‌ها</a></li>
-                        <li role="presentation"><a href="#reviews" role="tab" data-toggle="tab">نظرات (۲)</a></li>
+                        <li role="presentation"><a href="#reviews" role="tab" data-toggle="tab">نظرات
+                                ({{$product->comments_count}})</a></li>
                     </ul>
 
                     <div class="tab-content padding-top-20">
@@ -301,138 +302,8 @@
 
                         <!-- REVIEWS -->
                         <div role="tabpanel" class="tab-pane fade" id="reviews">
-                            <!-- REVIEW ITEM -->
-                            <div class="block margin-bottom-60">
 
-										<span class="user-avatar"><!-- user-avatar -->
-											<img class="pull-left media-object" src="/front/images/avatar2.jpg"
-                                                 width="64" height="64" alt="">
-										</span>
-
-                                <div class="media-body">
-                                    <h4 class="media-heading size-14">
-                                        John Doe &ndash;
-                                        <span class="text-muted">June 29, 2014 - 11:23</span> &ndash;
-                                        <span class="size-14 text-muted"><!-- stars -->
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star-o"></i>
-												</span>
-                                    </h4>
-
-                                    <p>
-                                        Proin eget tortor risus. Cras ultricies ligula sed magna dictum porta.
-                                        Pellentesque in ipsum id orci porta dapibus. Lorem ipsum dolor sit amet,
-                                        consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing
-                                        elit. Maecenas metus nulla, commodo a sodales sed, dignissim pretium nunc. Nam
-                                        et lacus neque.
-                                    </p>
-
-                                </div>
-
-                            </div>
-                            <!-- /REVIEW ITEM -->
-
-                            <!-- REVIEW ITEM -->
-                            <div class="block margin-bottom-60">
-
-										<span class="user-avatar"><!-- user-avatar -->
-											<img class="pull-left media-object" src="/front/images/avatar2.jpg"
-                                                 width="64" height="64" alt="">
-										</span>
-
-                                <div class="media-body">
-                                    <h4 class="media-heading size-14">
-                                        John Doe &ndash;
-                                        <span class="text-muted">June 29, 2014 - 11:23</span> &ndash;
-                                        <span class="size-14 text-muted"><!-- stars -->
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star-o"></i>
-													<i class="fa fa-star-o"></i>
-												</span>
-                                    </h4>
-
-                                    <p>
-                                        Proin eget tortor risus. Cras ultricies ligula sed magna dictum porta.
-                                        Pellentesque in ipsum id orci porta dapibus. Lorem ipsum dolor sit amet,
-                                        consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing
-                                        elit. Maecenas metus nulla, commodo a sodales sed, dignissim pretium nunc. Nam
-                                        et lacus neque.
-                                    </p>
-
-                                </div>
-
-                            </div>
-                            <!-- /REVIEW ITEM -->
-
-
-                            <!-- REVIEW FORM -->
-                            <h4 class="page-header margin-bottom-40">ADD A REVIEW</h4>
-                            <form method="post" action="#" id="form">
-
-                                <div class="row margin-bottom-10">
-
-                                    <div class="col-md-6 margin-bottom-10">
-                                        <!-- Name -->
-                                        <input type="text" name="name" id="name" class="form-control"
-                                               placeholder="Name *" maxlength="100" required="">
-                                    </div>
-
-                                    <div class="col-md-6">
-                                        <!-- Email -->
-                                        <input type="email" name="email" id="email" class="form-control"
-                                               placeholder="Email *" maxlength="100" required="">
-                                    </div>
-
-                                </div>
-
-                                <!-- Comment -->
-                                <div class="margin-bottom-30">
-                                    <textarea name="text" id="text" class="form-control" rows="6" placeholder="Comment"
-                                              maxlength="1000"></textarea>
-                                </div>
-
-                                <!-- Stars -->
-                                <div class="product-star-vote clearfix">
-
-                                    <label class="radio pull-left">
-                                        <input type="radio" name="product-review-vote" value="1"/>
-                                        <i></i> 1 Star
-                                    </label>
-
-                                    <label class="radio pull-left">
-                                        <input type="radio" name="product-review-vote" value="2"/>
-                                        <i></i> 2 Stars
-                                    </label>
-
-                                    <label class="radio pull-left">
-                                        <input type="radio" name="product-review-vote" value="3"/>
-                                        <i></i> 3 Stars
-                                    </label>
-
-                                    <label class="radio pull-left">
-                                        <input type="radio" name="product-review-vote" value="4"/>
-                                        <i></i> 4 Stars
-                                    </label>
-
-                                    <label class="radio pull-left">
-                                        <input type="radio" name="product-review-vote" value="5"/>
-                                        <i></i> 5 Stars
-                                    </label>
-
-                                </div>
-
-                                <!-- Send Button -->
-                                <button type="submit" class="btn btn-primary"><i class="fa fa-check"></i> Send Review
-                                </button>
-
-                            </form>
-                            <!-- /REVIEW FORM -->
-
+                            @include('front.product.partials.comments' , ['comments'=>$product->comments])
                         </div>
                     </div>
 
