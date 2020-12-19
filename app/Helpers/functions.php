@@ -9,6 +9,11 @@ if (!function_exists('getSetting')) {
         return \App\Helpers\Setting\Facade\Setting::get($key);
 
     }
+}
+
+
+if (!function_exists('getUser')) {
+
 
     function getUser()
     {
@@ -17,5 +22,12 @@ if (!function_exists('getSetting')) {
             return null;
         }
         return \Illuminate\Support\Facades\Auth::user();
+    }
+}
+if (!function_exists('getProductImageUrl')) {
+
+    function getProductImageUrl($product_id , $image_name)
+    {
+     return \Illuminate\Support\Facades\Storage::disk('ProductImages')->url($product_id . '/' . $image_name);
     }
 }

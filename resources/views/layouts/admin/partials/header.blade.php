@@ -23,10 +23,10 @@
             <li class="dropdown pull-left">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown"
                    data-close-others="true">
-                    <img class="user-avatar" alt="" src="{{route('share.user.userImage' , getUser()->id)}}" height="34"/>
+                    <img class="user-avatar" alt="" src="{{route('share.user.userImage' , optional(getUser())->id) }}" height="34"/>
                     <span class="user-name">
 									<span class="hidden-xs">خوش‌آمدی
-										{{getUser()->first_name}}<i class="fa fa-angle-down"></i>
+										{{optional(getUser())->first_name}}<i class="fa fa-angle-down"></i>
 									</span>
 								</span>
                 </a>

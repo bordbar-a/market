@@ -2,6 +2,7 @@
 
 @section('style')
     <link href="/backend/plugins/select2/css/select2.css" rel="stylesheet" type="text/css"/>
+    <link href="/backend/plugins/dropzone/css/dropzone.css" rel="stylesheet" type="text/css"/>
 @endsection
 
 
@@ -44,7 +45,8 @@
 
                     <div class="panel-body">
 
-                        <form class="" action="{{route('admin.product.update',[$product->id])}}" method="post"
+                        <form class="" id="productData" action="{{route('admin.product.update',[$product->id])}}"
+                              method="post"
                               enctype="multipart/form-data">
                             <fieldset>
                                 @csrf
@@ -92,7 +94,7 @@
                                                     name="categories[]" multiple>
                                                 @foreach($categories as $index => $category)
                                                     <option value="{{$index}}"
-                                                 {{in_array($index , $productCategories) ? 'selected' : ''}}>{{$category}}</option>
+                                                        {{in_array($index , $productCategories) ? 'selected' : ''}}>{{$category}}</option>
                                                 @endforeach
                                             </select>
                                         </div>
@@ -102,15 +104,21 @@
 
                             </fieldset>
 
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <button type="submit" class="btn btn-3d   btn-teal btn-xlg btn-block margin-top-30">
-                                        ذخیره محصول
-                                    </button>
-                                </div>
-                            </div>
-
                         </form>
+                        <div class="row">
+                            <form action="{{route('admin.product.editImages' , $product->id)}}" method="post"
+                                  class="dropzone nomargin" id="my-dropzone">@csrf</form>
+                        </div>
+
+
+                        <div class="row">
+                            <div class="col-md-12">
+                                <button type="submit" class="btn btn-3d   btn-teal btn-xlg btn-block margin-top-30"
+                                        id="submitForm">
+                                    ذخیره محصول
+                                </button>
+                            </div>
+                        </div>
                     </div>
 
                 </div>
@@ -131,6 +139,7 @@
 
 
     <script type="text/javascript" src="/backend/plugins/select2/js/select2.js"></script>
+    <script type="text/javascript" src="/backend/plugins/dropzone/dropzone.js"></script>
 
     <script>
         $(document).ready(function () {
@@ -138,6 +147,93 @@
                 tags: true
             });
 
-        });
+            Dropzone.options.myDropzone = {
+                acceptedFiles: "image/*",
+                init: function () {
+                        <?php
+
+                        $files = json_encode($product->pictures()->pluck('name')->toArray());
+                        echo "files = " . $files . ";\n";
+                        ?>
+                    for (let i = 0; i < files.length; i++) {
+                        let mockFile = {
+                            name: i+1,
+                            size: '0',
+                            type: 'image/jpeg',
+                            accepted: true            // required if using 'MaxFiles' option
+                        };
+                        this.files.push(mockFile);    // add to files array
+                        this.emit("addedfile", mockFile);
+                        this.emit("thumbnail", mockFile, '{{asset('storage/productImages/'.$product->id)}}' + '/' + files[i]);
+                        this.emit("complete", mockFile);
+                        // Create the remove button
+                        let removeButton = Dropzone.createElement("<button class='btn btn-sm btn-default fullwidth margin-top-10'>حذف تصویر</button>");
+
+                        // Capture the Dropzone instance as closure.
+                        let _this = this;
+                        // Listen to the click event
+                        removeButton.addEventListener("click", function (e) {
+                            // Make sure the button click doesn't submit the form:
+                            e.preventDefault();
+                            e.stopPropagation();
+
+                            // Remove the file preview.
+
+                            $.ajax({
+                                type: 'get',
+                                url: '{{url('admin/product/images/' . $product->id )}}' + '/' + files[i] + '/delete',
+                                success: function (data) {
+                                    _this.removeFile(mockFile);
+                                }
+                            });
+                            // If you want to the delete the file on the server as well,
+                            // you can do the AJAX request here.
+                        });
+
+                        // Add the button to the file preview element.
+                        mockFile.previewElement.appendChild(removeButton);
+                    }
+                    this.on("success", function (file ,response) {
+                        // Create the remove button
+                        var removeButton = Dropzone.createElement("<button class='btn btn-sm btn-default fullwidth margin-top-10'>حذف تصویر</button>");
+                        // Capture the Dropzone instance as closure.
+                        var _this = this;
+                        // Listen to the click event
+                        removeButton.addEventListener("click", function (e) {
+                            // Make sure the button click doesn't submit the form:
+                            e.preventDefault();
+                            e.stopPropagation();
+                            $.ajax({
+                                type: 'get',
+                                url: '{{url('admin/product/images/' . $product->id )}}' + '/' + response.name + '/delete',
+                                success: function (data) {
+                                    _this.removeFile(file);
+                                }
+                            });
+                            // Remove the file preview.
+                            // _this.removeFile(file);
+
+                            // If you want to the delete the file on the server as well,
+                            // you can do the AJAX request here.
+                        });
+
+                        // Add the button to the file preview element.
+                        file.previewElement.appendChild(removeButton);
+                    });
+
+
+                },
+
+
+            }
+
+
+            document.getElementById('submitForm').addEventListener('click', function () {
+
+                document.getElementById('productData').submit();
+            });
+
+        })
+        ;
     </script>
 @endsection

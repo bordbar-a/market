@@ -53,6 +53,12 @@ return [
             'url' => env('APP_URL').'/userImage',
             'visibility' => 'public'
         ],
+        'ProductImages' => [
+            'driver' => 'local',
+            'root' => storage_path('app' . DIRECTORY_SEPARATOR . 'public' . DIRECTORY_SEPARATOR . 'productImages'),
+            'url' => env('APP_URL').'/storage/productImages',
+            'visibility' => 'public'
+        ],
 
         'public' => [
             'driver' => 'local',
@@ -72,5 +78,6 @@ return [
         ],
 
     ],
+
 
 ];

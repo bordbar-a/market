@@ -2,27 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d4527880-cb0d-413e-8591-1ff27fa185c3" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/market.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/market.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Helpers/File/UploadedFile.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Helpers/File/HandleFile.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Helpers/UploadFileName/UploadFileName.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Helpers/File/HandleFile.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Helpers/File/HandleFile.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Helpers/functions.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Helpers/functions.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/User/UsersController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/User/UsersController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Profile/Personal/PersonalController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Profile/Personal/PersonalController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Requests/User/UserEditRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/User/UserEditRequest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/File.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/File.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Product.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Product.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Providers/AuthServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/AuthServiceProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/Product/ProductsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/Product/ProductsController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/filesystems.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/filesystems.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/users/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/users/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/product/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/product/edit.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/layouts/admin/partials/header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/admin/partials/header.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/profile/personal/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/profile/personal/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -191,19 +177,19 @@
     <property name="settings.editor.selected.configurable" value="yiiguxing.plugin.translate" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\market\storage\app\public\productImages\5" />
+      <recent name="C:\xampp\htdocs\market\storage\app\public\productImages" />
+      <recent name="C:\xampp\htdocs\market\app\Http\Controllers\Share\User" />
+      <recent name="C:\xampp\htdocs\market\app\Http\Controllers\Admin\Comment" />
+      <recent name="C:\xampp\htdocs\market\app\Http\Controllers\Front\CommentsController" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\xampp\htdocs\market\resources\views\admin\comment" />
       <recent name="C:\xampp\htdocs\market\resources\views\admin\menu\submenu" />
       <recent name="C:\xampp\htdocs\market\resources\views\admin\menu" />
       <recent name="C:\xampp\htdocs\market\resources\views\admin" />
       <recent name="C:\xampp\htdocs\market\resources\views\admin\order" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\xampp\htdocs\market\app\Http\Controllers\Share\User" />
-      <recent name="C:\xampp\htdocs\market\app\Http\Controllers\Admin\Comment" />
-      <recent name="C:\xampp\htdocs\market\app\Http\Controllers\Front\CommentsController" />
-      <recent name="C:\xampp\htdocs\market\app\Http\Controllers\Front" />
-      <recent name="C:\xampp\htdocs\market\resources\views\front\product\partials" />
     </key>
   </component>
   <component name="RunManager" selected="PHPUnit.app">
@@ -301,7 +287,7 @@
       <workItem from="1607919747888" duration="5799000" />
       <workItem from="1608005529483" duration="11833000" />
       <workItem from="1608283307949" duration="18740000" />
-      <workItem from="1608353232606" duration="2089000" />
+      <workItem from="1608353232606" duration="23988000" />
     </task>
     <servers />
   </component>
@@ -421,9 +407,9 @@
       <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state x="376" y="195" key="run.anything.popup/0.0.1440.860@0.0.1440.860" timestamp="1608048373315" />
-    <state x="549" y="245" width="672" height="678" key="search.everywhere.popup" timestamp="1608369919530">
+    <state x="549" y="245" width="672" height="678" key="search.everywhere.popup" timestamp="1608388350772">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state x="549" y="245" width="672" height="678" key="search.everywhere.popup/0.0.1440.860@0.0.1440.860" timestamp="1608369919530" />
+    <state x="549" y="245" width="672" height="678" key="search.everywhere.popup/0.0.1440.860@0.0.1440.860" timestamp="1608388350772" />
   </component>
 </project>

@@ -20,7 +20,7 @@ use Illuminate\Support\Facades\Route;
 
 
 //Start Admin Route - all route begin by :   /admin
-Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'as' => 'admin.'/*, 'middleware' => ['auth' ,'admin']*/], function () {
+Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'as' => 'admin.', 'middleware' => ['auth' ,'admin']], function () {
 
     Route::group(['namespace' => 'Dashboard'], function () {
         Route::get('/', 'DashboardController@index')->name('dashboard');
@@ -59,6 +59,8 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'as' => 'admin.'/*, '
         Route::get('/delete/{product}', 'ProductsController@delete')->name('delete');
         Route::get('/edit/{product}', 'ProductsController@edit')->name('edit');
         Route::post('/update/{product}', 'ProductsController@update')->name('update');
+        Route::post('/images/{product}', 'ProductsController@editImages')->name('editImages');
+        Route::get('/images/{product}/{image}/delete', 'ProductsController@deleteImage')->name('deleteImage');
     });
     // End Product Route
 
