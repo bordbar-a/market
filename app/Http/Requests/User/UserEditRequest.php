@@ -31,7 +31,7 @@ class UserEditRequest extends FormRequest
             'firstName' => 'required|min:2|max:20',
             'lastName' => 'required|min:2|max:20',
             'email' => ['required',
-                        Rule::unique('users')->ignore($this->route('id'))],
+                        Rule::unique('users')->ignore($this->user->id)],
             'mobile' => 'nullable|regex:/^09[0-9]{9}$/',
             'nationalCode' => ['nullable' , new NationalCodeRule()],
             'password' => 'nullable',

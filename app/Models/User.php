@@ -17,8 +17,7 @@ class User extends Authenticatable
     use Notifiable, Presentable;
 
 
-    const UserImageDisk = 'userImage';
-    const UserImagePath = 'app' . DIRECTORY_SEPARATOR . 'usersImage' . DIRECTORY_SEPARATOR;
+
 
     //Role Constants
     const User = 0;

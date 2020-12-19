@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Profile\Personal;
 
 use App\Entities\FileType;
-use App\Helpers\File\UploadedFile;
+use App\Helpers\File\HandleFile;
 use App\Helpers\FlashMessages\FlashMessages;
 use App\Helpers\UploadFileName\UploadFileName;
 use App\Http\Controllers\Profile\ProfileBaseController;
@@ -32,24 +32,6 @@ class PersonalController extends ProfileBaseController
         return redirect()->route('profile.index');
     }
 
-
-    public function userImage($user)
-    {
-
-        $loginUser = Auth::user();
-        if (!$user || $loginUser->id != $user->id) {
-            return abort(404);
-        }
-        $userProfileImagePath = UploadedFile::userImagePath($user);
-        $file = \Illuminate\Support\Facades\File::get($userProfileImagePath);
-        $type = \Illuminate\Support\Facades\File::mimeType($userProfileImagePath);
-
-        $response = Response::make($file, 200);
-        $response->header("Content-Type", $type);
-
-        return $response;
-
-    }
 
     public function update(Request $request)
     {
@@ -81,24 +63,10 @@ class PersonalController extends ProfileBaseController
     }
 
 
-    public function deleteProfileImage($user){
-
-        if($user->id != Auth::user()->id){
-            return abort(403);
-        }
-
-        UploadedFile::deletedUserImage($user->profileImage->name);
-        $user->profileImage()->delete();
-
-        return back();
-    }
-
-
-
     public function changePassword($user)
     {
 
-        if($user->id ==Auth::user()->id){
+        if($user->id == Auth::user()->id){
             return view('profile.personal.changePassword');
         }
 
@@ -141,7 +109,7 @@ class PersonalController extends ProfileBaseController
         }
 
         $file = $request->file('image');
-        $image = $file->storeAs('', UploadFileName::generateUserImageName($file), User::UserImageDisk);
+        $image = HandleFile::saveUserImage($file);
 
         if (!$image) {
             return;
@@ -154,14 +122,12 @@ class PersonalController extends ProfileBaseController
         }
 
 
-        UploadedFile::deletedUserImage($user->profileImage->name);
+        HandleFile::deletedUserImage($user->profileImage->name);
         $user->profileImage()->update([
             'name' => $image,
             'type' => File::ProfileImage
         ]);
         return;
-
-
     }
 
 

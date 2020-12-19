@@ -49,9 +49,9 @@ return [
         ],
         'userImage' => [
             'driver' => 'local',
-            'root' => storage_path('app/usersImage'),
+            'root' => storage_path('app' . DIRECTORY_SEPARATOR . 'usersImage'),
             'url' => env('APP_URL').'/userImage',
-            'visibility' => 'private'
+            'visibility' => 'public'
         ],
 
         'public' => [

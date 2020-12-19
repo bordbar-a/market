@@ -13,6 +13,7 @@
         "fideloper/proxy": "^4.4",
         "hekmatinasser/verta": "^1.11",
         "imanghafoori/laravel-widgetize": "^2.2",
+        "intervention/image": "^2.5",
         "laravel/framework": "^7.0",
         "laravel/tinker": "^2.0",
         "laravel/ui": "^2.0"

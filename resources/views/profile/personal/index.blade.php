@@ -71,24 +71,22 @@
                                         @if($user->profileImage)
 
                                             <div class="col-md-6 col-sm-6 text-center">
-
                                                 <div class="col-md-6 col-sm-6">
                                                     <img class="img-fluid img-thumbnail" width="130" height="170"
-                                                         src="{{route('profile.personal.userImage' ,$user->id)}}"
+                                                         src="{{route('share.user.userImage' ,$user->id)}}"
                                                          alt="">
                                                 </div>
                                                 <div class="col-md-6 col-sm-6">
-                                                    <a href="{{route('profile.personal.deleteProfileImage' ,['user'=>$user->id])}}">
+                                                    <a href="{{route('share.user.deleteProfileImage' ,['user'=>$user->id])}}">
                                                         <button type="button" class="btn btn-danger btn-xs">حذف عکس
                                                             پروفایل
                                                         </button>
                                                     </a>
                                                 </div>
-
-
                                             </div>
+
+                                        @endif
                                     </div>
-                                    @endif
                                 </div>
 
                                 <div class="row">

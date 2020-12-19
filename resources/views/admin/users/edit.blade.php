@@ -18,8 +18,8 @@
     <div id="content" class="padding-20">
         <div class="row">
             <div class="col-md-4 col-md-offset-4"><a href="{{route('admin.user.list')}}"
-                                      class="btn btn-3d   btn-default btn-lg btn-block margin-bottom-30">
-                   لیست کاربران
+                                                     class="btn btn-3d   btn-default btn-lg btn-block margin-bottom-30">
+                    لیست کاربران
                 </a>
             </div>
         </div>
@@ -108,6 +108,32 @@
                                         </div>
                                     </div>
                                 </div>
+                                @if($user->profileImage)
+                                    @can('seeUserImage' , $user)
+                                        <div class="row">
+                                            <div class="form-group">
+
+
+                                                <div class="col-md-6 col-sm-6 text-center">
+                                                    <div class="col-md-6 col-sm-6">
+                                                        <img class="img-fluid img-thumbnail" width="130" height="170"
+                                                             src="{{route('share.user.userImage' ,$user->id)}}"
+                                                             alt="">
+                                                    </div>
+                                                    <div class="col-md-6 col-sm-6">
+                                                        <a href="{{route('share.user.deleteProfileImage' ,['user'=>$user->id])}}">
+                                                            <button type="button" class="btn btn-danger btn-xs">حذف عکس
+                                                                پروفایل
+                                                            </button>
+                                                        </a>
+                                                    </div>
+                                                </div>
+
+
+                                            </div>
+                                        </div>
+                                    @endcan
+                                @endif
 
                                 <div class="row">
                                     <div class="form-group">

@@ -23,10 +23,10 @@
             <li class="dropdown pull-left">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown"
                    data-close-others="true">
-                    <img class="user-avatar" alt="" src="/assets/images/noavatar.jpg" height="34"/>
+                    <img class="user-avatar" alt="" src="{{route('share.user.userImage' , getUser()->id)}}" height="34"/>
                     <span class="user-name">
 									<span class="hidden-xs">خوش‌آمدی
-										{{\Illuminate\Support\Facades\Auth::user()->first_name}}<i class="fa fa-angle-down"></i>
+										{{getUser()->first_name}}<i class="fa fa-angle-down"></i>
 									</span>
 								</span>
                 </a>

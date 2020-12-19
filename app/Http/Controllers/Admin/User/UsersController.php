@@ -2,13 +2,16 @@
 
 namespace App\Http\Controllers\Admin\User;
 
+use App\Helpers\File\HandleFile;
 use App\Helpers\FlashMessages\FlashMessages;
 use App\Http\Controllers\Admin\AdminBaseController;
 use App\Http\Requests\User\UserCreateRequest;
 use App\Http\Requests\User\UserEditRequest;
+use App\Models\File;
 use App\Models\User;
 use App\Services\User\UserCreateService\UserCreateService;
 use Illuminate\Http\Request;
+use Intervention\Image\Facades\Image;
 
 
 class UsersController extends AdminBaseController
@@ -76,6 +79,8 @@ class UsersController extends AdminBaseController
     public function edit(Request $request, $user)
     {
 
+
+
         if (!$user instanceof User) {
             FlashMessages::error('کاربر مورد نظر یافت نشد');
             return view('admin.users.list');
@@ -90,6 +95,8 @@ class UsersController extends AdminBaseController
 
     public function update(UserEditRequest $request, $user)
     {
+
+
 
         if (!$user instanceof User) {
             FlashMessages::error('کاربر مورد نظر پیدا نشد');
@@ -112,6 +119,8 @@ class UsersController extends AdminBaseController
         }
         $result = $user->update($userData);
 
+        $this->handleUserImage($request, $user);
+
         if ($result){
             FlashMessages::success('ویرایش انجام شد');
         } else{
@@ -120,5 +129,33 @@ class UsersController extends AdminBaseController
 
         return back();
 
+    }
+
+    private function handleUserImage(Request $request, User $user): void
+    {
+        if (!$request->hasFile('image')) {
+            return;
+        }
+
+        $file = $request->file('image');
+        $image = HandleFile::saveUserImage($file);
+
+        if (!$image) {
+            return;
+        }
+
+
+        if (!$user->profileImage) {
+            $user->profileImage()->save(new File(['name' => $image, 'type' => File::ProfileImage]));
+            return;
+        }
+
+
+        HandleFile::deletedUserImage($user->profileImage->name);
+        $user->profileImage()->update([
+            'name' => $image,
+            'type' => File::ProfileImage
+        ]);
+        return;
     }
 }

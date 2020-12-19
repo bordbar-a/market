@@ -20,7 +20,7 @@ use Illuminate\Support\Facades\Route;
 
 
 //Start Admin Route - all route begin by :   /admin
-Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'as' => 'admin.', 'middleware' => ['auth' ,'admin']], function () {
+Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'as' => 'admin.'/*, 'middleware' => ['auth' ,'admin']*/], function () {
 
     Route::group(['namespace' => 'Dashboard'], function () {
         Route::get('/', 'DashboardController@index')->name('dashboard');
@@ -170,8 +170,6 @@ Route::group(['prefix' => 'profile', 'namespace' => 'Profile', 'as' => 'profile.
     Route::group(['prefix' => 'personal', 'namespace' => 'Personal', 'as' => 'personal.'], function () {
         Route::get('/', 'PersonalController@index')->name('index');
         Route::post('/update', 'PersonalController@update')->name('update');
-        Route::get('/userImage/{user}', 'PersonalController@userImage')->name('userImage');
-        Route::get('/deleteProfileImage/{user}', 'PersonalController@deleteProfileImage')->name('deleteProfileImage');
         Route::get('/changePassword/{user}', 'PersonalController@changePassword')->name('changePassword');
         Route::post('/changePassword/{user}', 'PersonalController@doChangePassword')->name('changePassword');
 
@@ -196,6 +194,19 @@ Route::group(['prefix' => 'profile', 'namespace' => 'Profile', 'as' => 'profile.
 // End Profile Route
 
 
+
+//Start Share Route - all route begin by :   /share
+Route::group(['prefix' => 'share', 'namespace' => 'Share', 'as' => 'share.'], function () {
+
+    // Start User Route  -    all route begin by :   /share/user
+    Route::group(['prefix' => 'user', 'namespace' => 'User', 'as' => 'user.'], function () {
+        Route::get('/userImage/{user}', 'UsersController@userImage')->name('userImage');
+        Route::get('/deleteProfileImage/{user}', 'UsersController@deleteProfileImage')->name('deleteProfileImage');
+    });
+    // End User Route
+
+});
+// End Share Route
 
 
 

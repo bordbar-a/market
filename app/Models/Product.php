@@ -34,6 +34,13 @@ class Product extends Model
 
     // Use BelongsToUser , MorphManyComments trait , for relation
 
+
+    public function pictures()
+    {
+        return $this->morphMany(File::class, 'fileable')->where('type', File::ProductPicture);
+    }
+
+
     public function orders()
     {
         return $this->
