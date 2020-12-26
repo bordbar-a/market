@@ -18,7 +18,7 @@ class ProductsController extends Controller
             $product->load([
                 'comments' => function ($query) {
                     $query->where('status', Comment::APPROVED)->orderBy('created_at' , 'desc');
-            }
+            } , 'pictures'
             ])->loadCount([
                 'comments' => function ($query) {
                     $query->where('status', Comment::APPROVED);

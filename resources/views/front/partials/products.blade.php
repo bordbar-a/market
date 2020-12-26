@@ -19,12 +19,15 @@
                                 <div class="thumbnail">
                                     <!-- product image(s) -->
                                     <a class="shop-item-image" href="{{route('front.product.item' , [$product->id])}}">
-                                        <img class="img-responsive"
-                                             src="/front/images/demo/shop/products/300x450/p13.jpg"
-                                             alt="shop first image"/>
-                                        <img class="img-responsive"
-                                             src="/front/images/demo/shop/products/300x450/p14.jpg"
-                                             alt="shop hover image"/>
+                                        @if(count($product->pictures))
+                                            <img class="img-responsive"
+                                                 src="{{asset('/storage/productImages/' . $product->id . '/' . $product->pictures[0]->name )}}"
+                                                 alt="shop first image" width="300" height="600"/>
+                                        @else
+                                            <img class="img-responsive"
+                                                 src="https://via.placeholder.com/300"
+                                                 alt="shop hover image"/>
+                                        @endif
                                     </a>
                                     <!-- /product image(s) -->
 
@@ -37,7 +40,8 @@
                                         <a class="btn btn-default add-compare" href="#" data-item-id="1"
                                            data-toggle="tooltip" title="مقایسه"><i class="fa fa-bar-chart-o nopadding"
                                                                                    data-toggle="tooltip"></i></a>
-                                        <a class="btn btn-default" href="{{route('front.basket.add' , [$product->id])}}"><i
+                                        <a class="btn btn-default"
+                                           href="{{route('front.basket.add' , [$product->id])}}"><i
                                                 class="fa fa-cart-plus size-20"></i></a>
                                     </div>
                                     <!-- /hover buttons -->
@@ -80,7 +84,7 @@
             <div class="col-sm-3 col-sm-pull-9">
 
                 <!-- CATEGORIES -->
-              @widget('Front\Categories\Category')
+                @widget('Front\Categories\Category')
                 <!-- /CATEGORIES -->
 
                 <!-- BRANDS -->

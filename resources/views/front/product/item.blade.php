@@ -48,72 +48,63 @@
 
                     <div class="row">
 
+                    @if(count($product->pictures))
+
                         <!-- IMAGE -->
-                        <div class="col-lg-6 col-sm-6">
+                            <div class="col-lg-6 col-sm-6">
 
-                            <div class="thumbnail relative margin-bottom-3">
-
-                                <!--
-                                    IMAGE ZOOM
-
-                                    data-mode="mouseover|grab|click|toggle"
-                                -->
-                                <figure id="zoom-primary" class="zoom" data-mode="mouseover">
-                                    <!--
-                                        zoom buttton
-
-                                        positions available:
-                                            .bottom-right
-                                            .bottom-left
-                                            .top-right
-                                            .top-left
-                                    -->
-                                    <a class="lightbox bottom-right"
-                                       href="/front/images/demo/shop/products/1000x1500/p5.jpg"
-                                       data-plugin-options='{"type":"image"}'><i class="glyphicon glyphicon-search"></i></a>
+                                <div class="thumbnail relative margin-bottom-3">
 
                                     <!--
-                                        image
+                                        IMAGE ZOOM
 
-                                        Extra: add .image-bw class to force black and white!
+                                        data-mode="mouseover|grab|click|toggle"
                                     -->
-                                    <img class="img-responsive" src="/front/images/demo/shop/products/1000x1500/p5.jpg"
-                                         width="1200" height="1500" alt="This is the product title"/>
-                                </figure>
+                                    <figure id="zoom-primary" class="zoom" data-mode="mouseover">
+                                        <!--
+                                            zoom buttton
+
+                                            positions available:
+                                                .bottom-right
+                                                .bottom-left
+                                                .top-right
+                                                .top-left
+                                        -->
+                                        <a class="lightbox bottom-right"
+                                           href="{{asset('/storage/productImages/' . $product->id . '/' . $product->pictures[0]->name )}}"
+                                           data-plugin-options='{"type":"image"}'><i
+                                                class="glyphicon glyphicon-search"></i></a>
+
+                                        <!--
+                                            image
+
+                                            Extra: add .image-bw class to force black and white!
+                                        -->
+                                        <img class="img-responsive"
+                                             src="{{asset('/storage/productImages/' . $product->id . '/' . $product->pictures[0]->name )}}"
+                                             width="1200" height="1500" alt="This is the product title"/>
+                                    </figure>
+
+                                </div>
+
+                                <!-- Thumbnails (required height:100px) -->
+                                <div data-for="zoom-primary" class="zoom-more owl-carousel owl-padding-3 featured"
+                                     data-plugin-options='{"singleItem": false, "autoPlay": false, "navigation": true, "pagination": false}'>
+                                    @foreach($product->pictures as $picture)
+                                        <a class="thumbnail active"
+                                           href="{{asset('/storage/productImages/' . $product->id . '/' . $picture->name )}}">
+                                            <img
+                                                src="{{asset('/storage/productImages/' . $product->id . '/' . $picture->name )}}"
+                                                height="100" alt=""/>
+                                        </a>
+                                    @endforeach
+                                </div>
+                                <!-- /Thumbnails -->
 
                             </div>
-
-                            <!-- Thumbnails (required height:100px) -->
-                            <div data-for="zoom-primary" class="zoom-more owl-carousel owl-padding-3 featured"
-                                 data-plugin-options='{"singleItem": false, "autoPlay": false, "navigation": true, "pagination": false}'>
-                                <a class="thumbnail active" href="/front/images/demo/shop/products/1000x1500/p5.jpg">
-                                    <img src="/front/images/demo/shop/products/100x100/p5.jpg" height="100" alt=""/>
-                                </a>
-                                <a class="thumbnail" href="/front/images/demo/shop/products/1000x1500/p6.jpg">
-                                    <img src="/front/images/demo/shop/products/100x100/p6.jpg" height="100" alt=""/>
-                                </a>
-                                <a class="thumbnail" href="/front/images/demo/shop/products/1000x1500/p7.jpg">
-                                    <img src="/front/images/demo/shop/products/100x100/p7.jpg" height="100" alt=""/>
-                                </a>
-                                <a class="thumbnail" href="/front/images/demo/shop/products/1000x1500/p8.jpg">
-                                    <img src="/front/images/demo/shop/products/100x100/p8.jpg" height="100" alt=""/>
-                                </a>
-                                <a class="thumbnail" href="/front/images/demo/shop/products/1000x1500/p9.jpg">
-                                    <img src="/front/images/demo/shop/products/100x100/p9.jpg" height="100" alt=""/>
-                                </a>
-                                <a class="thumbnail" href="/front/images/demo/shop/products/1000x1500/p10.jpg">
-                                    <img src="/front/images/demo/shop/products/100x100/p10.jpg" height="100" alt=""/>
-                                </a>
-                                <a class="thumbnail" href="/front/images/demo/shop/products/1000x1500/p11.jpg">
-                                    <img src="/front/images/demo/shop/products/100x100/p11.jpg" height="100" alt=""/>
-                                </a>
-                            </div>
-                            <!-- /Thumbnails -->
-
-                        </div>
-                        <!-- /IMAGE -->
-
-                        <!-- ITEM DESC -->
+                            <!-- /IMAGE -->
+                    @endif
+                    <!-- ITEM DESC -->
                         <div class="col-lg-6 col-sm-6">
 
                             <!-- buttons -->

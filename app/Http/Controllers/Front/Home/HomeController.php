@@ -11,7 +11,7 @@ class HomeController extends FrontBaseController
     public function index(){
 
 
-        $products = Product::all();
+        $products = Product::with('pictures')->get();
 
         return view('front.index' , compact('products'));
     }
