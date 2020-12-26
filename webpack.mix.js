@@ -32,7 +32,10 @@ mix.scripts([
     'resources/assets/admin/js/cms.js',
     'resources/assets/admin/js/app.js'
 ],'public/backend/js/output.js');
-
+mix.scripts([
+    'node_modules/@ckeditor/ckeditor5-build-classic/src/ckeditor.js',
+    'node_modules/@ckeditor/ckeditor5-build-classic/build/ckeditor.js',
+],'public/backend/plugins/ckeditor/ckeditor.js');
 
 mix.styles([
     'resources/assets/admin/css/layout-nestable.css',

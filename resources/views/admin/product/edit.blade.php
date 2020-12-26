@@ -3,6 +3,7 @@
 @section('style')
     <link href="/backend/plugins/select2/css/select2.css" rel="stylesheet" type="text/css"/>
     <link href="/backend/plugins/dropzone/css/dropzone.css" rel="stylesheet" type="text/css"/>
+    <link href="/backend/plugins/summernote/summernote.css" rel="stylesheet" type="text/css"/>
 @endsection
 
 
@@ -63,8 +64,10 @@
                                     <div class="form-group">
                                         <div class="col-md-12 col-sm-12">
                                             <label>توضیحات</label>
-                                            <textarea class="summernote form-control" data-height="200"
+{{--                                            <div id="editor">{!! $product->description !!}</div>--}}
+                                            <textarea class="editor form-control" data-height="200"
                                                       data-lang="en-US"
+                                                      id="editor"
                                                       name="description">{{$product->description}}</textarea>
                                         </div>
                                     </div>
@@ -140,9 +143,15 @@
 
     <script type="text/javascript" src="/backend/plugins/select2/js/select2.js"></script>
     <script type="text/javascript" src="/backend/plugins/dropzone/dropzone.js"></script>
+    {{--    <script type="text/javascript" src="/backend/plugins/summernote/summernote.js"></script>--}}
+{{--    <script src="https://cdn.ckeditor.com/ckeditor5/24.0.0/classic/ckeditor.js"></script>--}}
+    <script src="/backend/plugins/ckeditor/build/ckeditor.js"></script>
 
     <script>
+
         $(document).ready(function () {
+
+
             $("#myselect").select2({
                 tags: true
             });
@@ -151,13 +160,12 @@
                 acceptedFiles: "image/*",
                 init: function () {
                         <?php
-
                         $files = json_encode($product->pictures()->pluck('name')->toArray());
                         echo "files = " . $files . ";\n";
                         ?>
                     for (let i = 0; i < files.length; i++) {
                         let mockFile = {
-                            name: i+1,
+                            name: i + 1,
                             size: '0',
                             type: 'image/jpeg',
                             accepted: true            // required if using 'MaxFiles' option
@@ -193,7 +201,7 @@
                         // Add the button to the file preview element.
                         mockFile.previewElement.appendChild(removeButton);
                     }
-                    this.on("success", function (file ,response) {
+                    this.on("success", function (file, response) {
                         // Create the remove button
                         var removeButton = Dropzone.createElement("<button class='btn btn-sm btn-default fullwidth margin-top-10'>حذف تصویر</button>");
                         // Capture the Dropzone instance as closure.
@@ -229,9 +237,65 @@
 
 
             document.getElementById('submitForm').addEventListener('click', function () {
-
                 document.getElementById('productData').submit();
+
             });
+
+
+
+            ClassicEditor
+                .create( document.querySelector( '#editor' ), {
+                    toolbar: {
+                        items: [
+                            'heading',
+                            '|',
+                            'fontFamily',
+                            'fontSize',
+                            'bold',
+                            'italic',
+                            'fontBackgroundColor',
+                            'fontColor',
+                            '|',
+                            'bulletedList',
+                            'numberedList',
+                            '|',
+                            'alignment',
+                            'indent',
+                            'outdent',
+                            '|',
+                            'link',
+                            'imageUpload',
+                            'blockQuote',
+                            'insertTable',
+                            'mediaEmbed',
+                            'undo',
+                            'redo',
+                            '|',
+                            'removeFormat'
+                        ]
+                    },
+                    language: 'fa',
+                    image: {
+                        toolbar: [
+                            'imageTextAlternative',
+                            'imageStyle:full',
+                            'imageStyle:side'
+                        ]
+                    },
+                    table: {
+                        contentToolbar: [
+                            'tableColumn',
+                            'tableRow',
+                            'mergeTableCells'
+                        ]
+                    },
+                    licenseKey: '',
+
+                } )
+                .catch(error => {
+                    console.error(error);
+                });
+
 
         })
         ;

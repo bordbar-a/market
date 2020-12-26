@@ -94,9 +94,8 @@ class ProductsController extends AdminBaseController
     }
 
 
-    public function update(ProductCreateRequest $request, $product)
+    public function update(ProductCreateRequest  $request, $product)
     {
-
         if ($product) {
             $data = [
                 'title' => $request->input('title'),
