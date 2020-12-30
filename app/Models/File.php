@@ -10,6 +10,7 @@ class File extends Model
     const DefaultFile = 0;
     const ProfileImage = 1;
     const ProductPicture = 2;
+    const SliderItemImage = 3;
 
 
     protected $guarded = [

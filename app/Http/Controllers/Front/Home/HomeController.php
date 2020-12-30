@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Front\Home;
 use App\Http\Controllers\Front\FrontBaseController;
 use App\Models\Product;
+use App\Models\Slider;
+use App\Models\SliderItem;
 use Illuminate\Http\Request;
 
 class HomeController extends FrontBaseController
@@ -12,7 +14,11 @@ class HomeController extends FrontBaseController
 
 
         $products = Product::with('pictures')->get();
+        $slider= Slider::where('name' , 'صفحه خانه')->with(['items'=>function($query){
+            $query->orderBy('order' , 'asc');
+        },'items.image'])->first();
 
-        return view('front.index' , compact('products'));
+//        $sliderItems->load(['image']);
+        return view('front.index' , compact('products' , 'slider'));
     }
 }

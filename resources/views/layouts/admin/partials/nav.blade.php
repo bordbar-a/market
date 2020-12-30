@@ -63,7 +63,7 @@
             </ul>
         </li>
 
-        {{--        menu--}}
+        {{--        comment--}}
         <li>
             <a href="#">
                 <i class="fa fa-menu-arrow pull-right"></i>
@@ -73,6 +73,18 @@
                 <li><a href="#">در انتظار تایید</a></li>
                 <li><a href="{{route('admin.comment.list')}}">همه نظرات</a></li>
                 <li><a href="#">نظرات تایید نشده</a></li>
+            </ul>
+        </li>
+
+        {{--        slider--}}
+        <li>
+            <a href="#">
+                <i class="fa fa-menu-arrow pull-right"></i>
+                <i class="main-icon fa fa-sliders"></i> <span>اسلایدرها</span>
+            </a>
+            <ul><!-- submenus -->
+                <li><a href="{{route('admin.slider.list')}}">لیست همه اسلایدرها</a></li>
+                <li><a href="{{route('admin.slider.create')}}">اضافه کردن اسلایدر</a></li>
             </ul>
         </li>
     </ul>

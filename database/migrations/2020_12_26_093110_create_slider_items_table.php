@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateMenuItemsTable extends Migration
+class CreateSliderItemsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,16 +13,14 @@ class CreateMenuItemsTable extends Migration
      */
     public function up()
     {
-        Schema::create('menu_items', function (Blueprint $table) {
+        Schema::create('slider_items', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('menu_id');
             $table->string('title');
+            $table->unsignedBigInteger('slider_id');
             $table->string('url');
-            $table->unsignedInteger('parent_id')->default(0);
             $table->unsignedInteger('order')->default(0);
-            $table->tinyInteger('active')->default(1);
 
-            $table->foreign('menu_id')->references('id')->on('menus')->onDelete('cascade');
+            $table->foreign('slider_id')->references('id')->on('sliders')->onDelete('cascade');
         });
     }
 
@@ -33,6 +31,6 @@ class CreateMenuItemsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('menu_items');
+        Schema::dropIfExists('slider_items');
     }
 }

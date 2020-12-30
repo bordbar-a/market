@@ -105,6 +105,21 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'as' => 'admin.', 'mi
     // End Comment Route
 
 
+    // Start Slider Route  -    all route begin by :   /admin/slider
+    Route::group(['prefix' => 'slider', 'namespace' => 'Slider', 'as' => 'slider.'], function () {
+        Route::get('/', 'SlidersController@index')->name('list');
+        Route::get('/create', 'SlidersController@create')->name('create');
+        Route::post('/store', 'SlidersController@store')->name('store');
+        Route::get('/{slider}/sub', 'SlidersController@subSlider')->name('sub');
+        Route::post('/{slider}/sub/store', 'SlidersController@subStore')->name('subStore');
+        Route::get('/{slider}/sub/update', 'SlidersController@subUpdate')->name('subUpdate');
+        Route::get('/{sliderItem}/download', 'SlidersController@sliderItemDownload')->name('sliderItemDownload');
+        Route::post('/{sliderItem}/update', 'SlidersController@sliderItemUpdate')->name('sliderItemUpdate');
+        Route::get('/{sliderItem}/delete', 'SlidersController@sliderItemDelete')->name('sliderItemDelete');
+    });
+    // End Slider Route
+
+
 });
 // End Admin Route
 
