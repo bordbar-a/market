@@ -11,7 +11,6 @@
         <h1>آیتم‌های منو</h1>
         <ol class="breadcrumb">
             <li><a href="{{route('admin.dashboard')}}">پنل ادمین</a></li>
-            <li class="active">منو {{ $menu->name }}</li>
         </ol>
     </header>
     <!-- /page title -->
@@ -19,9 +18,9 @@
 
     <div id="content" class="padding-20">
         <div class="row">
-            <div class="col-md-4 col-md-offset-4"><a href="{{route('admin.menu.list')}}"
+            <div class="col-md-4 col-md-offset-4"><a href="{{route('admin.category.list')}}"
                                                      class="btn btn-3d   btn-default btn-lg btn-block margin-bottom-30">
-                    لیست منوها
+                    لیست دسته‌بندی‌ها
                 </a>
             </div>
         </div>
@@ -35,41 +34,47 @@
             <!-- ------ -->
                 <div class="panel panel-default">
                     <div class="panel-heading panel-heading-transparent">
-                        آیتم‌های منو <strong>{{$menu->name}}</strong>
+                        <strong>دسته‌بندی‌ها</strong>
                     </div>
 
                     <div class="panel-body">
                         <div class="col-md-4">
-                            <form class="" action="{{route('admin.menu.subStore' , [$menu->id])}}" method="post"
+                            <form class="" action="{{route('admin.category.store')}}" method="post"
                                   enctype="multipart/form-data">
                                 <fieldset>
                                     @csrf
                                     <div class="row">
                                         <div class="form-group">
-                                            <div class="col-md-12 col-sm-12">
+                                            <div class="col-md-8 col-sm-8">
                                                 <label>عنوان</label>
                                                 <input type="text" name="title" value="{{old('title')}}"
                                                        class="form-control required">
                                             </div>
                                         </div>
                                     </div>
+
                                     <div class="row">
                                         <div class="form-group">
-                                            <div class="col-md-12 col-sm-12">
-                                                <label>URL</label>
-                                                <input type="text" name="url" value="{{old('url')}}"
-                                                       class="form-control required text-right en-font">
+                                            <div class="col-md-8 col-sm-8">
+                                                <label>والد : </label>
+                                                <select name="parentId" class="form-control pointer required">
+                                                    <option value="0">دسته‌بندی اصلی</option>
+
+                                                    @foreach($categories as $category)
+                                                        <option value="{{$category->id}}">{{$category->title}}</option>
+                                                    @endforeach
+                                                </select>
                                             </div>
                                         </div>
                                     </div>
+
 
                                 </fieldset>
 
                                 <div class="row">
                                     <div class="col-md-12">
-                                        <button type="submit"
-                                                class="btn btn-3d   btn-teal btn-xlg btn-block margin-top-30">
-                                            افزودن آیتم
+                                        <button type="submit" class="btn btn-3d   btn-teal btn-xlg btn-block margin-top-30">
+                                            ذخیره دسته‌بندی
                                         </button>
                                     </div>
                                 </div>
@@ -87,8 +92,8 @@
                                     <div class="col-md-11">
                                         <div class="dd" id="nestable_list">
                                             <ol class="dd-list">
-                                                @foreach($all_items['root'] as $item)
-                                                    @include('admin.menu.submenu.items' , ['all_items'=>$all_items , 'item'=>$item])
+                                                @foreach($categories_groupBy_parent[0]??[] as $item)
+                                                    @include('admin.category.items' , ['all_items'=>$categories_groupBy_parent , 'item'=>$item])
                                                 @endforeach
                                             </ol>
                                         </div>
@@ -137,7 +142,7 @@
                 var list = e.length ? e : $(e.target), output = list.data('output');
                 $.ajax({
                     method: "get",
-                    url: "{{route('admin.menu.subUpdate' , $menu->id)}}",
+                    url: "{{route('admin.category.category.update')}}",
                     data: {
                         list: list.nestable('serialize')
                     }

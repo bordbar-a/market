@@ -7,9 +7,9 @@
     <!-- /SLIDER -->
 
 
-    <!-- FEATURED -->
+    <!-- Products -->
     @include('front.partials.products')
-    <!-- /FEATURED -->
+    <!-- /Products -->
 
 
     <!-- NEW PRODUCTS -->

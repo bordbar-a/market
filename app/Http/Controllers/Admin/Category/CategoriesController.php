@@ -11,23 +11,36 @@ use Illuminate\Http\Request;
 class CategoriesController extends AdminBaseController
 {
 
-
     public function all()
     {
 
-        $categories = Category::with('parent')->get();
-        return view('admin.category.list', compact('categories'));
+        $categories_groupBy_parent = Category::with('parent')->get()->groupBy('parent_id');
+        $categories = Category::all();
+        return view('admin.category.index', compact('categories_groupBy_parent', 'categories'));
 
     }
 
-
-    public function create()
+    public function category_update(Request $request)
     {
 
-        $categories = Category::all();
-        return view('admin.category.create', compact('categories'));
+        $items = $request->all()['list'];
+        $parent = 0;
+        $this->handleCategory($items, $parent);
+        return true;
     }
 
+    private function handleCategory($all, $parent)
+    {
+        $beforeParent = $parent;
+        foreach ($all as $key => $item) {
+            Category::where('id', $item['id'])->update(['parent_id' => $parent]);
+            if (array_key_exists('children', $item)) {
+                $parent = $item['id'];
+                $this->handleCategory($item['children'],$parent);
+            }
+            $parent = $beforeParent;
+        }
+    }
 
     public function store(CategoryCreateRequest $request)
     {
@@ -46,9 +59,7 @@ class CategoriesController extends AdminBaseController
         }
 
 
-
-
-        return redirect()->route('admin.category.create');
+        return redirect()->route('admin.category.list');
 
     }
 
@@ -57,8 +68,9 @@ class CategoriesController extends AdminBaseController
     {
 
 
-        if ($category instanceof Category){
+        if ($category instanceof Category) {
             try {
+                $category->children()->delete();
                 $category->delete();
                 FlashMessages::success('دسته‌بندی مورد نظر حذف شد');
 
@@ -74,7 +86,7 @@ class CategoriesController extends AdminBaseController
     public function edit(Request $request, $category)
     {
 
-        if($category){
+        if ($category) {
 
             $category->load('parent');
             $categories = Category::cursor();
@@ -85,9 +97,9 @@ class CategoriesController extends AdminBaseController
     }
 
 
-   public function update(CategoryCreateRequest $request , $category)
+    public function update(CategoryCreateRequest $request, $category)
     {
-        if($category){
+        if ($category) {
             $category->title = $request->input('title');
             $category->parent_id = $request->input('parentId');
             $category->save();

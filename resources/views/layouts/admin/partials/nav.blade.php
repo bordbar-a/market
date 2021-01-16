@@ -9,14 +9,9 @@
         </li>
         {{--        categories--}}
         <li>
-            <a href="#">
-                <i class="fa fa-menu-arrow pull-right"></i>
+            <a href="{{route('admin.category.list')}}">
                 <i class="main-icon fa fa-bars"></i> <span>دسته‌بندی‌ها</span>
             </a>
-            <ul><!-- submenus -->
-                <li><a href="{{route('admin.category.list')}}">لیست</a></li>
-                <li><a href="{{route('admin.category.create')}}">اضافه کردن دسته‌بندی</a></li>
-            </ul>
         </li>
         {{--        users--}}
         <li>

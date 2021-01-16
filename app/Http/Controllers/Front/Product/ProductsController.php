@@ -24,7 +24,12 @@ class ProductsController extends Controller
                     $query->where('status', Comment::APPROVED);
                 }
             ])->get();
-            return view('front.product.item', compact('product'));
+
+            $relatedProducts = Product::whereHas('categories' ,function($query) use($product){
+                    $query->whereIn('category_id' , $product->categories->pluck('id')->toArray());
+            })->where('id' ,'!=', $product->id)->get();
+
+            return view('front.product.item', compact('product' , 'relatedProducts'));
         }
         return redirect()->route('front.home');
     }

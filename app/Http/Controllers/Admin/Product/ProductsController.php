@@ -85,6 +85,7 @@ class ProductsController extends AdminBaseController
         if ($product) {
 
             $product->load('categories');
+            debug($product);
             $categories = Category::pluck('title', 'id')->toArray();
             $productCategories = $product->categories->pluck('id')->toArray();
             return view('admin.product.edit', compact('product', 'categories', 'productCategories'));

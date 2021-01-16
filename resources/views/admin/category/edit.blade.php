@@ -6,23 +6,17 @@
 
     <!-- page title -->
     <header id="page-header">
-        <h1>ویرایش دسته‌بندی</h1>
+        <h1>ویرایش آیتم منو</h1>
         <ol class="breadcrumb">
             <li><a href="{{route('admin.dashboard')}}">پنل ادمین</a></li>
-            <li class="active">ویرایش‌ دسته‌بندی</li>
+            <li class="active">ویرایش آیتم منو</li>
         </ol>
     </header>
     <!-- /page title -->
 
 
     <div id="content" class="padding-20">
-        <div class="row">
-            <div class="col-md-4 col-md-offset-4"><a href="{{route('admin.category.list')}}"
-                                                     class="btn btn-3d   btn-default btn-lg btn-block margin-bottom-30">
-                    لیست دسته‌بندی‌ها
-                </a>
-            </div>
-        </div>
+
         <div class="row">
 
             <div class="col-md-12">
@@ -33,62 +27,55 @@
             <!-- ------ -->
                 <div class="panel panel-default">
                     <div class="panel-heading panel-heading-transparent">
-                        <strong>ویرایش</strong>
+                        ویرایش آیتم دسته‌بندی <strong class="color-red">{{$category->title}}</strong>
                     </div>
 
                     <div class="panel-body">
 
-                        <form class="" action="{{route('admin.category.update' , [$category->id])}}" method="post"
-                              enctype="multipart/form-data">
-                            <fieldset>
-                                @csrf
-                                <div class="row">
-                                    <div class="form-group">
-                                        <div class="col-md-8 col-sm-8">
-                                            <label>عنوان</label>
-                                            <input type="text" name="title" value="{{old('title' , $category->title)}}"
-                                                   class="form-control required">
+                        <div class="col-md-4">
+                            <form class="" action="{{route('admin.category.update' , [$category->id])}}" method="post"
+                                  enctype="multipart/form-data">
+                                <fieldset>
+                                    @csrf
+                                    <div class="row">
+                                        <div class="form-group">
+                                            <div class="col-md-12 col-sm-12">
+                                                <label>عنوان</label>
+                                                <input type="text" name="title" value="{{ $category->title}}"
+                                                       class="form-control required">
+                                            </div>
                                         </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="form-group">
+                                            <div class="col-md-12 col-sm-12">
+                                                <label>والد : </label>
+                                                <select name="parentId" class="form-control pointer required">
+                                                    <option value="0">دسته‌بندی اصلی</option>
+
+                                                    @foreach($categories as $cat)
+                                                        @if($cat->id != $category->id)
+                                                            <option value="{{$cat->id}}" {{$cat->id==$category->parent->id ? 'selected': ''}}>{{$cat->title}}</option>
+                                                        @endif
+                                                    @endforeach
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </fieldset>
+
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <button type="submit"
+                                                class="btn btn-3d   btn-teal btn-xlg btn-block margin-top-30">
+                                            ویرایش آیتم
+                                        </button>
                                     </div>
                                 </div>
 
-                                <div class="row">
-                                    <div class="form-group">
-                                        <div class="col-md-8 col-sm-8">
-                                            <label>والد : </label>
-                                            <select name="parentId" class="form-control pointer required">
-                                                <option value="0">دسته‌بندی اصلی</option>
-
-                                                @foreach($categories as $item)
-                                                    @if($category->id!=$item->id)
-                                                        <option
-                                                            value="{{$item->id}}" {{$item->id==$category->parent_id ?"selected" : ''}}> {{$item->title}}</option>
-                                                    @endif
-                                                @endforeach
-                                            </select>
-                                        </div>
-                                    </div>
-                                </div>
-
-
-                            </fieldset>
-
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <button type="submit" class="btn btn-3d   btn-teal btn-xlg btn-block margin-top-30">
-                                        ذخیره دسته‌بندی
-                                    </button>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-12"><a href="{{route('admin.category.delete' , [$category->id])}}"
-                                                          class="btn btn-3d   btn-danger btn-xlg btn-block margin-top-30">
-                                        حذف دسته‌بندی
-                                    </a>
-                                </div>
-                            </div>
-
-                        </form>
+                            </form>
+                        </div>
 
                     </div>
 

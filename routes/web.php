@@ -47,6 +47,7 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'as' => 'admin.', 'mi
         Route::get('/delete/{category}', 'CategoriesController@delete')->name('delete');
         Route::get('/edit/{category}', 'CategoriesController@edit')->name('edit');
         Route::post('/update/{category}', 'CategoriesController@update')->name('update');
+        Route::get('/update/category', 'CategoriesController@category_update')->name('category.update');
     });
     // End Category Route
 

@@ -71,7 +71,7 @@
                                                 .top-left
                                         -->
                                         <a class="lightbox bottom-right"
-                                           href="{{asset('/storage/productImages/' . $product->id . '/' . $product->pictures[0]->name )}}"
+                                           href="{{getProductImageUrl($product->id , $product->pictures[0]->name)}}"
                                            data-plugin-options='{"type":"image"}'><i
                                                 class="glyphicon glyphicon-search"></i></a>
 
@@ -81,7 +81,7 @@
                                             Extra: add .image-bw class to force black and white!
                                         -->
                                         <img class="img-responsive"
-                                             src="{{asset('/storage/productImages/' . $product->id . '/' . $product->pictures[0]->name )}}"
+                                             src="{{getProductImageUrl($product->id , $product->pictures[0]->name)}}"
                                              width="1200" height="1500" alt="This is the product title"/>
                                     </figure>
 
@@ -92,9 +92,9 @@
                                      data-plugin-options='{"singleItem": false, "autoPlay": false, "navigation": true, "pagination": false}'>
                                     @foreach($product->pictures as $picture)
                                         <a class="thumbnail active"
-                                           href="{{asset('/storage/productImages/' . $product->id . '/' . $picture->name )}}">
+                                           href="{{getProductImageUrl($product->id , $picture->name)}}">
                                             <img
-                                                src="{{asset('/storage/productImages/' . $product->id . '/' . $picture->name )}}"
+                                                src="{{getProductImageUrl($product->id , $picture->name)}}"
                                                 height="100" alt=""/>
                                         </a>
                                     @endforeach
@@ -302,308 +302,51 @@
                     <hr class="margin-top-80 margin-bottom-80"/>
 
 
-                    <h2 class="owl-featured"><strong>Related</strong> products:</h2>
+                    <h2 class="owl-featured"><strong> محصولات </strong> مرتبط </h2>
                     <div class="owl-carousel featured nomargin owl-padding-10"
                          data-plugin-options='{"singleItem": false, "items": "4", "stopOnHover":false, "autoPlay":4500, "autoHeight": false, "navigation": true, "pagination": false}'>
 
-                        <!-- item -->
-                        <div class="shop-item nomargin">
-
-                            <div class="thumbnail">
-                                <!-- product image(s) -->
-                                <a class="shop-item-image" href="shop-single-left.html">
-                                    <img class="img-responsive" src="/front/images/demo/shop/products/300x450/p13.jpg"
-                                         alt="shop first image"/>
-                                    <img class="img-responsive" src="/front/images/demo/shop/products/300x450/p14.jpg"
-                                         alt="shop hover image"/>
-                                </a>
-                                <!-- /product image(s) -->
-
-                                <!-- product more info -->
-                                <div class="shop-item-info">
-                                    <span class="label label-success">NEW</span>
-                                    <span class="label label-danger">SALE</span>
-                                </div>
-                                <!-- /product more info -->
-                            </div>
-
-                            <div class="shop-item-summary text-center">
-                                <h2>Cotton 100% - Pink Shirt</h2>
-
-                                <!-- rating -->
-                                <div class="shop-item-rating-line">
-                                    <div class="rating rating-4 size-13"><!-- rating-0 ... rating-5 --></div>
-                                </div>
-                                <!-- /rating -->
-
-                                <!-- price -->
-                                <div class="shop-item-price">
-                                    <span class="line-through">$98.00</span>
-                                    $78.00
-                                </div>
-                                <!-- /price -->
-                            </div>
-
-                            <!-- buttons -->
-                            <div class="shop-item-buttons text-center">
-                                <a class="btn btn-default" href="shop-cart.html"><i class="fa fa-cart-plus"></i> Add to
-                                    Cart</a>
-                            </div>
-                            <!-- /buttons -->
-                        </div>
-                        <!-- /item -->
+                    @foreach($relatedProducts as $rel_product)
 
                         <!-- item -->
-                        <div class="shop-item nomargin">
+                            <div class="shop-item nomargin">
 
-                            <div class="thumbnail">
-                                <!-- product image(s) -->
-                                <a class="shop-item-image" href="shop-single-left.html">
-                                    <!-- CAROUSEL -->
-                                    <div class="owl-carousel owl-padding-0 nomargin"
-                                         data-plugin-options='{"singleItem": true, "autoPlay": 3000, "navigation": false, "pagination": false, "transitionStyle":"fadeUp"}'>
+                                <div class="thumbnail">
+                                    <!-- product image(s) -->
+                                    <a class="shop-item-image" href="{{route('front.product.item' ,$rel_product->id)}}">
                                         <img class="img-responsive"
-                                             src="/front/images/demo/shop/products/300x450/p5.jpg" alt="">
-                                        <img class="img-responsive"
-                                             src="/front/images/demo/shop/products/300x450/p1.jpg" alt="">
+                                             src="{{getProductImageUrl($rel_product->id , $rel_product->pictures[0]->name)}}"
+                                             alt="shop first image"/>
+                                    </a>
+                                    <!-- /product image(s) -->
+                                </div>
+
+                                <div class="shop-item-summary text-center">
+                                    <h2>{{$rel_product->title}}</h2>
+
+                                    <!-- rating -->
+                                    <div class="shop-item-rating-line">
+                                        <div class="rating rating-4 size-13"><!-- rating-0 ... rating-5 --></div>
                                     </div>
-                                    <!-- /CAROUSEL -->
-                                </a>
-                                <!-- /product image(s) -->
-                            </div>
+                                    <!-- /rating -->
 
-                            <div class="shop-item-summary text-center">
-                                <h2>Pink Dress 100% Cotton</h2>
-
-                                <!-- rating -->
-                                <div class="shop-item-rating-line">
-                                    <div class="rating rating-4 size-13"><!-- rating-0 ... rating-5 --></div>
+                                    <!-- price -->
+                                    <div class="shop-item-price">
+                                      {{$rel_product->present()->getFinalPrice()}}
+                                    </div>
+                                    <!-- /price -->
                                 </div>
-                                <!-- /rating -->
 
-                                <!-- price -->
-                                <div class="shop-item-price">
-                                    $44.00
+                                <!-- buttons -->
+                                <div class="shop-item-buttons text-center">
+                                    <a class="btn btn-default" href="{{route('front.basket.add' , $rel_product->id)}}"><i class="fa fa-cart-plus"></i> اضافه به سبد
+                                        </a>
                                 </div>
-                                <!-- /price -->
+                                <!-- /buttons -->
                             </div>
+                            <!-- /item -->
 
-                            <!-- buttons -->
-                            <div class="shop-item-buttons text-center">
-                                <a class="btn btn-default" href="shop-cart.html"><i class="fa fa-cart-plus"></i> Add to
-                                    Cart</a>
-                            </div>
-                            <!-- /buttons -->
-                        </div>
-                        <!-- /item -->
-
-                        <!-- item -->
-                        <div class="shop-item nomargin">
-
-                            <div class="thumbnail">
-                                <!-- product image(s) -->
-                                <a class="shop-item-image" href="shop-single-left.html">
-                                    <img class="img-responsive" src="/front/images/demo/shop/products/300x450/p2.jpg"
-                                         alt="shop first image"/>
-                                    <img class="img-responsive" src="/front/images/demo/shop/products/300x450/p12.jpg"
-                                         alt="shop hover image"/>
-                                </a>
-                                <!-- /product image(s) -->
-
-                                <!-- product more info -->
-                                <div class="shop-item-info">
-                                    <span class="label label-success">NEW</span>
-                                    <span class="label label-danger">SALE</span>
-                                </div>
-                                <!-- /product more info -->
-                            </div>
-
-                            <div class="shop-item-summary text-center">
-                                <h2>Black Fashion Hat</h2>
-
-                                <!-- rating -->
-                                <div class="shop-item-rating-line">
-                                    <div class="rating rating-4 size-13"><!-- rating-0 ... rating-5 --></div>
-                                </div>
-                                <!-- /rating -->
-
-                                <!-- price -->
-                                <div class="shop-item-price">
-                                    <span class="line-through">$77.00</span>
-                                    $65.00
-                                </div>
-                                <!-- /price -->
-                            </div>
-
-                            <!-- buttons -->
-                            <div class="shop-item-buttons text-center">
-                                <a class="btn btn-default" href="shop-cart.html"><i class="fa fa-cart-plus"></i> Add to
-                                    Cart</a>
-                            </div>
-                            <!-- /buttons -->
-                        </div>
-                        <!-- /item -->
-
-                        <!-- item -->
-                        <div class="shop-item nomargin">
-
-                            <div class="thumbnail">
-                                <!-- product image(s) -->
-                                <a class="shop-item-image" href="shop-single-left.html">
-                                    <img class="img-responsive" src="/front/images/demo/shop/products/300x450/p8.jpg"
-                                         alt="shop first image"/>
-                                </a>
-                                <!-- /product image(s) -->
-
-                                <!-- countdown -->
-                                <div class="shop-item-counter">
-                                    <div class="countdown" data-from="December 31, 2017 08:22:01"
-                                         data-labels="years,months,weeks,days,hour,min,sec">
-                                        <!-- Example Date From: December 31, 2018 15:03:26 --></div>
-                                </div>
-                                <!-- /countdown -->
-                            </div>
-
-                            <div class="shop-item-summary text-center">
-                                <h2>Beach Black Lady Suit</h2>
-
-                                <!-- rating -->
-                                <div class="shop-item-rating-line">
-                                    <div class="rating rating-4 size-13"><!-- rating-0 ... rating-5 --></div>
-                                </div>
-                                <!-- /rating -->
-
-                                <!-- price -->
-                                <div class="shop-item-price">
-                                    $56.00
-                                </div>
-                                <!-- /price -->
-                            </div>
-
-                            <!-- buttons -->
-                            <div class="shop-item-buttons text-center">
-                                <a class="btn btn-default" href="shop-cart.html"><i class="fa fa-cart-plus"></i> Add to
-                                    Cart</a>
-                            </div>
-                            <!-- /buttons -->
-                        </div>
-                        <!-- /item -->
-
-                        <!-- item -->
-                        <div class="shop-item nomargin">
-
-                            <div class="thumbnail">
-                                <!-- product image(s) -->
-                                <a class="shop-item-image" href="shop-single-left.html">
-                                    <img class="img-responsive" src="/front/images/demo/shop/products/300x450/p7.jpg"
-                                         alt="shop first image"/>
-                                </a>
-                                <!-- /product image(s) -->
-                            </div>
-
-                            <div class="shop-item-summary text-center">
-                                <h2>Town Dress - Black</h2>
-
-                                <!-- rating -->
-                                <div class="shop-item-rating-line">
-                                    <div class="rating rating-4 size-13"><!-- rating-0 ... rating-5 --></div>
-                                </div>
-                                <!-- /rating -->
-
-                                <!-- price -->
-                                <div class="shop-item-price">
-                                    $154.00
-                                </div>
-                                <!-- /price -->
-                            </div>
-
-                            <!-- buttons -->
-                            <div class="shop-item-buttons text-center">
-                                <a class="btn btn-default" href="shop-cart.html"><i class="fa fa-cart-plus"></i> Add to
-                                    Cart</a>
-                            </div>
-                            <!-- /buttons -->
-                        </div>
-                        <!-- /item -->
-
-                        <!-- item -->
-                        <div class="shop-item nomargin">
-
-                            <div class="thumbnail">
-                                <!-- product image(s) -->
-                                <a class="shop-item-image" href="shop-single-left.html">
-                                    <img class="img-responsive" src="/front/images/demo/shop/products/300x450/p6.jpg"
-                                         alt="shop first image"/>
-                                    <img class="img-responsive" src="/front/images/demo/shop/products/300x450/p14.jpg"
-                                         alt="shop hover image"/>
-                                </a>
-                                <!-- /product image(s) -->
-                            </div>
-
-                            <div class="shop-item-summary text-center">
-                                <h2>Chick Lady Fashion</h2>
-
-                                <!-- rating -->
-                                <div class="shop-item-rating-line">
-                                    <div class="rating rating-4 size-13"><!-- rating-0 ... rating-5 --></div>
-                                </div>
-                                <!-- /rating -->
-
-                                <!-- price -->
-                                <div class="shop-item-price">
-                                    $167.00
-                                </div>
-                                <!-- /price -->
-                            </div>
-
-                            <!-- buttons -->
-                            <div class="shop-item-buttons text-center">
-                                <a class="btn btn-default" href="shop-cart.html"><i class="fa fa-cart-plus"></i> Add to
-                                    Cart</a>
-                            </div>
-                            <!-- /buttons -->
-                        </div>
-                        <!-- /item -->
-
-                        <!-- item -->
-                        <div class="shop-item nomargin">
-
-                            <div class="thumbnail">
-                                <!-- product image(s) -->
-                                <a class="shop-item-image" href="shop-single-left.html">
-                                    <img class="img-responsive" src="/front/images/demo/shop/products/300x450/p11.jpg"
-                                         alt="shop hover image"/>
-                                    <img class="img-responsive" src="/front/images/demo/shop/products/300x450/p3.jpg"
-                                         alt="shop first image"/>
-                                </a>
-                                <!-- /product image(s) -->
-                            </div>
-
-                            <div class="shop-item-summary text-center">
-                                <h2>Black Long Lady Shirt</h2>
-
-                                <!-- rating -->
-                                <div class="shop-item-rating-line">
-                                    <div class="rating rating-0 size-13"><!-- rating-0 ... rating-5 --></div>
-                                </div>
-                                <!-- /rating -->
-
-                                <!-- price -->
-                                <div class="shop-item-price">
-                                    $128.00
-                                </div>
-                                <!-- /price -->
-                            </div>
-
-                            <!-- buttons -->
-                            <div class="shop-item-buttons text-center">
-                                <a class="btn btn-default" href="shop-cart.html"><i class="fa fa-cart-plus"></i> Add to
-                                    Cart</a>
-                            </div>
-                            <!-- /buttons -->
-                        </div>
-                        <!-- /item -->
-
+                        @endforeach
                     </div>
 
                 </div>
@@ -615,130 +358,6 @@
                     <!-- CATEGORIES -->
                     @widget('Front\Categories\Category')
                     <!-- /CATEGORIES -->
-
-
-                    <!-- BANNER ROTATOR -->
-                    <div class="owl-carousel buttons-autohide controlls-over margin-bottom-60 text-center"
-                         data-plugin-options='{"singleItem": true, "autoPlay": 4000, "navigation": true, "pagination": false, "transitionStyle":"fadeUp"}'>
-                        <a href="#">
-                            <img class="img-responsive" src="/front/images/demo/shop/banners/off_1.png" width="270"
-                                 height="350" alt="">
-                        </a>
-                        <a href="#">
-                            <img class="img-responsive" src="/front/images/demo/shop/banners/off_2.png" width="270"
-                                 height="350" alt="">
-                        </a>
-                    </div>
-                    <!-- /BANNER ROTATOR -->
-
-
-                    <!-- FEATURED -->
-                    <div class="margin-bottom-60">
-
-                        <h2 class="owl-featured">FEATURED</h2>
-                        <div class="owl-carousel featured"
-                             data-plugin-options='{"singleItem": true, "stopOnHover":false, "autoPlay":false, "autoHeight": false, "navigation": true, "pagination": false}'>
-
-                            <div><!-- SLIDE 1 -->
-                                <ul class="list-unstyled nomargin nopadding text-left">
-
-                                    <li class="clearfix"><!-- item -->
-                                        <div class="thumbnail featured clearfix pull-left">
-                                            <a href="#">
-                                                <img src="/front/images/demo/shop/products/100x100/p10.jpg" width="80"
-                                                     height="80" alt="featured item">
-                                            </a>
-                                        </div>
-
-                                        <a class="block size-12" href="#">Long Grey Dress - Special</a>
-                                        <div class="rating rating-4 size-13 width-100 text-left">
-                                            <!-- rating-0 ... rating-5 --></div>
-                                        <div class="size-18 text-left">$132.00</div>
-                                    </li><!-- /item -->
-
-                                    <li class="clearfix"><!-- item -->
-                                        <div class="thumbnail featured clearfix pull-left">
-                                            <a href="#">
-                                                <img src="/front/images/demo/shop/products/100x100/p2.jpg" width="80"
-                                                     height="80" alt="featured item">
-                                            </a>
-                                        </div>
-
-                                        <a class="block size-1" href="#">Black Fashion Hat</a>
-                                        <div class="rating rating-4 size-13 width-100 text-left">
-                                            <!-- rating-0 ... rating-5 --></div>
-                                        <div class="size-18 text-left">$65.00</div>
-                                    </li><!-- /item -->
-
-                                    <li class="clearfix"><!-- item -->
-                                        <div class="thumbnail featured clearfix pull-left">
-                                            <a href="#">
-                                                <img src="/front/images/demo/shop/products/100x100/p13.jpg" width="80"
-                                                     height="80" alt="featured item">
-                                            </a>
-                                        </div>
-
-                                        <a class="block size-1" href="#">Cotton 100% - Pink Dress</a>
-                                        <div class="rating rating-4 size-13 width-100 text-left">
-                                            <!-- rating-0 ... rating-5 --></div>
-                                        <div class="size-18 text-left">$77.00</div>
-                                    </li><!-- /item -->
-
-                                </ul>
-                            </div><!-- /SLIDE 1 -->
-
-                            <div><!-- SLIDE 2 -->
-                                <ul class="list-unstyled nomargin nopadding text-left">
-
-                                    <li class="clearfix"><!-- item -->
-                                        <div class="thumbnail featured clearfix pull-left">
-                                            <a href="#">
-                                                <img src="/front/images/demo/shop/products/100x100/p12.jpg" width="80"
-                                                     height="80" alt="featured item">
-                                            </a>
-                                        </div>
-
-                                        <a class="block size-12" href="#">Long Grey Dress - Special</a>
-                                        <div class="rating rating-4 size-13 width-100 text-left">
-                                            <!-- rating-0 ... rating-5 --></div>
-                                        <div class="size-18 text-left">$132.00</div>
-                                    </li><!-- /item -->
-
-                                    <li class="clearfix"><!-- item -->
-                                        <div class="thumbnail featured clearfix pull-left">
-                                            <a href="#">
-                                                <img src="/front/images/demo/shop/products/100x100/p6.jpg" width="80"
-                                                     height="80" alt="featured item">
-                                            </a>
-                                        </div>
-
-                                        <a class="block size-1" href="#">Black Fashion Hat</a>
-                                        <div class="rating rating-4 size-13 width-100 text-left">
-                                            <!-- rating-0 ... rating-5 --></div>
-                                        <div class="size-18 text-left">$65.00</div>
-                                    </li><!-- /item -->
-
-                                    <li class="clearfix"><!-- item -->
-                                        <div class="thumbnail featured clearfix pull-left">
-                                            <a href="#">
-                                                <img src="/front/images/demo/shop/products/100x100/p14.jpg" width="80"
-                                                     height="80" alt="featured item">
-                                            </a>
-                                        </div>
-
-                                        <a class="block size-1" href="#">Cotton 100% - Pink Dress</a>
-                                        <div class="rating rating-4 size-13 width-100 text-left">
-                                            <!-- rating-0 ... rating-5 --></div>
-                                        <div class="size-18 text-left">$77.00</div>
-                                    </li><!-- /item -->
-
-                                </ul>
-                            </div><!-- /SLIDE 2 -->
-
-                        </div>
-
-                    </div>
-                    <!-- /FEATURED -->
 
 
                     <!-- HTML BLOCK -->

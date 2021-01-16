@@ -3,12 +3,17 @@
   <component name="ChangeListManager">
     <list default="true" id="d4527880-cb0d-413e-8591-1ff27fa185c3" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Helpers/File/HandleFile.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Helpers/File/HandleFile.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Front/Home/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Front/Home/HomeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/File.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/File.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/filesystems.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/filesystems.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_12_10_125346_create_menu_items_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_12_10_125346_create_menu_items_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/front/partials/slider.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/front/partials/slider.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/Category/CategoriesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/Category/CategoriesController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/Product/ProductsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/Product/ProductsController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Front/Product/ProductsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Front/Product/ProductsController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/category/columns.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/category/create.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/category/edit.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/category/items.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/category/list.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/menu/submenu/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/menu/submenu/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/front/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/front/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/front/product/item.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/front/product/item.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/layouts/admin/partials/nav.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/admin/partials/nav.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
@@ -172,25 +177,25 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/admin" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/admin/category/new" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="yiiguxing.plugin.translate" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\xampp\htdocs\market\storage\app\public\productImages\5" />
-      <recent name="C:\xampp\htdocs\market\storage\app\public\productImages" />
-      <recent name="C:\xampp\htdocs\market\app\Http\Controllers\Share\User" />
-      <recent name="C:\xampp\htdocs\market\app\Http\Controllers\Admin\Comment" />
-      <recent name="C:\xampp\htdocs\market\app\Http\Controllers\Front\CommentsController" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\market\resources\views\admin\category\new" />
       <recent name="C:\xampp\htdocs\market\resources\views\admin" />
       <recent name="C:\xampp\htdocs\market\public\backend\plugins\ckeditornew" />
       <recent name="C:\xampp\htdocs\market\public\backend\plugins\ckeditor5\src" />
       <recent name="C:\xampp\htdocs\market\resources\views\admin\comment" />
-      <recent name="C:\xampp\htdocs\market\resources\views\admin\menu\submenu" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\market\resources\views\admin\category" />
+      <recent name="C:\xampp\htdocs\market\storage\app\public\productImages\5" />
+      <recent name="C:\xampp\htdocs\market\storage\app\public\productImages" />
+      <recent name="C:\xampp\htdocs\market\app\Http\Controllers\Share\User" />
+      <recent name="C:\xampp\htdocs\market\app\Http\Controllers\Admin\Comment" />
     </key>
   </component>
   <component name="RunManager" selected="PHPUnit.app">
@@ -295,7 +300,13 @@
       <workItem from="1608568553310" duration="10351000" />
       <workItem from="1608957394762" duration="15141000" />
       <workItem from="1609131291901" duration="2141000" />
-      <workItem from="1609298560484" duration="2030000" />
+      <workItem from="1609298560484" duration="3298000" />
+      <workItem from="1609411334749" duration="1638000" />
+      <workItem from="1609761908016" duration="31000" />
+      <workItem from="1609764697767" duration="1818000" />
+      <workItem from="1610283519438" duration="6979000" />
+      <workItem from="1610699222223" duration="1655000" />
+      <workItem from="1610721286650" duration="5237000" />
     </task>
     <servers />
   </component>
@@ -327,10 +338,10 @@
       <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state x="365" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1440.860@0.0.1440.860" timestamp="1608287316821" />
-    <state x="450" y="184" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1608980001198">
+    <state x="450" y="184" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1610723468833">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state x="450" y="184" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1440.860@0.0.1440.860" timestamp="1608980001198" />
+    <state x="450" y="184" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1440.860@0.0.1440.860" timestamp="1610723468833" />
     <state x="500" y="355" key="#com.jetbrains.php.lang.intentions.PhpImportClassDialog#" timestamp="1606375386753">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
@@ -347,10 +358,10 @@
       <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state x="524" y="325" width="447" height="241" key="ComposerInitDialogKey/0.0.1440.860@0.0.1440.860" timestamp="1604418130842" />
-    <state x="500" y="184" key="FileChooserDialogImpl" timestamp="1607921128029">
+    <state x="500" y="184" key="FileChooserDialogImpl" timestamp="1610709023003">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state x="500" y="184" key="FileChooserDialogImpl/0.0.1440.860@0.0.1440.860" timestamp="1607921128029" />
+    <state x="500" y="184" key="FileChooserDialogImpl/0.0.1440.860@0.0.1440.860" timestamp="1610709023003" />
     <state width="1397" height="499" key="GridCell.Tab.0.bottom" timestamp="1608581896869">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
@@ -395,10 +406,10 @@
       <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state x="221" y="72" key="SettingsEditor/0.0.1440.860@0.0.1440.860" timestamp="1604729020213" />
-    <state x="416" y="253" key="com.intellij.ide.util.TipDialog" timestamp="1609298560111">
+    <state x="416" y="253" key="com.intellij.ide.util.TipDialog" timestamp="1610792782719">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state x="416" y="253" key="com.intellij.ide.util.TipDialog/0.0.1440.860@0.0.1440.860" timestamp="1609298560111" />
+    <state x="416" y="253" key="com.intellij.ide.util.TipDialog/0.0.1440.860@0.0.1440.860" timestamp="1610792782719" />
     <state x="295" y="74" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1606234506085">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
@@ -419,9 +430,9 @@
       <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state x="376" y="195" key="run.anything.popup/0.0.1440.860@0.0.1440.860" timestamp="1608048373315" />
-    <state x="549" y="245" width="672" height="678" key="search.everywhere.popup" timestamp="1609299161588">
+    <state x="549" y="245" width="672" height="678" key="search.everywhere.popup" timestamp="1610725750299">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state x="549" y="245" width="672" height="678" key="search.everywhere.popup/0.0.1440.860@0.0.1440.860" timestamp="1609299161588" />
+    <state x="549" y="245" width="672" height="678" key="search.everywhere.popup/0.0.1440.860@0.0.1440.860" timestamp="1610725750299" />
   </component>
 </project>
