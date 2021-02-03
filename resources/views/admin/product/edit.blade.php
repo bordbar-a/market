@@ -143,8 +143,6 @@
 
     <script type="text/javascript" src="/backend/plugins/select2/js/select2.js"></script>
     <script type="text/javascript" src="/backend/plugins/dropzone/dropzone.js"></script>
-    {{--    <script type="text/javascript" src="/backend/plugins/summernote/summernote.js"></script>--}}
-{{--    <script src="https://cdn.ckeditor.com/ckeditor5/24.0.0/classic/ckeditor.js"></script>--}}
     <script src="/backend/plugins/ckeditor/build/ckeditor.js"></script>
 
     <script>

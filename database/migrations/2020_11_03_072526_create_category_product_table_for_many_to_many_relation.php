@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateCategoryProductTableForManyToManyRealiton extends Migration
+class CreateCategoryProductTableForManyToManyRelation extends Migration
 {
     /**
      * Run the migrations.
@@ -17,10 +17,6 @@ class CreateCategoryProductTableForManyToManyRealiton extends Migration
             $table->bigIncrements('id');
             $table->unsignedBigInteger('category_id');
             $table->unsignedBigInteger('product_id');
-
-
-            $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
-            $table->foreign('product_id')->references('id')->on('products')->onDelete('cascade');
 
         });
     }

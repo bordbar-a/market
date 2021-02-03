@@ -16,7 +16,8 @@ class CommentsController extends FrontBaseController
     public function productCreate(Request $request, Product $product)
     {
         $request->validate([
-            'name'=>'filled'
+            'name'=>'filled',
+            'content'=>'required',
         ]);
         $product->comments()->create([
             'title' => $request->get('title'),

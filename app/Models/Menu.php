@@ -7,6 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 class Menu extends Model
 {
 
+
+    const MAIN_MENU_NAME = 'منو اصلی سایت';
     protected $guarded = [
         'id'
     ];

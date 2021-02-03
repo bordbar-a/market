@@ -25,6 +25,9 @@ class HandleFile
     {
         return $file->storeAs('', self::generateUserImageName($file), self::UserImageDisk);
     }
+
+
+
     public static function saveProductPicture(UploadedFile $file, int $product_id)
     {
         $name = $file->storeAs($product_id, self::generateProductImageName($file), self::ProductImageDisk);

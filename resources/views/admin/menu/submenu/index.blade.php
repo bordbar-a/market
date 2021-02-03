@@ -82,24 +82,23 @@
                             <div class="row">
 
 
-                                <!-- NESTABLE #2 -->
-                                <div class="col-sm-6 col-md-8">
-                                    <div class="col-md-11">
-                                        <div class="dd" id="nestable_list">
-                                            <ol class="dd-list">
-                                                @foreach($all_items['root'] as $item)
-                                                    @include('admin.menu.submenu.items' , ['all_items'=>$all_items , 'item'=>$item])
-                                                @endforeach
-                                            </ol>
+                                <!-- NESTABLE  -->
+                                @if(isset($menu_items['root']))
+                                    <div class="col-sm-6 col-md-8">
+                                        <div class="col-md-11">
+                                            <div class="dd" id="nestable_list">
+                                                <ol class="dd-list">
+                                                    @foreach($menu_items['root'] as $item)
+                                                        @include('admin.menu.submenu.items' , ['all_items'=>$menu_items , 'item'=>$item])
+                                                    @endforeach
+                                                </ol>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-1">
+                                            <button class="btn btn-success btn-xs" id="#saveMenu">ذخیره تغییرات</button>
                                         </div>
                                     </div>
-                                    <div class="col-md-1">
-                                        <button class="btn btn-success btn-xs" id="#saveMenu">ذخیره تغییرات</button>
-                                    </div>
-
-
-                                </div>
-
+                                @endif
 
                             </div>
                         </div>
@@ -128,8 +127,6 @@
     <script type="text/javascript" src="{{asset('backend/plugins/nestable/jquery.nestable.js')}}"></script>
 
     <script>
-
-
 
 
         $(document).ready(function () {

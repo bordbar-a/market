@@ -28,14 +28,12 @@ class ProductsController extends AdminBaseController
 
     public function create()
     {
-
-        $products = Product::all();
         $categories = Category::all();
-        return view('admin.product.create', compact('products', 'categories'));
+        return view('admin.product.create', compact('categories'));
     }
 
 
-    public function store(ProductCreateRequest $request)
+    public function store(ProductCreateRequest  $request)
     {
 
         $data = [
@@ -52,6 +50,20 @@ class ProductsController extends AdminBaseController
             $product = Product::create($data);
             $categories = $this->addNewCategoryItem($request->input('categories'));
             $product->categories()->sync($categories);
+
+            if ($request->hasFile('images')) {
+                $images = $request->file('images');
+
+                foreach ($images as $image){
+
+                    $name = HandleFile::saveProductPicture($image, $product->id);
+                    $product->pictures()->create([
+                        'name' => $name,
+                        'type' => File::ProductPicture,
+                    ]);
+                }
+            }
+
             FlashMessages::success('محصول ' . $product->title . " اضافه شد");
 
         } catch (\Exception $exception) {
@@ -95,7 +107,7 @@ class ProductsController extends AdminBaseController
     }
 
 
-    public function update(ProductCreateRequest  $request, $product)
+    public function update(ProductCreateRequest $request, $product)
     {
         if ($product) {
             $data = [
@@ -133,7 +145,7 @@ class ProductsController extends AdminBaseController
                 'type' => File::ProductPicture,
             ]);
 
-            return Response::json(['name'=>$name], 200);
+            return Response::json(['name' => $name], 200);
 
         } else {
             return Response::json('error', 400);
@@ -157,6 +169,9 @@ class ProductsController extends AdminBaseController
 
     private function addNewCategoryItem($data)
     {
+        if (is_null($data)) {
+            return [];
+        }
         $categories_id = array_map(function ($item) {
             if ((is_numeric($item))) {
                 return (int)$item;

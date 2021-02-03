@@ -18,6 +18,7 @@ class SessionBasketProvider extends BasketContract
     /**
      * @param array $item
      */
+
     public function add(array $item)
     {
         $this->handleBasketExist();

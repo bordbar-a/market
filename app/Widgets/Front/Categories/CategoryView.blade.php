@@ -1,8 +1,9 @@
-<?php
-$categories = $data[0];
+@php
+   if(!empty($data[0])){
+    $categories = $data[0];
 
 
-?>
+@endphp
 <div class="side-nav margin-bottom-60">
 
     <div class="side-nav-head">
@@ -17,3 +18,8 @@ $categories = $data[0];
     </ul>
 
 </div>
+
+@php
+}
+@endphp
+

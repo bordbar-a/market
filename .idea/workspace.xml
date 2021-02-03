@@ -3,19 +3,28 @@
   <component name="ChangeListManager">
     <list default="true" id="d4527880-cb0d-413e-8591-1ff27fa185c3" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/Category/CategoriesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/Category/CategoriesController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Helpers/File/HandleFile.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Helpers/File/HandleFile.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Helpers/Setting/SettingHelper.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Helpers/Setting/SettingHelper.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/Menu/MenusController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/Menu/MenusController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/Product/ProductsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/Product/ProductsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Front/Product/ProductsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Front/Product/ProductsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/category/columns.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/category/create.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/category/edit.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/category/items.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/category/list.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Front/Comment/CommentsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Front/Comment/CommentsController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Front/Home/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Front/Home/HomeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Menu.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Menu.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Slider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Slider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Services/Basket/Providers/SessionBasketProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Services/Basket/Providers/SessionBasketProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Widgets/Front/Categories/Category.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Widgets/Front/Categories/Category.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Widgets/Front/Categories/CategoryView.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Widgets/Front/Categories/CategoryView.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Widgets/Front/Header/Header.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Widgets/Front/Header/Header.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Widgets/Front/Header/HeaderView.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Widgets/Front/Header/HeaderView.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_11_03_072526_create_category_product_table_for_many_to_many_realiton.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_11_03_072526_create_category_product_table_for_many_to_many_relation.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_11_03_073347_add_foreign_user_id_in_table_products.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_11_03_073347_add_foreign_user_id_in_table_products.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/category/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/category/edit.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/admin/menu/submenu/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/menu/submenu/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/front/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/front/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/front/product/item.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/front/product/item.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/admin/partials/nav.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/admin/partials/nav.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/product/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/product/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/product/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/product/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/setting/list.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/setting/list.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/front/partials/products.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/front/partials/products.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/front/partials/slider.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/front/partials/slider.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -177,7 +186,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/admin/category/new" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="yiiguxing.plugin.translate" />
@@ -307,6 +316,10 @@
       <workItem from="1610283519438" duration="6979000" />
       <workItem from="1610699222223" duration="1655000" />
       <workItem from="1610721286650" duration="5237000" />
+      <workItem from="1610792768686" duration="621000" />
+      <workItem from="1610818355373" duration="1979000" />
+      <workItem from="1611219540982" duration="86000" />
+      <workItem from="1612343526904" duration="13220000" />
     </task>
     <servers />
   </component>
@@ -358,10 +371,10 @@
       <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state x="524" y="325" width="447" height="241" key="ComposerInitDialogKey/0.0.1440.860@0.0.1440.860" timestamp="1604418130842" />
-    <state x="500" y="184" key="FileChooserDialogImpl" timestamp="1610709023003">
+    <state x="500" y="184" key="FileChooserDialogImpl" timestamp="1611219625043">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state x="500" y="184" key="FileChooserDialogImpl/0.0.1440.860@0.0.1440.860" timestamp="1610709023003" />
+    <state x="500" y="184" key="FileChooserDialogImpl/0.0.1440.860@0.0.1440.860" timestamp="1611219625043" />
     <state width="1397" height="499" key="GridCell.Tab.0.bottom" timestamp="1608581896869">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
@@ -406,18 +419,18 @@
       <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state x="221" y="72" key="SettingsEditor/0.0.1440.860@0.0.1440.860" timestamp="1604729020213" />
-    <state x="416" y="253" key="com.intellij.ide.util.TipDialog" timestamp="1610792782719">
+    <state x="416" y="253" key="com.intellij.ide.util.TipDialog" timestamp="1611219547488">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state x="416" y="253" key="com.intellij.ide.util.TipDialog/0.0.1440.860@0.0.1440.860" timestamp="1610792782719" />
+    <state x="416" y="253" key="com.intellij.ide.util.TipDialog/0.0.1440.860@0.0.1440.860" timestamp="1611219547488" />
     <state x="295" y="74" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1606234506085">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state x="295" y="74" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1440.860@0.0.1440.860" timestamp="1606234506085" />
-    <state x="416" y="167" width="737" height="596" key="find.popup" timestamp="1608050460981">
+    <state x="416" y="167" width="737" height="596" key="find.popup" timestamp="1612344355301">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state x="416" y="167" width="737" height="596" key="find.popup/0.0.1440.860@0.0.1440.860" timestamp="1608050460981" />
+    <state x="416" y="167" width="737" height="596" key="find.popup/0.0.1440.860@0.0.1440.860" timestamp="1612344355301" />
     <state x="361" y="156" width="700" height="530" key="recent.locations.popup" timestamp="1608581088711">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
@@ -430,9 +443,9 @@
       <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state x="376" y="195" key="run.anything.popup/0.0.1440.860@0.0.1440.860" timestamp="1608048373315" />
-    <state x="549" y="245" width="672" height="678" key="search.everywhere.popup" timestamp="1610725750299">
+    <state x="549" y="245" width="672" height="678" key="search.everywhere.popup" timestamp="1612365037120">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state x="549" y="245" width="672" height="678" key="search.everywhere.popup/0.0.1440.860@0.0.1440.860" timestamp="1610725750299" />
+    <state x="549" y="245" width="672" height="678" key="search.everywhere.popup/0.0.1440.860@0.0.1440.860" timestamp="1612365037120" />
   </component>
 </project>

@@ -1,3 +1,5 @@
+@if(!is_null($slider))
+
 <section class="padding-top-40">
     <div class="container">
 
@@ -20,3 +22,4 @@
 
     </div>
 </section>
+@endif

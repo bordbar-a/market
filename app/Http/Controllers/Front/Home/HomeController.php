@@ -14,7 +14,7 @@ class HomeController extends FrontBaseController
 
 
         $products = Product::with('pictures')->get();
-        $slider= Slider::where('name' , 'صفحه خانه')->with(['items'=>function($query){
+        $slider= Slider::where('name' , Slider::FIRST_PAGE_SLIDER_NAME)->with(['items'=>function($query){
             $query->orderBy('order' , 'asc');
         },'items.image'])->first();
 

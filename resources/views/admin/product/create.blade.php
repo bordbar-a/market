@@ -36,7 +36,7 @@
 
                     <div class="panel-body">
 
-                        <form class="" action="{{route('admin.product.store')}}" method="post"
+                        <form class="" action="{{route('admin.product.store')}}" method="post" id="productData"
                               enctype="multipart/form-data">
                             <fieldset>
                                 @csrf
@@ -53,8 +53,9 @@
                                     <div class="form-group">
                                         <div class="col-md-12 col-sm-12">
                                             <label>توضیحات</label>
-                                            <textarea class="summernote form-control" data-height="200"
+                                            <textarea class="editor form-control" data-height="200"
                                                       data-lang="en-US"
+                                                      id="editor"
                                                       name="description">{{old('description')}}</textarea>
                                         </div>
                                     </div>
@@ -90,18 +91,25 @@
                                     </div>
                                 </div>
 
+                                <div class="fancy-file-upload fancy-file-info">
+                                    <i class="fa fa-upload"></i>
+                                    <input type="file" class="form-control" name="images[]" onchange="jQuery(this).next('input').val(this.value);" multiple/>
+                                    <input type="text" class="form-control" placeholder="هیچ تصویری انتخاب نشده است" readonly="" />
+                                    <span class="button">انتخاب تصویر</span>
+                                </div>
 
                             </fieldset>
 
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <button type="submit" class="btn btn-3d   btn-teal btn-xlg btn-block margin-top-30">
-                                        ذخیره محصول
-                                    </button>
-                                </div>
-                            </div>
-
                         </form>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <button type="submit" class="btn btn-3d   btn-teal btn-xlg btn-block margin-top-30"
+                                        id="submitForm">
+                                    ذخیره محصول
+                                </button>
+                            </div>
+                        </div>
+
 
                     </div>
 
@@ -121,17 +129,86 @@
 
 
 
+
 @section('script')
 
 
     <script type="text/javascript" src="/backend/plugins/select2/js/select2.js"></script>
+    <script src="/backend/plugins/ckeditor/build/ckeditor.js"></script>
 
     <script>
+
         $(document).ready(function () {
+
+
             $("#myselect").select2({
                 tags: true
             });
 
-        });
+
+
+            document.getElementById('submitForm').addEventListener('click', function () {
+                document.getElementById('productData').submit();
+
+            });
+
+
+            ClassicEditor
+                .create( document.querySelector( '#editor' ), {
+                    toolbar: {
+                        items: [
+                            'heading',
+                            '|',
+                            'fontFamily',
+                            'fontSize',
+                            'bold',
+                            'italic',
+                            'fontBackgroundColor',
+                            'fontColor',
+                            '|',
+                            'bulletedList',
+                            'numberedList',
+                            '|',
+                            'alignment',
+                            'indent',
+                            'outdent',
+                            '|',
+                            'link',
+                            'imageUpload',
+                            'blockQuote',
+                            'insertTable',
+                            'mediaEmbed',
+                            'undo',
+                            'redo',
+                            '|',
+                            'removeFormat'
+                        ]
+                    },
+                    language: 'fa',
+                    image: {
+                        toolbar: [
+                            'imageTextAlternative',
+                            'imageStyle:full',
+                            'imageStyle:side'
+                        ]
+                    },
+                    table: {
+                        contentToolbar: [
+                            'tableColumn',
+                            'tableRow',
+                            'mergeTableCells'
+                        ]
+                    },
+                    licenseKey: '',
+
+                } )
+                .catch(error => {
+                    console.error(error);
+                });
+
+
+        })
+        ;
     </script>
 @endsection
+

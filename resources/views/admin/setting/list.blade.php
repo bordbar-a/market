@@ -38,8 +38,8 @@
                                         <div class="form-group">
                                             <div class="col-md-8 col-sm-8">
                                                 <label>{{$setting->title}}</label>
-                                                <input type="text" name="{{$setting->key}}" value="{{$setting->value}}"
-                                                       class="form-control required">
+                                                <input type="text" name="{{$setting->key}}" value="{{$setting->value}} "
+                                                       class="form-control text-right required">
                                             </div>
                                         </div>
                                     </div>

@@ -40,10 +40,14 @@ class MenusController extends AdminBaseController
     {
         $menu->load('items');
 
-        $all_items = $menu->items()->orderBy('order', 'asc')->get()->groupBy('parent_id');
-        $all_items['root'] = $all_items[0];
-        unset($all_items[0]);
-        return view('admin.menu.submenu.index', compact('menu', 'all_items'));
+        $menu_items = $menu->items()->orderBy('order', 'asc')->get()->groupBy('parent_id');
+        if (count($menu_items) > 0) {
+            $menu_items['root'] = $menu_items[0];
+            unset($menu_items[0]);
+        }
+
+
+        return view('admin.menu.submenu.index', compact('menu', 'menu_items'));
     }
 
     public function subStore(Request $request, Menu $menu)
@@ -65,26 +69,26 @@ class MenusController extends AdminBaseController
         return view('admin.menu.submenu.edit', compact('menuItem'));
     }
 
-    public function menuItemUpdate(Request $request , MenuItem $menuItem)
+    public function menuItemUpdate(Request $request, MenuItem $menuItem)
     {
         $request->validate([
-            'title'=>'required'
-        ],[
-            'title.required'=>'وارد کردن عنوان الزامی است'
+            'title' => 'required'
+        ], [
+            'title.required' => 'وارد کردن عنوان الزامی است'
         ]);
 
         $menuItem->update([
-            'title'=>$request->title,
-            'url'=>$request->url,
+            'title' => $request->title,
+            'url' => $request->url,
         ]);
-        return redirect()->route('admin.menu.sub' , $menuItem->menu->id);
+        return redirect()->route('admin.menu.sub', $menuItem->menu->id);
     }
 
     public function menuItemDelete(MenuItem $menuItem)
     {
         $menuItem->children()->delete();
         $menuItem->delete();
-        return redirect()->route('admin.menu.sub' , $menuItem->menu->id);
+        return redirect()->route('admin.menu.sub', $menuItem->menu->id);
     }
 
     public function subUpdate(Request $request)

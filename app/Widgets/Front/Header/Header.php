@@ -29,9 +29,15 @@ class Header
      */
     public function data()
     {
-        $menuItems = Menu::where('name', 'هدر')->first()->items()->orderBy('order', 'asc')->get()->groupBy('parent_id');
-        $menuItems['root'] = $menuItems['0'];
-        unset($menuItems[0]);
+        $headerMenu = Menu::where('name', Menu::MAIN_MENU_NAME)->first();
+        if (is_null($headerMenu)) {
+            return [];
+        }
+        $menuItems = $headerMenu->items()->orderBy('order', 'asc')->get()->groupBy('parent_id');
+        if (!empty($menuItems)) {
+            $menuItems['root'] = $menuItems['0'];
+            unset($menuItems[0]);
+        }
         return [$menuItems];
     }
 

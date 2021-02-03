@@ -53,9 +53,10 @@
                                                 <select name="parentId" class="form-control pointer required">
                                                     <option value="0">دسته‌بندی اصلی</option>
 
+
                                                     @foreach($categories as $cat)
                                                         @if($cat->id != $category->id)
-                                                            <option value="{{$cat->id}}" {{$cat->id==$category->parent->id ? 'selected': ''}}>{{$cat->title}}</option>
+                                                            <option value="{{$cat->id}}" {{$cat->id==optional($category->parent)->id ? 'selected': ''}}>{{$cat->title}}</option>
                                                         @endif
                                                     @endforeach
                                                 </select>

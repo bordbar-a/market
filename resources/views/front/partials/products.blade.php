@@ -1,4 +1,5 @@
-<section class="nopadding-bottom">
+@if(!is_null($products))
+    <section class="nopadding-bottom">
     <div class="container">
 
         <div class="row">
@@ -146,3 +147,4 @@
 
     </div>
 </section>
+@endif

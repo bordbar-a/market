@@ -24,13 +24,20 @@ class Category
      * @widget('Category', ['a' => 'someVal', 'b' => 'foo'])
      * @return array
      */
-	public function data()
-	{
-	    $categories = \App\Models\Category::select(['id','title','parent_id'])->withCount('products')->get()->groupBy('parent_id')->toArray();
-        $categories['root'] = $categories[0];
-        unset($categories[0]);
-		return [$categories];
-	}
+    public function data()
+    {
+        $categories = \App\Models\Category::select([
+            'id',
+            'title',
+            'parent_id'
+        ])->withCount('products')->get()->groupBy('parent_id')->toArray();
+
+        if (!empty($categories)) {
+            $categories['root'] = $categories[0];
+            unset($categories[0]);
+        }
+        return [$categories];
+    }
 
     /**
      * If the widget output depends on query strings you should return key names.
@@ -39,8 +46,8 @@ class Category
      * or if you want it to be separated for each user: return auth()->id();
      * @return array
      */
-	public function extraCacheKeyDependency($args)
-	{
+    public function extraCacheKeyDependency($args)
+    {
         return [/* request('page') */];
-	}
+    }
 }
