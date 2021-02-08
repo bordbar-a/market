@@ -20,17 +20,18 @@ class UserCreateService
         $this->userData['national_code'] = $data['nationalCode'];
         $this->userData['role'] = $data['role'];
         $this->userData['status'] = $data['status'];
-        $this->userData['password'] =$data['password'];
+        $this->userData['password'] = $data['password'];
     }
 
 
     public function perform()
     {
 
-            $user = User::create($this->userData);
-            if ($user) {
-                return $user;
-            }
+        $user = User::create($this->userData);
+        if ($user) {
+            return $user;
+        }
+
         throw new \Exception('کاربرایجاد نشد');
 
     }

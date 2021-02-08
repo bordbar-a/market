@@ -31,16 +31,19 @@
                 @each('messages.errors' , $errors->all() , 'error')
             @endif
             <!-- ------ -->
-                <div class="panel panel-default">
-                    <div class="panel-heading panel-heading-transparent">
-                        <strong>ویرایش</strong>
-                    </div>
 
-                    <div class="panel-body">
+                <form class="" action="{{route('admin.user.update' , [$user->id])}}" method="post"
+                      enctype="multipart/form-data">
+                    <fieldset>
 
-                        <form class="" action="{{route('admin.user.update' , [$user->id])}}" method="post"
-                              enctype="multipart/form-data">
-                            <fieldset>
+
+                        {{--personal data panel--}}
+                        <div class="panel panel-default">
+                            <div class="panel-heading panel-heading-transparent">
+                                <strong>اطلاعات شخصی</strong>
+                            </div>
+                            <div class="panel-body">
+
                                 @csrf
                                 <div class="row">
                                     <div class="form-group">
@@ -78,14 +81,43 @@
                                             <input type="text" name="nationalCode" value="{{$user->national_code}}"
                                                    class="form-control required">
                                         </div>
+                                    </div>
+
+                                </div>
+
+
+                            </div>
+
+                        </div>
+
+                        {{--password panel--}}
+                        <div class="panel panel-default">
+                            <div class="panel-heading panel-heading-transparent">
+                                <strong>رمز عبور</strong>
+                            </div>
+                            <div class="panel-body">
+
+                                <div class="row">
+                                    <div class="form-group">
                                         <div class="col-md-6 col-sm-6">
                                             <label>رمز عبور</label>
                                             <input type="password" name="password" value=""
                                                    class="form-control required">
                                         </div>
                                     </div>
-
                                 </div>
+                            </div>
+
+
+                        </div>
+
+                        {{--role and status panel--}}
+                        <div class="panel panel-default">
+                            <div class="panel-heading panel-heading-transparent">
+                                <strong>نقش و وضعیت</strong>
+                            </div>
+                            <div class="panel-body">
+
                                 <div class="row">
                                     <div class="form-group">
                                         <div class="col-md-6 col-sm-6">
@@ -108,9 +140,49 @@
                                         </div>
                                     </div>
                                 </div>
+                            </div>
+
+
+                        </div>
+
+                        {{-- permission panel--}}
+                        <div class="panel panel-default">
+                            <div class="panel-heading panel-heading-transparent">
+                                <strong>دسترسی‌ها</strong>
+                            </div>
+                            <div class="panel-body">
+                                <div class="row">
+                                    <div class="form-group">
+
+                                        <div class="col-md-12 col-sm-12">
+                                        @foreach($permissions as $permission)
+                                            <!-- checkbox -->
+                                                <div class="permission-checkbox">
+                                                    <i>{{$permission->persian_name}}</i>
+                                                    <input type="checkbox" value="{{$permission->name}}"
+                                                           name="permissions[]" {{$user->permissions->contains($permission) ?'checked': ''}}>
+                                                </div>
+
+                                            @endforeach
+
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </div>
+
+                        {{-- user image panel--}}
+                        <div class="panel panel-default">
+                            <div class="panel-heading panel-heading-transparent">
+                                <strong>تصویر کاربر</strong>
+                            </div>
+                            <div class="panel-body">
                                 @if($user->profileImage)
                                     @can('seeUserImage' , $user)
-                                        <div class="row">
+                                        <div class="row profileImage">
                                             <div class="form-group">
 
 
@@ -159,37 +231,31 @@
                                         </div>
                                     </div>
                                 </div>
-
-                            </fieldset>
-
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <button type="submit" class="btn btn-3d   btn-teal btn-xlg btn-block margin-top-30">
-                                        ویرایش کاربر
-                                    </button>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-12"><a href="{{route('admin.user.delete' , [$user->id])}}"
-                                                          class="btn btn-3d   btn-danger btn-xlg btn-block margin-top-30">
-                                        حذف کاربر
-                                    </a>
-                                </div>
                             </div>
 
-                        </form>
 
-                    </div>
+                        </div>
 
-                </div>
-                <!-- /----- -->
+
+                        <div class="row">
+                            <div class="col-md-12">
+                                <button type="submit" class="btn btn-3d   btn-teal btn-xlg btn-block margin-top-30">
+                                    ویرایش کاربر
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-12"><a href="{{route('admin.user.delete' , [$user->id])}}"
+                                                      class="btn btn-3d   btn-danger btn-xlg btn-block margin-top-30">
+                                    حذف کاربر
+                                </a>
+                            </div>
+                        </div>
+                    </fieldset>
+                </form>
 
             </div>
-
-
-        </div>
-
-    </div>
 
 
 

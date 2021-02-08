@@ -82,6 +82,17 @@
                 <li><a href="{{route('admin.slider.create')}}">اضافه کردن اسلایدر</a></li>
             </ul>
         </li>
+        {{--        Permission--}}
+        <li>
+            <a href="#">
+                <i class="fa fa-menu-arrow pull-right"></i>
+                <i class="main-icon fa fa-sliders"></i> <span>دسترسی‌ها و نقش‌ها</span>
+            </a>
+            <ul><!-- submenus -->
+                <li><a href="{{route('admin.permission.list')}}">لیست دسترسی‌ها</a></li>
+                <li><a href="{{route('admin.slider.create')}}">لیست نقش‌ها</a></li>
+            </ul>
+        </li>
     </ul>
 
     <!-- SECOND MAIN LIST -->

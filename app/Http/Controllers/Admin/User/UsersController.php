@@ -8,6 +8,7 @@ use App\Http\Controllers\Admin\AdminBaseController;
 use App\Http\Requests\User\UserCreateRequest;
 use App\Http\Requests\User\UserEditRequest;
 use App\Models\File;
+use App\Models\Permission;
 use App\Models\User;
 use App\Services\User\UserCreateService\UserCreateService;
 use Illuminate\Http\Request;
@@ -30,7 +31,8 @@ class UsersController extends AdminBaseController
     {
         $userRoles = User::getUserRoles();
         $userStatuses = User::getUserStatuses();
-        return view('admin.users.create', compact('userRoles' ,'userStatuses'));
+        $permissions = Permission::all();
+        return view('admin.users.create', compact('userRoles' ,'userStatuses' , 'permissions'));
     }
 
 
@@ -52,6 +54,8 @@ class UsersController extends AdminBaseController
         $userCreateService = new UserCreateService($userData);
         $user = $userCreateService->perform();
         if ($user) {
+            $this->handleUserImage($request, $user);
+            $user->refreshPermissions($request->input('permissions'));
             FlashMessages::success('کاربر با موفقیت ثبت گردید');
         } else {
             FlashMessages::error('کاربر با موفقیت ثبت گردید');
@@ -86,38 +90,33 @@ class UsersController extends AdminBaseController
             return view('admin.users.list');
         }
 
+
+        $user->load('permissions');
         $userRoles = User::getUserRoles();
         $userStatuses = User::getUserStatuses();
-        return view('admin.users.edit', compact('user', 'userRoles' , 'userStatuses'));
+        $permissions = Permission::all();
+        return view('admin.users.edit', compact('user', 'userRoles' , 'userStatuses' , 'permissions'));
 
     }
 
 
     public function update(UserEditRequest $request, $user)
     {
-
-
-
         if (!$user instanceof User) {
             FlashMessages::error('کاربر مورد نظر پیدا نشد');
             return redirect()->route('admin.user.list');
         }
 
-        $userData = [
-            'firstName' => $request->input('firstName'),
-            'lastName' => $request->input('lastName'),
-            'email' => $request->input('email'),
-            'mobile' => $request->input('mobile'),
-            'nationalCode' => $request->input('nationalCode'),
-            'role' => $request->input('role'),
-            'status' => $request->input('status'),
-        ];
+        $userData = $this->userDataForm($request);
 
 
         if($request->filled('password')){
             $userData['password'] = $request->input('password');
         }
         $result = $user->update($userData);
+
+
+        $user->refreshPermissions($request->input('permissions'));
 
         $this->handleUserImage($request, $user);
 
@@ -157,5 +156,25 @@ class UsersController extends AdminBaseController
             'type' => File::ProfileImage
         ]);
         return;
+    }
+
+    /**
+     * @param UserEditRequest $request
+     * @return array
+     */
+
+
+    private function userDataForm(UserEditRequest $request): array
+    {
+        $userData = [
+            'firstName' => $request->input('firstName'),
+            'lastName' => $request->input('lastName'),
+            'email' => $request->input('email'),
+            'mobile' => $request->input('mobile'),
+            'national_code' => $request->input('nationalCode'),
+            'role' => $request->input('role'),
+            'status' => $request->input('status'),
+        ];
+        return $userData;
     }
 }

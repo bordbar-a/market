@@ -13202,3 +13202,20 @@ ul.easypiecharts li span.stat-title {
 .comment-fa-icon{
     margin-left : 5px;
 }
+
+
+.permission-checkbox{
+    width: 30%;
+    float: right;
+    margin-bottom: 10px;
+}
+
+.permission-checkbox > i {
+    float: right;
+}
+
+.permission-checkbox > input {
+    float: left;
+    margin-left: 60%;
+}
+

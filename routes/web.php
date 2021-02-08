@@ -11,6 +11,7 @@
 |
 */
 
+use App\Models\Permission ;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -29,18 +30,18 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'as' => 'admin.', 'mi
 
     // Start User Route  -    all route begin by :   /admin/user
     Route::group(['prefix' => 'user', 'namespace' => 'User', 'as' => 'user.'], function () {
-        Route::get('/', 'UsersController@all')->name('list');
-        Route::get('/create', 'UsersController@create')->name('create');
-        Route::post('/create', 'UsersController@store')->name('store');
-        Route::get('/delete/{user}', 'UsersController@delete')->name('delete');
-        Route::get('/edit/{user}', 'UsersController@edit')->name('edit');
-        Route::post('/update/{user}', 'UsersController@update')->name('update');
+        Route::get('/', 'UsersController@all')->middleware('can:' . Permission::READ_USERS)->name('list');
+        Route::get('/create', 'UsersController@create')->middleware('can:' . Permission::CREATE_USERS)->name('create');
+        Route::post('/create', 'UsersController@store')->middleware('can:' . Permission::CREATE_USERS)->name('store');
+        Route::get('/delete/{user}', 'UsersController@delete')->middleware('can:' . Permission::DELETE_USERS)->name('delete');
+        Route::get('/edit/{user}', 'UsersController@edit')->middleware('can:' . Permission::UPDATE_USERS)->name('edit');
+        Route::post('/update/{user}', 'UsersController@update')->middleware('can:' . Permission::UPDATE_USERS)->name('update');
     });
     // End User Route
 
 
     // Start Category Route  -    all route begin by :   /admin/category
-    Route::group(['prefix' => 'category', 'namespace' => 'Category', 'as' => 'category.'], function () {
+    Route::group(['prefix' => 'category', 'namespace' => 'Category', 'as' => 'category.' ,'middleware'=>['can:'. Permission::CATEGORIES]], function () {
         Route::get('/', 'CategoriesController@all')->name('list');
         Route::get('/create', 'CategoriesController@create')->name('create');
         Route::post('/create', 'CategoriesController@store')->name('store');
@@ -54,19 +55,19 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'as' => 'admin.', 'mi
 
     // Start Product Route  -    all route begin by :   /admin/product
     Route::group(['prefix' => 'product', 'namespace' => 'Product', 'as' => 'product.'], function () {
-        Route::get('/', 'ProductsController@all')->name('list');
-        Route::get('/create', 'ProductsController@create')->name('create');
-        Route::post('/create', 'ProductsController@store')->name('store');
-        Route::get('/delete/{product}', 'ProductsController@delete')->name('delete');
-        Route::get('/edit/{product}', 'ProductsController@edit')->name('edit');
-        Route::post('/update/{product}', 'ProductsController@update')->name('update');
-        Route::post('/images/{product}', 'ProductsController@editImages')->name('editImages');
-        Route::get('/images/{product}/{image}/delete', 'ProductsController@deleteImage')->name('deleteImage');
+        Route::get('/', 'ProductsController@all')->middleware('can:' . Permission::READ_PRODUCTS)->name('list');
+        Route::get('/create', 'ProductsController@create')->middleware('can:' . Permission::CREATE_PRODUCTS)->name('create');
+        Route::post('/create', 'ProductsController@store')->middleware('can:' . Permission::CREATE_PRODUCTS)->name('store');
+        Route::get('/delete/{product}', 'ProductsController@delete')->middleware('can:' . Permission::DELETE_PRODUCTS)->name('delete');
+        Route::get('/edit/{product}', 'ProductsController@edit')->middleware('can:' . Permission::UPDATE_PRODUCTS)->name('edit');
+        Route::post('/update/{product}', 'ProductsController@update')->middleware('can:' . Permission::UPDATE_PRODUCTS)->name('update');
+        Route::post('/images/{product}', 'ProductsController@editImages')->middleware('can:' . Permission::UPDATE_PRODUCTS)->name('editImages');
+        Route::get('/images/{product}/{image}/delete', 'ProductsController@deleteImage')->middleware('can:' . Permission::UPDATE_PRODUCTS)->name('deleteImage');
     });
     // End Product Route
 
     // Start Order Route  -    all route begin by :   /admin/order
-    Route::group(['prefix' => 'order', 'namespace' => 'Order', 'as' => 'order.'], function () {
+    Route::group(['prefix' => 'order', 'namespace' => 'Order', 'as' => 'order.' , 'middleware'=>['can:'.Permission::ORDERS]], function () {
         Route::get('/', 'OrdersController@all')->name('list');
         Route::get('/details/{order}', 'OrdersController@details')->name('details');
     });
@@ -74,7 +75,7 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'as' => 'admin.', 'mi
 
 
     // Start Setting Route  -    all route begin by :   /admin/setting
-    Route::group(['prefix' => 'setting', 'namespace' => 'Setting', 'as' => 'setting.'], function () {
+    Route::group(['prefix' => 'setting', 'namespace' => 'Setting', 'as' => 'setting.' , 'middleware'=>['can:'.Permission::SETTINGS]], function () {
         Route::get('/', 'SettingsController@all')->name('list');
         Route::post('/save', 'SettingsController@save')->name('save');
     });
@@ -82,7 +83,7 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'as' => 'admin.', 'mi
 
 
     // Start Menu Route  -    all route begin by :   /admin/menu
-    Route::group(['prefix' => 'menu', 'namespace' => 'Menu', 'as' => 'menu.'], function () {
+    Route::group(['prefix' => 'menu', 'namespace' => 'Menu', 'as' => 'menu.' , 'middleware'=>['can:'.Permission::MENU]], function () {
         Route::get('/', 'MenusController@index')->name('list');
         Route::get('/create', 'MenusController@create')->name('create');
         Route::post('/store', 'MenusController@store')->name('store');
@@ -96,7 +97,7 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'as' => 'admin.', 'mi
     // End Menu Route
 
     // Start Comment Route  -    all route begin by :   /admin/comment
-    Route::group(['prefix' => 'comment', 'namespace' => 'Comment', 'as' => 'comment.'], function () {
+    Route::group(['prefix' => 'comment', 'namespace' => 'Comment', 'as' => 'comment.','middleware'=>['can:'.Permission::COMMENTS]], function () {
         Route::get('/', 'CommentsController@all')->name('list');
         Route::get('/{comment}/depending', 'CommentsController@setDepending')->name('set.depending');
         Route::get('/{comment}/approved', 'CommentsController@setApproved')->name('set.approved');
@@ -107,7 +108,7 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'as' => 'admin.', 'mi
 
 
     // Start Slider Route  -    all route begin by :   /admin/slider
-    Route::group(['prefix' => 'slider', 'namespace' => 'Slider', 'as' => 'slider.'], function () {
+    Route::group(['prefix' => 'slider', 'namespace' => 'Slider', 'as' => 'slider.','middleware'=>['can:'.Permission::SLIDERS]], function () {
         Route::get('/', 'SlidersController@index')->name('list');
         Route::get('/create', 'SlidersController@create')->name('create');
         Route::post('/store', 'SlidersController@store')->name('store');
@@ -117,6 +118,14 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'as' => 'admin.', 'mi
         Route::get('/{sliderItem}/download', 'SlidersController@sliderItemDownload')->name('sliderItemDownload');
         Route::post('/{sliderItem}/update', 'SlidersController@sliderItemUpdate')->name('sliderItemUpdate');
         Route::get('/{sliderItem}/delete', 'SlidersController@sliderItemDelete')->name('sliderItemDelete');
+    });
+    // End Slider Route
+
+
+
+    // Start Permission Route  -    all route begin by :   /admin/permission
+    Route::group(['prefix' => 'permission', 'namespace' => 'Permission', 'as' => 'permission.' ,'middleware'=>['can:'.Permission::PERMISSIONS]], function () {
+        Route::get('/' ,'PermissionsController@index')->name('list');
     });
     // End Slider Route
 
@@ -163,7 +172,7 @@ Route::group(['namespace' => 'Front', 'as' => 'front.'], function () {
 
 
 
-    // Start Product Route  -    all route begin by :   /front/comment
+    // Start Comment Route  -    all route begin by :   /front/comment
     Route::group(['prefix' => 'comment', 'namespace' => 'Comment', 'as' => 'comment.'], function () {
         Route::post('/{product}/product', 'CommentsController@productCreate')->name('product.add');
 

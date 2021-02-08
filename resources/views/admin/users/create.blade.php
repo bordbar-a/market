@@ -21,20 +21,21 @@
 
             <div class="col-md-12">
 
-            @if($errors->any())
-                @each('messages.errors' , $errors->all() , 'error')
-            @endif
-            <!-- ------ -->
-                <div class="panel panel-default">
-                    <div class="panel-heading panel-heading-transparent">
-                        <strong>افزودن</strong>
-                    </div>
+                @if($errors->any())
+                    @each('messages.errors' , $errors->all() , 'error')
+                @endif
+                <form class="" action="{{route('admin.user.store')}}" method="post"
+                      enctype="multipart/form-data">
+                    <fieldset>
 
-                    <div class="panel-body">
 
-                        <form class="" action="{{route('admin.user.store')}}" method="post"
-                              enctype="multipart/form-data">
-                            <fieldset>
+                        {{--personal data panel--}}
+                        <div class="panel panel-default">
+                            <div class="panel-heading panel-heading-transparent">
+                                <strong>اطلاعات شخصی</strong>
+                            </div>
+                            <div class="panel-body">
+
                                 @csrf
                                 <div class="row">
                                     <div class="form-group">
@@ -72,21 +73,51 @@
                                             <input type="text" name="nationalCode" value="{{old('nationalCode')}}"
                                                    class="form-control required">
                                         </div>
+                                    </div>
+
+                                </div>
+
+
+                            </div>
+
+                        </div>
+
+                        {{--password panel--}}
+                        <div class="panel panel-default">
+                            <div class="panel-heading panel-heading-transparent">
+                                <strong>رمز عبور</strong>
+                            </div>
+                            <div class="panel-body">
+
+                                <div class="row">
+                                    <div class="form-group">
                                         <div class="col-md-6 col-sm-6">
                                             <label>رمز عبور</label>
                                             <input type="password" name="password" value=""
                                                    class="form-control required">
                                         </div>
                                     </div>
-
                                 </div>
+                            </div>
+
+
+                        </div>
+
+                        {{--role and status panel--}}
+                        <div class="panel panel-default">
+                            <div class="panel-heading panel-heading-transparent">
+                                <strong>نقش و وضعیت</strong>
+                            </div>
+                            <div class="panel-body">
+
                                 <div class="row">
                                     <div class="form-group">
                                         <div class="col-md-6 col-sm-6">
                                             <label>نقش</label>
                                             <select name="role" class="form-control pointer required">
                                                 @foreach($userRoles as $index => $role)
-                                                    <option value="{{$index}}">{{$role}}</option>
+                                                    <option
+                                                        value="{{$index}}">{{$role}}</option>
                                                 @endforeach
                                             </select>
                                         </div>
@@ -94,12 +125,53 @@
                                             <label>وضعیت</label>
                                             <select name="status" class="form-control pointer required">
                                                 @foreach($userStatuses as $index => $status)
-                                                    <option value="{{$index}}">{{$status}}</option>
+                                                    <option
+                                                        value="{{$index}}">{{$status}}</option>
                                                 @endforeach
                                             </select>
                                         </div>
                                     </div>
                                 </div>
+                            </div>
+
+
+                        </div>
+
+                        {{-- permission panel--}}
+                        <div class="panel panel-default">
+                            <div class="panel-heading panel-heading-transparent">
+                                <strong>دسترسی‌ها</strong>
+                            </div>
+                            <div class="panel-body">
+                                <div class="row">
+                                    <div class="form-group">
+
+                                        <div class="col-md-12 col-sm-12">
+                                        @foreach($permissions as $permission)
+                                            <!-- checkbox -->
+                                                <div class="permission-checkbox">
+                                                    <i>{{$permission->persian_name}}</i>
+                                                    <input type="checkbox" value="{{$permission->name}}"
+                                                           name="permissions[]">
+                                                </div>
+
+                                            @endforeach
+
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </div>
+
+                        {{-- user image panel--}}
+                        <div class="panel panel-default">
+                            <div class="panel-heading panel-heading-transparent">
+                                <strong>تصویر کاربر</strong>
+                            </div>
+                            <div class="panel-body">
                                 <div class="row">
                                     <div class="form-group">
                                         <div class="col-md-12">
@@ -124,23 +196,22 @@
                                         </div>
                                     </div>
                                 </div>
-
-                            </fieldset>
-
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <button type="submit" class="btn btn-3d   btn-teal btn-xlg btn-block margin-top-30">
-                                        ذخیره کاربر
-                                    </button>
-                                </div>
                             </div>
 
-                        </form>
 
-                    </div>
+                        </div>
 
-                </div>
-                <!-- /----- -->
+
+                        <div class="row">
+                            <div class="col-md-12">
+                                <button type="submit" class="btn btn-3d   btn-teal btn-xlg btn-block margin-top-30">
+                                    ذخیره کاربر
+                                </button>
+                            </div>
+                        </div>
+
+                    </fieldset>
+                </form>
 
             </div>
 

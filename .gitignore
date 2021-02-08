@@ -16,5 +16,6 @@ yarn-error.log
 /public/front/images
 /resources/assets/admin/plugins
 /resources/assets/front/plugins
+/.idea
 
 
