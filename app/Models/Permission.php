@@ -7,8 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 class Permission extends Model
 {
 
-
-
     const CREATE_USERS = 'create_users';
     const UPDATE_USERS = 'update_users';
     const READ_USERS = 'read_users';

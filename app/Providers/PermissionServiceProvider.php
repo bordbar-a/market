@@ -30,6 +30,7 @@ class PermissionServiceProvider extends ServiceProvider
 
         Permission::all()->map(function ($permission){
             Gate::define($permission->name , function (User $user) use ($permission){
+                if ($user->hasFullPermissions())  return true;
                 return $user->hasPermission($permission);
             });
         });

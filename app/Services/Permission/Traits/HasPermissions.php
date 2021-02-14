@@ -34,11 +34,21 @@ trait HasPermissions
 
     public function hasPermission($permission)
     {
-        return $this->permissions->contains('name' , 'all') || $this->permissions->contains($permission);
+        return $this->permissions->contains($permission);
     }
 
 
 
+    public function hasFullPermissions()
+    {
+        return $this->permissions->contains('name' , 'all');
+    }
+
+    public function withdrawalPermissions(...$permissions){
+
+        $permissions = $this->getAllPermissions($permissions);
+        $this->permissions()->detach($permissions);
+    }
 
     protected function getAllPermissions($permissions)
     {
