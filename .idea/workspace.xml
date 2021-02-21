@@ -3,14 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="d4527880-cb0d-413e-8591-1ff27fa185c3" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/User/UsersController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/User/UsersController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Models/Permission.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Permission.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Providers/PermissionServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/PermissionServiceProvider.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Services/Permission/Traits/HasPermissions.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Services/Permission/Traits/HasPermissions.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/backend/css/output.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/backend/css/output.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/assets/admin/css/myCss.css" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/admin/css/myCss.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/admin/partials/nav.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/admin/partials/nav.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/users/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/users/edit.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -172,7 +168,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/admin/role/user" />
+    <property name="last_opened_file_path" value="E:/learn/7l/practical laravel/permissions and roles/permission code" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="yiiguxing.plugin.translate" />
@@ -315,6 +311,8 @@
       <workItem from="1613210268217" duration="6591000" />
       <workItem from="1613298343409" duration="10105000" />
       <workItem from="1613331135414" duration="2581000" />
+      <workItem from="1613753447849" duration="156000" />
+      <workItem from="1613932581380" duration="4326000" />
     </task>
     <servers />
   </component>
@@ -322,10 +320,6 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="312" y="88" key="#Custom_Plugin_Repositories" timestamp="1604728959029">
-      <screen x="0" y="0" width="1440" height="860" />
-    </state>
-    <state x="312" y="88" key="#Custom_Plugin_Repositories/0.0.1440.860@0.0.1440.860" timestamp="1604728959029" />
     <state x="312" y="88" key="#Inspections" timestamp="1608294894602">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
@@ -358,10 +352,10 @@
       <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state x="461" y="0" key="#com.jetbrains.php.refactoring.extractMethod.PhpExtractMethodDialog#method1/0.0.1440.860@0.0.1440.860" timestamp="1612793749443" />
-    <state x="500" y="184" key="FileChooserDialogImpl" timestamp="1612881982767">
+    <state x="500" y="184" key="FileChooserDialogImpl" timestamp="1613934501808">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state x="500" y="184" key="FileChooserDialogImpl/0.0.1440.860@0.0.1440.860" timestamp="1612881982767" />
+    <state x="500" y="184" key="FileChooserDialogImpl/0.0.1440.860@0.0.1440.860" timestamp="1613934501808" />
     <state width="1397" height="499" key="GridCell.Tab.0.bottom" timestamp="1608581896869">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
@@ -402,14 +396,10 @@
       <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state x="554" y="353" key="NewPhpFileDialog/0.0.1440.860@0.0.1440.860" timestamp="1612798648263" />
-    <state x="221" y="72" key="SettingsEditor" timestamp="1604729020213">
+    <state x="277" y="231" width="1011" height="353" key="com.intellij.ide.util.TipDialog" timestamp="1613753572790">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state x="221" y="72" key="SettingsEditor/0.0.1440.860@0.0.1440.860" timestamp="1604729020213" />
-    <state x="277" y="231" width="1011" height="353" key="com.intellij.ide.util.TipDialog" timestamp="1613331186841">
-      <screen x="0" y="0" width="1440" height="860" />
-    </state>
-    <state x="277" y="231" width="1011" height="353" key="com.intellij.ide.util.TipDialog/0.0.1440.860@0.0.1440.860" timestamp="1613331186841" />
+    <state x="277" y="231" width="1011" height="353" key="com.intellij.ide.util.TipDialog/0.0.1440.860@0.0.1440.860" timestamp="1613753572790" />
     <state x="295" y="74" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1606234506085">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
@@ -426,9 +416,9 @@
       <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state x="376" y="195" key="run.anything.popup/0.0.1440.860@0.0.1440.860" timestamp="1608048373315" />
-    <state x="549" y="245" width="672" height="678" key="search.everywhere.popup" timestamp="1613332594731">
+    <state x="549" y="245" width="672" height="678" key="search.everywhere.popup" timestamp="1613935276410">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state x="549" y="245" width="672" height="678" key="search.everywhere.popup/0.0.1440.860@0.0.1440.860" timestamp="1613332594731" />
+    <state x="549" y="245" width="672" height="678" key="search.everywhere.popup/0.0.1440.860@0.0.1440.860" timestamp="1613935276410" />
   </component>
 </project>

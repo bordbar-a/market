@@ -9,6 +9,7 @@ use App\Http\Requests\User\UserCreateRequest;
 use App\Http\Requests\User\UserEditRequest;
 use App\Models\File;
 use App\Models\Permission;
+use App\Models\Role;
 use App\Models\User;
 use App\Services\User\UserCreateService\UserCreateService;
 use Illuminate\Http\Request;
@@ -91,11 +92,12 @@ class UsersController extends AdminBaseController
         }
 
 
-        $user->load('permissions');
+        $user->load('permissions' , 'roles');
         $userRoles = User::getUserRoles();
+        $roles = Role::all();
         $userStatuses = User::getUserStatuses();
         $permissions = Permission::all();
-        return view('admin.users.edit', compact('user', 'userRoles' , 'userStatuses' , 'permissions'));
+        return view('admin.users.edit', compact('user', 'userRoles' , 'userStatuses' , 'permissions' , 'roles'));
 
     }
 
@@ -117,6 +119,7 @@ class UsersController extends AdminBaseController
 
 
         $user->refreshPermissions($request->input('permissions'));
+        $user->refreshRoles($request->input('roles'));
 
         $this->handleUserImage($request, $user);
 
@@ -172,7 +175,7 @@ class UsersController extends AdminBaseController
             'email' => $request->input('email'),
             'mobile' => $request->input('mobile'),
             'national_code' => $request->input('nationalCode'),
-            'role' => $request->input('role'),
+//            'role' => $request->input('role'),
             'status' => $request->input('status'),
         ];
         return $userData;

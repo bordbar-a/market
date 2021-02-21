@@ -90,10 +90,10 @@
 
                         </div>
 
-                        {{--password panel--}}
+                        {{--password and status panel--}}
                         <div class="panel panel-default">
                             <div class="panel-heading panel-heading-transparent">
-                                <strong>رمز عبور</strong>
+                                <strong>رمز عبور و وضعیت</strong>
                             </div>
                             <div class="panel-body">
 
@@ -104,31 +104,6 @@
                                             <input type="password" name="password" value=""
                                                    class="form-control required">
                                         </div>
-                                    </div>
-                                </div>
-                            </div>
-
-
-                        </div>
-
-                        {{--role and status panel--}}
-                        <div class="panel panel-default">
-                            <div class="panel-heading panel-heading-transparent">
-                                <strong>نقش و وضعیت</strong>
-                            </div>
-                            <div class="panel-body">
-
-                                <div class="row">
-                                    <div class="form-group">
-                                        <div class="col-md-6 col-sm-6">
-                                            <label>نقش</label>
-                                            <select name="role" class="form-control pointer required">
-                                                @foreach($userRoles as $index => $role)
-                                                    <option
-                                                        value="{{$index}}" {{$user->role == $index ? "selected" : ""}}>{{$role}}</option>
-                                                @endforeach
-                                            </select>
-                                        </div>
                                         <div class="col-md-6 col-sm-6">
                                             <label>وضعیت</label>
                                             <select name="status" class="form-control pointer required">
@@ -137,6 +112,35 @@
                                                         value="{{$index}}" {{$user->status == $index ? "selected" : ""}} >{{$status}}</option>
                                                 @endforeach
                                             </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </div>
+
+                        {{--role panel --}}
+                        <div class="panel panel-default">
+                            <div class="panel-heading panel-heading-transparent">
+                                <strong>نقش‌ها</strong>
+                            </div>
+                            <div class="panel-body">
+                                <div class="row">
+                                    <div class="form-group">
+
+                                        <div class="col-md-12 col-sm-12">
+                                        @foreach($roles as $role)
+                                            <!-- checkbox -->
+                                                <div class="permission-checkbox">
+                                                    <i>{{$role->persian_name}}</i>
+                                                    <input type="checkbox" value="{{$role->name}}"
+                                                           name="roles[]" {{$user->roles->contains($role) ?'checked': ''}}>
+                                                </div>
+
+                                            @endforeach
+
+
                                         </div>
                                     </div>
                                 </div>
