@@ -4,6 +4,7 @@
 namespace App\Services\Permission\Traits;
 
 
+use App\Models\Permission;
 use App\Models\Role;
 use Illuminate\Support\Arr;
 
@@ -54,5 +55,7 @@ trait HasRoles
     {
         return Role::whereIn('name', Arr::flatten($roles))->get();
     }
+
+
 
 }

@@ -28,10 +28,16 @@ class PermissionServiceProvider extends ServiceProvider
     {
 
 
-        Permission::all()->map(function ($permission){
-            Gate::define($permission->name , function (User $user) use ($permission){
-                if ($user->hasFullPermissions())  return true;
-                return $user->hasPermission($permission);
+        Gate::before(function ($user, $ability) {
+            if ($user->hasPermission(Permission::ALL)) {
+                return true;
+            }
+        });
+
+
+        Permission::all()->map(function ($permission) {
+            Gate::define($permission->name, function (User $user) use ($permission) {
+                return $user->hasPermission($permission->name);
             });
         });
     }

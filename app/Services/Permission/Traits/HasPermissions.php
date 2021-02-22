@@ -5,6 +5,7 @@ namespace App\Services\Permission\Traits;
 
 
 use App\Models\Permission;
+use App\Models\User;
 use DebugBar\DebugBar;
 use Illuminate\Support\Arr;
 
@@ -20,7 +21,7 @@ trait HasPermissions
     public function givePermissionTo(...$permissions)
     {
         $all_permissions = $this->getAllPermissions($permissions);
-        if ($permissions->isEmpty()) {
+        if ($all_permissions->isEmpty()){
             return $this;
         }
 
@@ -37,26 +38,12 @@ trait HasPermissions
 
     public function hasPermission($permission)
     {
-        return $this->hasPermissionsThroughRole($permission) || $this->permissions->contains($permission);
-    }
-
-
-    public function hasPermissionsThroughRole(Permission $permission)
-    {
-        debug($permission->roles);
-        foreach ($permission->roles as $role) {
-            if ($this->roles->contains($role)) {
-                return true;
-            }
+        if($this instanceof User){
+            if ($this->hasPermissionThroughRoles($permission))return true;
         }
-        return false;
+        return  $this->permissions->contains('name' ,$permission);
     }
 
-
-    public function hasFullPermissions()
-    {
-        return $this->permissions->contains('name', 'all');
-    }
 
     public function withdrawalPermissions(...$permissions)
     {

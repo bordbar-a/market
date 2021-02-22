@@ -17,12 +17,14 @@ class Permission extends Model
     const DELETE_PRODUCTS = 'delete_products';
     const SETTINGS = 'settings';
     const COMMENTS = 'comments';
-    const MENU = 'menu';
     const CATEGORIES = 'categories';
+    const MENU = 'menu';
     const PERMISSIONS = 'permissions';
     const SLIDERS = 'sliders';
     const ORDERS = 'orders';
     const ALL = 'all';
+    const ADMIN_PANEL = 'admin-panel';
+    const PROFILE_PANEL = 'profile-panel';
 
     public function users()
     {

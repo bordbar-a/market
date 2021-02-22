@@ -103,6 +103,18 @@ class User extends Authenticatable
         return $this->hasMany(Comment::class, 'user_id');
     }
 
+
+    public function hasPermissionThroughRoles($permission)
+    {
+        $permission = Permission::where('name' , $permission)->first();
+        foreach ($permission->roles as  $role) {
+            if ($this->roles->contains($role)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
     /*
      * End Of Define Relation
      */
