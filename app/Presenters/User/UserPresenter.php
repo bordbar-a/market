@@ -45,4 +45,9 @@ class UserPresenter extends Presenter
         return '<span class="label label-info">N/A</span>';
     }
 
+
+    public function fullName(){
+        return $this->entity->first_name . ' ' . $this->entity->last_name;
+    }
+
 }

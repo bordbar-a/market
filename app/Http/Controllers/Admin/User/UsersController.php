@@ -33,7 +33,8 @@ class UsersController extends AdminBaseController
         $userRoles = User::getUserRoles();
         $userStatuses = User::getUserStatuses();
         $permissions = Permission::all();
-        return view('admin.users.create', compact('userRoles' ,'userStatuses' , 'permissions'));
+        $roles = Role::all();
+        return view('admin.users.create', compact('userRoles' ,'userStatuses' , 'permissions' , 'roles'));
     }
 
 
@@ -57,6 +58,7 @@ class UsersController extends AdminBaseController
         if ($user) {
             $this->handleUserImage($request, $user);
             $user->refreshPermissions($request->input('permissions'));
+            $user->refreshRoles($request->input('roles'));
             FlashMessages::success('کاربر با موفقیت ثبت گردید');
         } else {
             FlashMessages::error('کاربر با موفقیت ثبت گردید');

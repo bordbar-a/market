@@ -3,13 +3,15 @@
   <component name="ChangeListManager">
     <list default="true" id="d4527880-cb0d-413e-8591-1ff27fa185c3" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/AdminMiddleware.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/AdminMiddleware.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Permission.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Permission.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Role.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Role.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Providers/PermissionServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/PermissionServiceProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Services/Permission/Traits/HasPermissions.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Services/Permission/Traits/HasPermissions.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Services/Permission/Traits/HasRoles.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Services/Permission/Traits/HasRoles.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/Permission/PermissionsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/Permission/PermissionsController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/Role/RolesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/Role/RolesController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/User/UsersController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/User/UsersController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Presenters/User/UserPresenter.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Presenters/User/UserPresenter.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Services/User/UserCreateService/UserCreateService.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Services/User/UserCreateService/UserCreateService.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/permission/items.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/permission/items.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/role/items.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/role/items.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/users/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/users/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -171,25 +173,25 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="E:/learn/7l/practical laravel/permissions and roles/permission code" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/admin/role/user" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="yiiguxing.plugin.translate" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\market\resources\views\admin\role\user" />
+      <recent name="C:\xampp\htdocs\market\resources\views\admin\permission\role" />
+      <recent name="C:\xampp\htdocs\market\resources\views\admin\permission" />
+      <recent name="C:\xampp\htdocs\market\resources\views\admin\role" />
+      <recent name="C:\xampp\htdocs\market\resources\views\admin" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\xampp\htdocs\market\resources\views\admin\role\permission" />
       <recent name="C:\xampp\htdocs\market\app\Http\Controllers\Admin\Role" />
       <recent name="C:\xampp\htdocs\market\resources\views\admin\category" />
       <recent name="C:\xampp\htdocs\market\storage\app\public\productImages\5" />
       <recent name="C:\xampp\htdocs\market\storage\app\public\productImages" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\xampp\htdocs\market\resources\views\admin\role\user" />
-      <recent name="C:\xampp\htdocs\market\resources\views\admin\role" />
-      <recent name="C:\xampp\htdocs\market\resources\views\admin" />
-      <recent name="C:\xampp\htdocs\market\resources\lang" />
-      <recent name="C:\xampp\htdocs\market\resources\views\admin\permission" />
     </key>
   </component>
   <component name="RunManager" selected="PHPUnit.app">
@@ -316,7 +318,8 @@
       <workItem from="1613331135414" duration="2581000" />
       <workItem from="1613753447849" duration="156000" />
       <workItem from="1613932581380" duration="4767000" />
-      <workItem from="1614008856092" duration="6595000" />
+      <workItem from="1614008856092" duration="6840000" />
+      <workItem from="1614336843851" duration="10178000" />
     </task>
     <servers />
   </component>
@@ -328,10 +331,6 @@
       <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state x="312" y="88" key="#Inspections/0.0.1440.860@0.0.1440.860" timestamp="1608294894602" />
-    <state x="373" y="232" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1605550840352">
-      <screen x="0" y="0" width="1440" height="860" />
-    </state>
-    <state x="373" y="232" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1440.860@0.0.1440.860" timestamp="1605550840352" />
     <state x="365" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1608287316821">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
@@ -348,10 +347,6 @@
       <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state x="461" y="44" key="#com.jetbrains.php.refactoring.extractMethod.PhpExtractMethodDialog#function0/0.0.1440.860@0.0.1440.860" timestamp="1612804103897" />
-    <state x="461" y="45" key="#com.jetbrains.php.refactoring.extractMethod.PhpExtractMethodDialog#method0" timestamp="1605552318947">
-      <screen x="0" y="0" width="1440" height="860" />
-    </state>
-    <state x="461" y="45" key="#com.jetbrains.php.refactoring.extractMethod.PhpExtractMethodDialog#method0/0.0.1440.860@0.0.1440.860" timestamp="1605552318947" />
     <state x="461" y="0" key="#com.jetbrains.php.refactoring.extractMethod.PhpExtractMethodDialog#method1" timestamp="1612793749443">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
@@ -376,22 +371,6 @@
       <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state width="1397" height="499" key="GridCell.Tab.0.right/0.0.1440.860@0.0.1440.860" timestamp="1608581896869" />
-    <state width="1397" height="276" key="GridCell.Tab.1.bottom" timestamp="1605470280430">
-      <screen x="0" y="0" width="1440" height="860" />
-    </state>
-    <state width="1397" height="276" key="GridCell.Tab.1.bottom/0.0.1440.860@0.0.1440.860" timestamp="1605470280430" />
-    <state width="1397" height="276" key="GridCell.Tab.1.center" timestamp="1605470280430">
-      <screen x="0" y="0" width="1440" height="860" />
-    </state>
-    <state width="1397" height="276" key="GridCell.Tab.1.center/0.0.1440.860@0.0.1440.860" timestamp="1605470280430" />
-    <state width="1397" height="276" key="GridCell.Tab.1.left" timestamp="1605470280430">
-      <screen x="0" y="0" width="1440" height="860" />
-    </state>
-    <state width="1397" height="276" key="GridCell.Tab.1.left/0.0.1440.860@0.0.1440.860" timestamp="1605470280430" />
-    <state width="1397" height="276" key="GridCell.Tab.1.right" timestamp="1605470280430">
-      <screen x="0" y="0" width="1440" height="860" />
-    </state>
-    <state width="1397" height="276" key="GridCell.Tab.1.right/0.0.1440.860@0.0.1440.860" timestamp="1605470280430" />
     <state x="182" y="235" width="495" height="385" key="NewPhpClassDialog" timestamp="1613214491837">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
@@ -400,10 +379,10 @@
       <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state x="554" y="353" key="NewPhpFileDialog/0.0.1440.860@0.0.1440.860" timestamp="1612798648263" />
-    <state x="277" y="231" width="1011" height="353" key="com.intellij.ide.util.TipDialog" timestamp="1614008876851">
+    <state x="277" y="231" width="1011" height="353" key="com.intellij.ide.util.TipDialog" timestamp="1614336867135">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state x="277" y="231" width="1011" height="353" key="com.intellij.ide.util.TipDialog/0.0.1440.860@0.0.1440.860" timestamp="1614008876851" />
+    <state x="277" y="231" width="1011" height="353" key="com.intellij.ide.util.TipDialog/0.0.1440.860@0.0.1440.860" timestamp="1614336867135" />
     <state x="295" y="74" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1606234506085">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
@@ -420,9 +399,9 @@
       <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state x="376" y="195" key="run.anything.popup/0.0.1440.860@0.0.1440.860" timestamp="1608048373315" />
-    <state x="549" y="245" width="672" height="678" key="search.everywhere.popup" timestamp="1614014568625">
+    <state x="549" y="245" width="672" height="678" key="search.everywhere.popup" timestamp="1614370763742">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state x="549" y="245" width="672" height="678" key="search.everywhere.popup/0.0.1440.860@0.0.1440.860" timestamp="1614014568625" />
+    <state x="549" y="245" width="672" height="678" key="search.everywhere.popup/0.0.1440.860@0.0.1440.860" timestamp="1614370763742" />
   </component>
 </project>

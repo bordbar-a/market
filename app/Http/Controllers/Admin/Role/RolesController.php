@@ -6,6 +6,7 @@ use App\Helpers\FlashMessages\FlashMessages;
 use App\Http\Controllers\Admin\AdminBaseController;
 use App\Models\Permission;
 use App\Models\Role;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class RolesController extends AdminBaseController
@@ -14,17 +15,15 @@ class RolesController extends AdminBaseController
 
     public function index()
     {
-        $roles = Role::all();
+        $roles = Role::withCount(['permissions' , 'users'])->get();
         return view('admin.role.index', compact('roles'));
     }
-
 
     public function create()
     {
         $permissions = Permission::all();
         return view('admin.role.create', compact('permissions'));
     }
-
 
     public function store(Request $request)
     {
@@ -62,7 +61,6 @@ class RolesController extends AdminBaseController
 
 
     }
-
 
     public function delete(Role $role)
     {
@@ -126,16 +124,16 @@ class RolesController extends AdminBaseController
 
     public function rolePermissions(Role $role)
     {
-        if(!$role){
+        if (!$role) {
             return back();
         }
         $role->load('permissions');
-        return view('admin.role.permission.index' ,compact('role'));
+        return view('admin.role.permission.index', compact('role'));
     }
 
-    public function deleteRolePermission(Role $role , Permission $permission)
+    public function deleteRolePermission(Role $role, Permission $permission)
     {
-        if(!$role || !$permission){
+        if (!$role || !$permission) {
             return back();
         }
 
@@ -143,10 +141,17 @@ class RolesController extends AdminBaseController
         return back();
     }
 
-
     public function roleUsers(Role $role)
     {
+        $role->load('users');
+        return view('admin.role.user.index', compact('role'));
 
+    }
+
+    public function getRoleFromUser(Role $role, User $user)
+    {
+        $user->withdrawalRoles($role->name);
+        return back();
     }
 
 

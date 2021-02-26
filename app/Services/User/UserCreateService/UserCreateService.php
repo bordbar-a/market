@@ -18,7 +18,6 @@ class UserCreateService
         $this->userData['email'] = $data['email'];
         $this->userData['mobile'] = $data['mobile'];
         $this->userData['national_code'] = $data['nationalCode'];
-        $this->userData['role'] = $data['role'];
         $this->userData['status'] = $data['status'];
         $this->userData['password'] = $data['password'];
     }

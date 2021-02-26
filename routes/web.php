@@ -126,6 +126,10 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'as' => 'admin.', 'mi
     // Start Permission Route  -    all route begin by :   /admin/permission
     Route::group(['prefix' => 'permission', 'namespace' => 'Permission', 'as' => 'permission.' ,'middleware'=>['can:'.Permission::PERMISSIONS]], function () {
         Route::get('/' ,'PermissionsController@index')->name('list');
+        Route::get('/{permission}/users' , 'PermissionsController@users')->name('users');
+        Route::get('/{permission}/user/{user}/delete' , 'PermissionsController@getPermissionFromUser')->name('user.delete');
+        Route::get('/{permission}/role/{role}/delete' , 'PermissionsController@getPermissionFromRole')->name('role.delete');
+        Route::get('/{permission}/roles' , 'PermissionsController@roles')->name('roles');
     });
     // End Permission Route
 
@@ -141,6 +145,7 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'as' => 'admin.', 'mi
         Route::post('/{role}/update' ,'RolesController@update')->name('update');
         Route::get('/{role}/delete' ,'RolesController@delete')->name('delete');
         Route::get('/{role}/{permission}/deletePermission' ,'RolesController@deleteRolePermission')->name('deletePermission');
+        Route::get('/{role}/user/{user}/delete' , 'RolesController@getRoleFromUser')->name('user.delete');
 
     });
     // End Role Route
