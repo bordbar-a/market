@@ -19,10 +19,8 @@ class ProductsController extends AdminBaseController
 
     public function all()
     {
-
         $products = Product::with('categories')->get();
         return view('admin.product.list', compact('products'));
-
     }
 
 
@@ -33,7 +31,7 @@ class ProductsController extends AdminBaseController
     }
 
 
-    public function store(ProductCreateRequest  $request)
+    public function store(ProductCreateRequest $request)
     {
 
         $data = [
@@ -54,7 +52,7 @@ class ProductsController extends AdminBaseController
             if ($request->hasFile('images')) {
                 $images = $request->file('images');
 
-                foreach ($images as $image){
+                foreach ($images as $image) {
 
                     $name = HandleFile::saveProductPicture($image, $product->id);
                     $product->pictures()->create([
@@ -94,16 +92,19 @@ class ProductsController extends AdminBaseController
     public function edit(Request $request, $product)
     {
         $product = Product::with('categories')->find($product->id);
-        if ($product) {
 
-            $product->load('categories');
-            debug($product);
-            $categories = Category::pluck('title', 'id')->toArray();
-            $productCategories = $product->categories->pluck('id')->toArray();
-            return view('admin.product.edit', compact('product', 'categories', 'productCategories'));
+        if (!$product) {
+            FlashMessages::error('محصول مورد نظر پیدا نشد');
+            return back();
         }
-        FlashMessages::error('محصول مورد نظر پیدا نشد');
-        return back();
+
+        $product->load('categories');
+        $categories = Category::pluck('title', 'id')->toArray();
+        $productCategories = $product->categories->pluck('id')->toArray();
+        $productStatuses = Product::getProductStatuses();
+        return view('admin.product.edit', compact('product', 'categories', 'productCategories', 'productStatuses'));
+
+
     }
 
 
@@ -112,6 +113,7 @@ class ProductsController extends AdminBaseController
         if ($product) {
             $data = [
                 'title' => $request->input('title'),
+                'status' => $request->input('status'),
                 'description' => $request->input('description'),
                 'price' => $request->input('price'),
                 'discount' => $request->input('discount') ?: config('product.basic_discount'),

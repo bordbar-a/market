@@ -33,7 +33,6 @@ abstract class BasketContract
 
     public abstract function isInBasket(int $item_id);
 
-
     public abstract function forceSave($items);
 
 

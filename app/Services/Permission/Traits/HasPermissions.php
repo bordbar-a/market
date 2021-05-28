@@ -5,6 +5,7 @@ namespace App\Services\Permission\Traits;
 
 
 use App\Models\Permission;
+use App\Models\Role;
 use App\Models\User;
 use DebugBar\DebugBar;
 use Illuminate\Support\Arr;
@@ -41,7 +42,7 @@ trait HasPermissions
         if($this instanceof User){
             if ($this->hasPermissionThroughRoles($permission))return true;
         }
-        return  $this->permissions->contains('name' ,$permission);
+        return $this->permissions->contains('name', Permission::ALL) || $this->permissions->contains('name' ,$permission) ;
     }
 
 

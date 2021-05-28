@@ -2,7 +2,9 @@
 
 namespace App\Http\Requests\Product;
 
+use App\Models\Product;
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rule;
 
 class ProductCreateRequest extends FormRequest
 {
@@ -25,6 +27,7 @@ class ProductCreateRequest extends FormRequest
     {
         return [
             'title' => ['required', 'max:250'],
+            'status'=>Rule::in(array_keys(Product::getProductStatuses())),
             'description' => ['required'],
             'price' => ['required', 'numeric', 'min:0'],
             'discount' => ['nullable', 'numeric', 'min:0'],

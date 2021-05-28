@@ -10,7 +10,16 @@ use Illuminate\Database\Eloquent\Model;
 
 class Product extends Model
 {
-    use BelongsToUser ,MorphManyComments, Presentable;
+    use BelongsToUser, MorphManyComments, Presentable;
+
+    //status
+
+    const DRAFT = 0;
+    const PUBLISHED = 1;
+    const PENDING = 2;
+    const FUTURE = 3;
+
+
     protected $guarded = [
         'id'
     ];
@@ -19,17 +28,9 @@ class Product extends Model
     protected $presenter = ProductPresenter::class;
 
 
-
-
-
-
-
-
-
     /*
      * Start Define Relation
     */
-
 
 
     // Use BelongsToUser , MorphManyComments trait , for relation
@@ -52,11 +53,33 @@ class Product extends Model
     public function categories()
     {
         return $this->
-        belongsToMany(Category::class , 'category_product' , 'product_id' ,'category_id');
+        belongsToMany(Category::class, 'category_product', 'product_id', 'category_id');
     }
 
 
+    public static function getProductStatuses($status = '')
+    {
+        $statuses = [
+            self::DRAFT => 'پیش نویس',
+            self::PUBLISHED => 'منتشر شده',
+            self::PENDING => 'در انتظار',
+            self::FUTURE => 'آینده',
 
+        ];
+
+
+        if ($status === '') {
+            return $statuses;
+        }else{
+            if(in_array($status , array_keys($statuses))){
+                return $statuses[$status];
+            }else{
+                return 'تعریف نشده';
+            }
+
+        }
+
+    }
 
 
     /*
@@ -64,6 +87,8 @@ class Product extends Model
      */
 
 
-
-
+    public function scopePublished($query)
+    {
+        return $query->where('status' , self::PUBLISHED);
+    }
 }

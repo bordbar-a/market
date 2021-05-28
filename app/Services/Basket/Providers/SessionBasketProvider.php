@@ -27,6 +27,7 @@ class SessionBasketProvider extends BasketContract
         $this->saveBasket($items);
     }
 
+
     public function setCount($items)
     {
         $basket_items = $this->items();
@@ -39,6 +40,7 @@ class SessionBasketProvider extends BasketContract
 
         $this->saveBasket($basket_items);
     }
+
 
     public function remove(int $item_id)
     {
@@ -134,8 +136,6 @@ class SessionBasketProvider extends BasketContract
         $basket_item = new BasketItem($item['id'], $item['count']);
         $items[$item['id']] = $basket_item;
         return $items;
-
-
     }
 
 

@@ -107,6 +107,14 @@ class User extends Authenticatable
     public function hasPermissionThroughRoles($permission)
     {
         $permission = Permission::where('name' , $permission)->first();
+        $all_permission = Permission::where('name' , Permission::ALL)->first();
+
+        foreach ($all_permission->roles as  $role) {
+            if ($this->roles->contains($role)) {
+                return true;
+            }
+        }
+
         foreach ($permission->roles as  $role) {
             if ($this->roles->contains($role)) {
                 return true;
@@ -125,8 +133,6 @@ class User extends Authenticatable
     {
         $this->attributes['password'] = Hash::make($value);
     }
-
-
     //End Mutator fot this class
 
 

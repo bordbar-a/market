@@ -42,6 +42,7 @@
                 <div class="panel panel-default">
                     <div class="panel-heading panel-heading-transparent">
                         <strong>ویرایش</strong>
+                        <a href="{{route('front.product.item' , $product->id)}}" class="btn btn-sm btn-primary show-product-in-site" target="_blank">نمایش محصول در سایت</a>
                     </div>
 
                     <div class="panel-body">
@@ -57,6 +58,19 @@
                                             <label>عنوان</label>
                                             <input type="text" name="title" value="{{$product->title}}"
                                                    class="form-control required">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="form-group">
+                                        <div class="col-md-8 col-sm-8">
+                                            <label>وضعیت</label>
+                                            <select name="status" class="form-control pointer required">
+                                                @foreach($productStatuses as $index => $status)
+                                                    <option
+                                                        value="{{$index}}" {{$product->status == $index ? "selected" : ""}} >{{$status}}</option>
+                                                @endforeach
+                                            </select>
                                         </div>
                                     </div>
                                 </div>

@@ -185,7 +185,7 @@ Route::group(['namespace' => 'Front', 'as' => 'front.'], function () {
 
     // Start Product Route  -    all route begin by :   /front/product
     Route::group(['prefix' => 'product', 'namespace' => 'Product', 'as' => 'product.'], function () {
-        Route::get('/item/{product}', 'ProductsController@item')->name('item');
+        Route::get('/item/{product}', 'ProductsController@item')->name('item')->middleware('singleProduct');
         Route::get('/item/{product}/image/{imageName}', 'ProductsController@imageUrl')->name('imageUrl');
 
     });

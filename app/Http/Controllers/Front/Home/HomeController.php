@@ -13,7 +13,7 @@ class HomeController extends FrontBaseController
     public function index(){
 
 
-        $products = Product::with('pictures')->get();
+        $products = Product::published()->with('pictures')->get();
         $slider= Slider::where('name' , Slider::FIRST_PAGE_SLIDER_NAME)->with(['items'=>function($query){
             $query->orderBy('order' , 'asc');
         },'items.image'])->first();
